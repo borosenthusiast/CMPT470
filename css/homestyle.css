@@ -1,6 +1,8 @@
 body{
 	margin: 0;
 	font-family: sans-serif;
+	text-align: center;
+	background-color: #a79ae0;
 }
 
 #home{
@@ -88,7 +90,7 @@ body{
 
 #loginbutton{
 	border: none;
-	background-color: #0084a1;
+	background-color: #a79ae0;
 	color:white;
 	font-weight: 600;
 	padding: 8px;
@@ -98,7 +100,7 @@ body{
 }
 
 #loginbutton:hover{
-	background-color: #004959;
+	background-color: #7b6db6;
 }
 
 #newaccount{
@@ -108,5 +110,9 @@ body{
 
 #newaccount:hover{
 	color: #810000;
+}
+
+footer{
+	color:white;
 }
 
