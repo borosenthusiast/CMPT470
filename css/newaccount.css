@@ -52,10 +52,11 @@ body{
 	width: 350px;
 	height:400px;
 	position:absolute;
+	background-color: purple;
+	opacity:8%;
 }
 
 #buttons{
-	border:1px solid black;
 	width: 400px;
 	height:100px;
 	position:relative;
@@ -69,7 +70,6 @@ body{
 	left:0px;
 	height:100px;
 	width:100px;
-	border: 1px solid black;
 }
 
 
@@ -78,7 +78,6 @@ body{
 	right:0px;
 	height:100px;
 	width:100px;
-	border: 1px solid black;
 }
 
 .choicebutton{
@@ -87,19 +86,24 @@ body{
 	width:100%;
 }
 
-
 .clickedbutton{
 	position: absolute;
-	z-index: 1;
 	height:100%;
 	width: 100%;
 }
 
-#leftclicked span{
-	visibility: hidden;
+#addedbutton{
+	opacity:0%;
 }
 
+#addedbutton:hover{
+	opacity: 80%;
+}
 
-#leftclicked:hover span{
-	visibility: visible;
+#subbedbutton{
+	opacity: 0%;
+}
+
+#subbedbutton:hover{
+	opacity:80%;
 }
