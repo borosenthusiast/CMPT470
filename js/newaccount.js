@@ -37,9 +37,20 @@ window.onload = function(){
 
 }
 
+function minusnumber(){
+	var flipsleft = parseInt(document.getElementById("flipsleft").innerHTML,10);
+	if (flipsleft == 0){
+		return;
+	}
+	flipsleft--;
+	document.getElementById("flipsleft").innerHTML = flipsleft;
+
+}
+
 /*leftbutton.onclick*/
 $(document).ready(function(){
 	$("#leftbutton").click(function(){
+		minusnumber();
 		$('#cards li:last').animate({
 			right:'150px'
 		},'fast');
@@ -50,6 +61,7 @@ $(document).ready(function(){
 			$(this).remove();
 
 		});
+
 	});
 
 });
@@ -57,6 +69,7 @@ $(document).ready(function(){
 /*rightbutton.onclick*/
 $(document).ready(function(){
 	$("#rightbutton").click(function(){
+		minusnumber();
 		$('#cards li:last').animate({
 			left:'150px'
 		},'fast');
