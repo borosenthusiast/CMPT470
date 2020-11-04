@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/homestyle.css">
+</head>
+<body>
+	<header>
+	</header>
+	<main>
+		<section id="home">
+			<section id="title">
+				<h class="appname" id="appname" onclick="tologin();">MATCHPAWS</h>
+				<p id="appdesc">FIND YOUR BEST PAWFRIEND</p>
+			</section>
+
+			<section id = "loginbox" class="loginbox">
+			</section>
+			<section class="loginbox">
+
+				<form id="loginform">
+					<h class="appname" id="informappname" style="color:#7b6db6; font-size: 30px;">MATCHPAWS</h>
+					<input type="textbox" placeholder="Username" id="username" class="fillbox" required><br>
+					<input type="password" placeholder="Password" id="password" class="fillbox" required><br>
+
+					<button id="loginbutton">LOG IN</button><br> 
+					<!--
+					just button and no action for now
+					-->
+
+					<a href="pages/signin.html" id="newaccount">CREATE NEW ACCOUNT</a>	
+					<!--
+					add other login methods(facebook, gmail etc)
+					-->
+				</form>
+				
+			</section>
+			
+		</section>                                                                            
+		</section>
+	</main>
+	<footer>
+		<p>footer msg</p>
+	</footer>
+</body>
+<script src="js/homescript.js"></script>
+</html>

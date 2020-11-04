@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../css/newaccount.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		<nav id="navbar">
+			<h id="appname">MATCHPAW</h>
+			<h id="processname">BUILDING YOUR PROFILE</h>
+		</nav>
+		<main>
+			<section id="instruction">
+				<p style="margin:0; font-size: 25px; font-weight: bold; color:#7b6db6;">WHO IS YOUR MATCH?</p>
+				<p id="flipsleft" class="flipsleft">4</p>
+				<span class="flipsleft">/4</span> <!--	4 demo cards for now -->
+
+			</section>
+			<section id="carddeck">
+				<ul id="cards">
+					<!--
+						after DB setup, have 10 cards randomly drawn from DB 
+					-->
+				</ul>
+				<p></p>
+			</section>
+
+			<section id="buttons">
+				<section id="leftbutton" >
+					<img class="choicebutton" src="../images/notchoosebutton.png">
+					<img class="clickedbutton" id="subbedbutton"  src="../images/paw.png">
+				</section>
+				<section id="rightbutton">
+					<img class="choicebutton" src="../images/choosebutton.png">
+					<img class="clickedbutton" id="addedbutton" src="../images/paw.png">
+				</section>
+			</section>
+
+		</main>
+	</body>
+	<script src="../js/newaccount.js"></script>
+</html>
