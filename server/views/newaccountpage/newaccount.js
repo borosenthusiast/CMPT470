@@ -57,7 +57,6 @@ $(document).ready(function(){
 		$('#cards li:last').fadeOut('fast',function(){
 			/*console.log($(this).html());*/
 			addedlist.push($(this).html()); /*record id of usercard*/
-			console.log(addedlist);
 			$(this).remove();
 
 		});
@@ -75,7 +74,6 @@ $(document).ready(function(){
 		},'fast');
 		$('#cards li:last').fadeOut('fast',function(){
 			subtractedlist.push($(this).html()); /*record id of usercard*/
-			console.log(subtractedlist);
 			$(this).remove();
 		});
 	});
