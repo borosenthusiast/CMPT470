@@ -1,11 +1,14 @@
 var express = require('express');
 var app = express();
+
 var indexRoute = require('./routes/indexRoute');
+var registerRoute = require('./routes/registerRoute');
 
 app.use(express.json());
 
 app.use('/', indexRoute);
 
+app.use('/register', registerRoute);
 
 // var http = require('http');
 
