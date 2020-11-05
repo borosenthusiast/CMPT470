@@ -10,7 +10,7 @@ var app = express();
 var indexRoute = require('./routes/indexRoute');
 
 app.use(express.json());
-
+app.use('/', indexRoute);
 
 class AuthHandler {
     login (req, res) {
@@ -59,7 +59,7 @@ class AuthHandler {
 
 }
 
-app.use('/', indexRoute);
+
 let handler = new AuthHandler();
 app.use(bodyParser.urlencoded({
     extended:true
