@@ -1,12 +1,72 @@
-var express = require('express');
+const express = require('express');
+const bodyParser = require('body-parser');
+let jwt = require('jsonwebtoken');
+let config = require('./config.js');
+
+
+
+let middleware = require('./middleware.js');
 var app = express();
 var indexRoute = require('./routes/indexRoute');
 
 app.use(express.json());
 
+
+class AuthHandler {
+    login (req, res) {
+        let username = req.body.username;
+        let password = req.body.password;
+        // TODO: Get user infromation from database
+        let testName = 'hi';
+        let testPw = 'bye'
+        //--------------------------------------
+        
+        if (username && password) {
+            if (username === testName && password === testPw) {
+                let token = jwt.sign({username: username},
+                    config.secret, {
+                        expiresIn: '1h'
+                    }
+                );
+                res.json({
+                    success: true,
+                    message: 'Authentication Success',
+                    token: token
+                });
+            }
+            else {
+                res.send(403).json({
+                    success: false,
+                    message: 'Incorrect Login Username or Password.'
+                });
+            }
+        }
+        else {
+            res.send(400).json({
+                success: false,
+                message: 'Authentication Failed - Incorrect Request'
+            })
+        }
+    }
+
+    index(req, res) {
+        res.json({
+            success:true,
+            message: 'Index page'
+        });
+    }
+
+}
+
 app.use('/', indexRoute);
+let handler = new AuthHandler();
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
+app.use(bodyParser.json());
 
-
+app.post('/login', handler.login);
+app.get('/chktoken', middleware.checkToken, handler.index);
 // var http = require('http');
 
 // app.get('/request', function(req, response) {  //server asks for test data
