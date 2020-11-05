@@ -23,6 +23,7 @@ class AuthHandler {
         
         if (username && password) {
             if (username === testName && password === testPw) {
+                console.log("Test login success!")
                 let token = jwt.sign({username: username},
                     config.secret, {
                         expiresIn: '1h'
@@ -35,14 +36,14 @@ class AuthHandler {
                 });
             }
             else {
-                res.send(403).json({
+                res.sendStatus(403).json({
                     success: false,
                     message: 'Incorrect Login Username or Password.'
                 });
             }
         }
         else {
-            res.send(400).json({
+            res.sendStatus(400).json({
                 success: false,
                 message: 'Authentication Failed - Incorrect Request'
             })
