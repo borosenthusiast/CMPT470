@@ -12,6 +12,10 @@ var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 
 app.use(express.json());
+app.use('/', function(req,res,next){
+  console.log(req.method, 'request:', req.url, JSON.stringify(req.body));
+  next(); 
+});
 app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
