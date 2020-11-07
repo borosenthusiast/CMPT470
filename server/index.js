@@ -10,6 +10,7 @@ var app = express();
 
 var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
+var profileRoute = require('./routes/profileRoute');
 
 app.use(express.json());
 app.use('/', function(req,res,next){
@@ -19,7 +20,7 @@ app.use('/', function(req,res,next){
 app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
-
+app.use('/profile', profileRoute);
 
 class AuthHandler {
     login (req, res) {
