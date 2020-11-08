@@ -12,18 +12,29 @@ script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
 script.type = 'text/javascript';
 document.getElementsByName('head')[0].appendChild(script);
 
-$.ajax({
-	url: "http://localhost:3000/login",
-	type: 'POST',
-	data: formData,
-	error : function(err) {
-	  console.log('Error!', err)
-	},
-	success: function(data) {
-	  console.log('Success!')
-	  localStorage.setItem('token', data.id_token);
-	}
-  });
+var formData = JSON.stringify($("#myForm").serializeArray());
+$("loginform").submit(function(e){
+	e.preventDefault();
+
+	var form = $(this);
+	var url = form.attr('action');
+	
+	$.ajax({
+		url: "http://localhost:3000/login",
+		type: 'POST',
+		data: formData,
+		error : function(err) {
+		  console.log('Error!', err)
+		},
+		success: function(data) {
+		  console.log('Success!')
+		  localStorage.setItem('token', data.id_token);
+		}
+	  });
+	
+	
+
+});
 
 
 $.ajax({
