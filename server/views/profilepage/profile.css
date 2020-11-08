@@ -1,0 +1,35 @@
+body{
+    font-family: sans-serif;
+    background-color:#a79ae0;
+}
+
+#navbar{
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color:#a79ae0;
+    padding: 0;
+    height: 70px;
+    color:white;
+    font-weight: 600;
+}
+
+#appname{
+    position: absolute;
+    left:3%;
+    top: 20px;
+
+    font-size: 25px;
+}
+
+#processname{
+    position: absolute;
+    right:3%;
+    top: 26px;
+    font-size: 16px;
+}
+
+#formsection{
+    border: 1px solid black;
+    
+}

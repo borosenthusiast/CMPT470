@@ -3,6 +3,6 @@ var userController = require('../controllers/userController');
 
 router.post('/signup', userController.signUp);
 
-//router.get('./getAllUsers', userController.getAllUsers);
+router.get('/getusersbyusername/:username', userController.getUserbyUsername);
 
 module.exports = router;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+  <head>
+      <link rel="stylesheet" type="text/css" href="/profile/profile.css">
+  </head>
+<body>
+
+<h2>Edit your profile</h2>
+
+<form action="/users" method="POST">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" name="name" id="name" value="">
+  </div>
+  <div class="form-group">
+    <label for="name">Age:</label>
+    <input type="text" class="form-control" name="age" id="age" value="">
+  </div>
+  <div class="form-group">
+    <label for="name">Email:</label>
+    <input type="text" class="form-control" name="email" id="email" value="">
+  </div>
+  <button class="btn btn-primary">Update</button>
+</form>
+
+<p><a href="/users/{{username}}" target="_blank">View your profile</a></p>
+
+
+</body>
+<script></script>
+</html>
