@@ -54,7 +54,7 @@ $(document).ready(function() {
 });
 
 
-// $.ajax({
+// $.ajax({ // use this to send the token when the server requires it, ex. accessing profile page
 // 	url: "http://localhost:3000/login",
 // 	type: 'GET',
 // 	// Fetch the stored token from localStorage and set in the header
