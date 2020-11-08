@@ -77,6 +77,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.post('/login', handler.login);
-app.get('/chktoken', middleware.checkToken, handler.index);
+app.get('/chktoken', middleware.checkToken, handler.index); // Use the middleware check token to access other pages that require a signed in user.
 
 app.listen(3000);  // app.listen(port, [host], [backlog], [callback]])
