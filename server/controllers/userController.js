@@ -4,10 +4,10 @@ exports.signUp = async (req, res) => {
 	var user = new User({username: req.body.username, password: req.body.password});
 
 	try {
-		let id = await User.create(user);
-		res.send("User created with id: " + id);
+		let id = await User.create(user); //id is currently undefined edit later
+		res.send(id);
 	} catch (err) {
-		console.log(err);
+		console.log("error");
 		res.status(500).send(err);
 	}
 };

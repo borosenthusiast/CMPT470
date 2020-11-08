@@ -1,5 +1,7 @@
 var http = require('http');
 var querystring = require('querystring');
+var util = require("util");
+var axios = require("axios");
 
 var User = function(user) {
 	this.username = user.username;
@@ -17,28 +19,30 @@ User.create = async(user) => {
 		}
 	}
 
-	console.log(user);
 
 	var output = "";
+	//http.request = util.promisify(http.request);
 
-	var request = http.request(options, (res) => {
-		res.setEncoding('utf8');
+	// var request =  await http.request(options, (res) => { // create this into a helper function
+	// 	res.setEncoding('utf8');
 
-		res.on('data', (chunk) => {
-			output += chunk
-    		console.log(`BODY: ${chunk}`);
-  		});
+	// 	res.on('data', (chunk) => {
+	// 		output += chunk
+ //    		console.log(`BODY: ${chunk}`);
+ //  		});
 
-  		res.on('end', () => {
-   		 console.log('No more data in response.');
-  		});
+ //  		res.on('end', () => {
+ //   		 console.log('No more data in response.');
+ //  		});
 
-	});
+	// });
 
-	request.write(JSON.stringify(user));
-	request.end();
+	// request.write(JSON.stringify(user));
+	// request.end();
 
-	return output;
+	response = await axios.post('http://localhost:8080/users/signup', user);
+	//console.log(response.data);
+	return response.data;
 }
 
 
