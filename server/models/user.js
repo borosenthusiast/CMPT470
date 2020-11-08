@@ -9,18 +9,18 @@ var User = function(user) {
 }
 
 User.create = async(user) => {
-	var options = {
-		host: 'localhost',
-		port: 8080,
-		path: '/users/signup',
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	}
+	// var options = {
+	// 	host: 'localhost',
+	// 	port: 8080,
+	// 	path: '/users/signup',
+	// 	method: 'POST',
+	// 	headers: {
+	// 		'Content-Type': 'application/json'
+	// 	}
+	// }
 
 
-	var output = "";
+	// var output = "";
 	//http.request = util.promisify(http.request);
 
 	// var request =  await http.request(options, (res) => { // create this into a helper function
@@ -40,11 +40,16 @@ User.create = async(user) => {
 	// request.write(JSON.stringify(user));
 	// request.end();
 
-	response = await axios.post('http://localhost:8080/users/signup', user);
+	let response = await axios.post('http://localhost:8080/users/signup', user);
 	//console.log(response.data);
 	return response.data;
 }
 
+User.getUserbyUsername = async(username) => {
+	let response = await axios.get('http://localhost:8080/users/getusersbyusername/' + username);
+	//console.log(response.data);
+	return response.data;
+};
 
 
 module.exports = User;
