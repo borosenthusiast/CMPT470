@@ -44,7 +44,7 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 			  console.log('Success!')
-			  localStorage.setItem('token', data.id_token);
+			  localStorage.setItem('token', data);
 			}
 		  });
 		
