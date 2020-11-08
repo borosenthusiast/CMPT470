@@ -1,8 +1,14 @@
+<!--
+What is the purpose of this extra index.html?
+-->
+
 <!DOCTYPE html>
 <html lang = "en" dir="ltr">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/homestyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/homescript.js"></script>
 </head>
 <body>
 	<header>
@@ -23,7 +29,7 @@
 					<input type="textbox" placeholder="Username" id="username" class="fillbox" required><br>
 					<input type="password" placeholder="Password" id="password" class="fillbox" required><br>
 
-					<button id="loginbutton">LOG IN</button><br> 
+					<button type="submit" id="loginbutton">LOG IN</button><br> 
 					<!--
 					just button and no action for now
 					-->
@@ -43,5 +49,4 @@
 		<p>footer msg</p>
 	</footer>
 </body>
-<script src="js/homescript.js"></script>
 </html>

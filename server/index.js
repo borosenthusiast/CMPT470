@@ -26,7 +26,7 @@ class AuthHandler {
     login (req, res) {
         let username = req.body.username;
         let password = req.body.password;
-        // TODO: Get user infromation from database
+        // TODO: Get user infromation from datase
         let testName = 'hi';
         let testPw = 'bye'
         //--------------------------------------
