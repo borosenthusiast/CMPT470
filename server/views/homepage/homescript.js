@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 	$('#loginform').submit(function(e){
 		e.preventDefault();
-		alert("ajax jquery request sent");
+		//alert("ajax jquery request sent");
 		var user = getFormUser();
 		var pass = getFormPw();
 		console.log(user);
