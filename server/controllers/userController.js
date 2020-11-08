@@ -20,7 +20,7 @@ exports.logIn = async (req, res) => {
 	let password = req.body.password;
 	try {
 		let user = await User.getUserbyUsername(username);
-		
+		console.log("User matched from DB: " + JSON.stringify(user));
 		if(username && password) {
 			if(username === user.username && password === user.password) {
 				console.log("Test login success!");
