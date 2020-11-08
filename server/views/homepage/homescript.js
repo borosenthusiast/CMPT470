@@ -6,40 +6,42 @@ function tologin(){
 	document.getElementById('loginbox').style.visibility ="visible";
 }
 
-// Add jQuery for ajax.
-var script = document.createElement('script');
-script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
-script.type = 'text/javascript';
-document.getElementsByName('head')[0].appendChild(script);
+//var formData = JSON.stringify($("#myForm").serializeArray());
+var $ = jQuery;
 
-var formData = JSON.stringify($("#myForm").serializeArray());
-$("loginform").submit(function(e){
-	e.preventDefault();
+$(document).ready(function() {
 
-	var form = $(this);
-	var url = form.attr('action');
-	
-	$.ajax({
-		url: "http://localhost:3000/login",
-		type: 'POST',
-		data: formData,
-		error : function(err) {
-		  console.log('Error!', err)
-		},
-		success: function(data) {
-		  console.log('Success!')
-		  localStorage.setItem('token', data.id_token);
-		}
-	  });
-	
-	
+	$("loginbutton").click(function(e){
 
+		alert("hello")
+		e.preventDefault();
+	
+		var form = $(this);
+		var url = form.attr('action');
+		
+		$.ajax({
+			url: "http://localhost:3000/login",
+			type: 'POST',
+			dataType: 'json',
+			data: form.serialize(),
+			error : function(err) {
+			  console.log('Error!', err)
+			},
+			success: function(data) {
+			  console.log('Success!')
+			  localStorage.setItem('token', data.id_token);
+			}
+		  });
+		
+		
+	});
+	
 });
 
 
-$.ajax({
-	url: "http://localhost:3000/login",
-	type: 'GET',
-	// Fetch the stored token from localStorage and set in the header
-	headers: {"Authorization": localStorage.getItem('token')}
-  });
+// $.ajax({
+// 	url: "http://localhost:3000/login",
+// 	type: 'GET',
+// 	// Fetch the stored token from localStorage and set in the header
+// 	headers: {"Authorization": localStorage.getItem('token')}
+//   });
