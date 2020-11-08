@@ -10,14 +10,14 @@ function tologin(){
 var $ = jQuery;
 
 $(document).ready(function() {
+	console.log("document ready")
 
-	$("loginbutton").click(function(e){
-
-		alert("hello")
+	$('#loginform').submit(function(e){
 		e.preventDefault();
-	
+		alert("ajax jquery request sent")
 		var form = $(this);
 		var url = form.attr('action');
+		console.log(form.username)
 		
 		$.ajax({
 			url: "http://localhost:3000/login",
