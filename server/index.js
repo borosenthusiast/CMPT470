@@ -27,14 +27,16 @@ app.use('/', indexRoute);
 app.use('/register', registerRoute);
 //app.use('/profile', profileRoute);
 
+
 // class AuthHandler {
 //     login (req, res) {
 //         let username = req.body.username;
 //         let password = req.body.password;
-//         // TODO: Get user infromation from database
+//         // TODO: Get user infromation from datase
 //         let testName = 'hi';
 //         let testPw = 'bye'
-//         //--------------------------------------
+        //--------------------------------------
+
         
 //         if (username && password) {
 //             if (username === testName && password === testPw) {
@@ -83,5 +85,6 @@ app.use('/register', registerRoute);
 
 // app.post('/login', handler.login);
 // app.get('/chktoken', middleware.checkToken, handler.index);
+
 
 app.listen(3000);  // app.listen(port, [host], [backlog], [callback]])
