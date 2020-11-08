@@ -20,7 +20,7 @@ app.use('/', function(req,res,next){
 app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
-app.use('/profile', profileRoute);
+//app.use('/profile', profileRoute);
 
 class AuthHandler {
     login (req, res) {

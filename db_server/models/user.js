@@ -19,6 +19,12 @@ User.isUsernameAvailable = async(user) => {
 
 }
 
+User.getUserbyUsername = async(username) => {
+	let query = await user_db.query("SELECT username, password FROM user WHERE username = ?", [username]);
+	//console.log(query[0]);
+	return query[0];
+}
+
 User.create = async(user) => {
 	let result = await user_db.query("INSERT INTO user SET ?", [user]); //add something to prevent sql injection
 	if(result.insertId) {
