@@ -35,6 +35,7 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 			  console.log('Success!')
+			  window.href = "localhost:3000/profile";
 			}
 		  });
 		
