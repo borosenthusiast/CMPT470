@@ -9,3 +9,7 @@ var Profile = function(profile) {
 	this.petDescription = profile.petDescription;
 	this.petImage = profile.petImage;
 }
+
+Profile.createProfile = async(Profile) => {
+	
+}

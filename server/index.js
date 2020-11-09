@@ -27,4 +27,10 @@ app.use('/register', registerRoute);
 app.use('/profile', profileRoute);
 
 
+//////////////////////////// temp
+var cardFlipRoute = require('./routes/cardFlipRoute');
+app.use('/cardflip', cardFlipRoute);
+///////////////////////////
+
+
 app.listen(3000);  // app.listen(port, [host], [backlog], [callback]])
