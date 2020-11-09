@@ -45,6 +45,7 @@ $(document).ready(function() {
 			success: function(data) {
 			  console.log('Success!')
 			  localStorage.setItem('token', JSON.stringify(data));
+			  window.href = "localhost:3000/test" // redirect user
 			}
 		  });
 		
