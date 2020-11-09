@@ -4,7 +4,6 @@ let jwt = require('jsonwebtoken');
 let config = require('./config.js');
 
 
-
 let middleware = require('./middleware.js');
 var app = express();
 
@@ -25,6 +24,17 @@ app.use('/', function(req,res,next){
 app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
+
+app.use('/profile', profileRoute)
+//User's profile
+//user's bio
+//their pet's image 1-5
+// individual pet info
+
+
+//app.user('/homepage', );
+
+
 //app.use('/profile', profileRoute);
 
 

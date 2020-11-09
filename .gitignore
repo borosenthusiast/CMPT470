@@ -2,3 +2,5 @@ server/node_modules/
 server/package-lock.json
 db_server/node_modules/
 db_server/node_package-lock.json
+mongo_server/node_modules/
+mongo_server/node_package-lock.json
