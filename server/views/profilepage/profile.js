@@ -8,10 +8,10 @@ $(document).ready(function() {
         e.preventDefault();
 
         let formData = new FormData();
-       // formData.append("file", userpic.files[0]);
+        formData.append("file", userpic.files[0]);
         formData.append("bio", user_bio.value);
-        console.log(user_bio.value);
-        //console.log(userpic.files[0]);
+        //console.log(user_bio.value);
+        console.log(formData);
 
         $.ajax({
             url: "http://localhost:3000/profile/submit",

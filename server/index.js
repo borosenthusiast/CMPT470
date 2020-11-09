@@ -11,11 +11,10 @@ var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
 
-//app.use(express.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended:true
 }));
-app.use(bodyParser.json());
 
 app.use('/', function(req,res,next){
   console.log(req.method, 'request:', req.url, JSON.stringify(req.body));

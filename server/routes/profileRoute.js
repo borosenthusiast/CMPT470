@@ -2,6 +2,7 @@ var router = require('express').Router();
 var profileController = require('../controllers/profileController');
 var path = require('path');
 var file_path = "/../views/";
+var multer = require('multer');
 
 
 router.get('/', function(req,res) {
@@ -16,7 +17,11 @@ router.get('/profile.js', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "profilepage/profile.js"));
 });
 
-router.post('/submit', profileController.submitProfile);
+
+var upload = multer({dest: './uploads/'});
+
+
+router.post('/submit', upload.single('file'), profileController.submitProfile);
 
 
 module.exports = router;

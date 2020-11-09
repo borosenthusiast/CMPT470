@@ -1,3 +1,5 @@
 exports.submitProfile = async (req, res) => {
-	console.log(req.body);
+	console.log(req.file);
+	console.log(req.body.bio);
+	//console.log(req);
 }
