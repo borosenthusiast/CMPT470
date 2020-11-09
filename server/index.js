@@ -24,76 +24,7 @@ app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
 
-app.use('/profile', profileRoute)
-//User's profile
-//user's bio
-//their pet's image 1-5
-// individual pet info
-
-
-//app.user('/homepage', );
-
-
-//app.use('/profile', profileRoute);
-
-
-// class AuthHandler {
-//     login (req, res) {
-//         let username = req.body.username;
-//         let password = req.body.password;
-//         // TODO: Get user infromation from datase
-//         let testName = 'hi';
-//         let testPw = 'bye'
-        //--------------------------------------
-
-        
-//         if (username && password) {
-//             if (username === testName && password === testPw) {
-//                 console.log("Test login success!")
-//                 let token = jwt.sign({username: username},
-//                     config.secret, {
-//                         expiresIn: '1h'
-//                     }
-//                 );
-//                 res.json({
-//                     success: true,
-//                     message: 'Authentication Success',
-//                     token: token
-//                 });
-//             }
-//             else {
-//                 res.sendStatus(403).json({
-//                     success: false,
-//                     message: 'Incorrect Login Username or Password.'
-//                 });
-//             }
-//         }
-//         else {
-//             res.sendStatus(400).json({
-//                 success: false,
-//                 message: 'Authentication Failed - Incorrect Request'
-//             })
-//         }
-//     }
-
-//     index(req, res) {
-//         res.json({
-//             success:true,
-//             message: 'Index page'
-//         });
-//     }
-
-// }
-
-
-// let handler = new AuthHandler();
-// app.use(bodyParser.urlencoded({
-//     extended:true
-// }));
-// app.use(bodyParser.json());
-
-// app.post('/login', handler.login);
-// app.get('/chktoken', middleware.checkToken, handler.index);
+app.use('/profile', profileRoute);
 
 
 app.listen(3000);  // app.listen(port, [host], [backlog], [callback]])

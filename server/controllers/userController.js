@@ -8,10 +8,18 @@ exports.signUp = async (req, res) => {
 
 	try {
 		let id = await User.create(user); //id is currently undefined edit later
-		res.send(id);
+		res.status(200).json({
+			success: true,
+			message: 'User Creation Success'
+		});
+		return;
 	} catch (err) {
 		console.log("error");
-		res.status(500).send(err);
+		res.status(500).json({
+			error: err,
+			message: "user creation failed."
+		});
+		//return;
 	}
 };
 
@@ -29,28 +37,34 @@ exports.logIn = async (req, res) => {
                         expiresIn: '1h'
                     }
                 );
-                res.json({
+                
+                res.status(200).json({
                     success: true,
                     message: 'Authentication Success',
                     token: token
                 });
+               
+                return;
                 
 			} else {
-                res.sendStatus(403).json({
+                res.status(403).json({
                     success: false,
                     message: 'Incorrect Login Username or Password.'
                 });
+                return;
             }
 		} else {
-            res.sendStatus(400).json({
+            res.status(400).json({
                 success: false,
                 message: 'Authentication Failed - Incorrect Request'
             })
+            return;
         }
 
 		//console.log(user);
 	} catch (err) {
 		console.log("error");
 		res.status(500).send(err);
+		//return;
 	}
 };
