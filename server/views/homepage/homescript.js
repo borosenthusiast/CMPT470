@@ -41,6 +41,7 @@ $(document).ready(function() {
 			data: json_query,
 			error : function(err) {
 			  console.log('Error!', err)
+			  alert("Incorrect Login Username or Password")
 			},
 			success: function(data) {
 			  console.log('Success!')
