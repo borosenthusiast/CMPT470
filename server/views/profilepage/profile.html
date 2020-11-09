@@ -2,12 +2,22 @@
 <html lang = "en" dir="ltr">
   <head>
       <link rel="stylesheet" type="text/css" href="/profile/profile.css">
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
   </head>
 <body>
 
-<h2>Edit your profile</h2>
-
-<form action="/users" method="POST">
+<h1>Edit your profile</h1>
+<!--
+<form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="name">Upload Your Image:</label>
+        <input type="file" accept="image/*" name="photo" >
+</form>
+-->
+<form action="/users" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name">Upload Your Image:</label>
+    <input type="file" accept="image/*" name="userpic" id="userpic">
+  </div>
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" class="form-control" name="name" id="name" value="">
@@ -20,12 +30,43 @@
     <label for="name">Email:</label>
     <input type="text" class="form-control" name="email" id="email" value="">
   </div>
-  <button class="btn btn-primary">Update</button>
+<div class="form-group">
+  <label for="user_bio">Bio：</label><br />
+  <textarea rows="4" maxlength="250" class="form-control" name="user[bio]" id="user_bio"></textarea><br />
+  <small class="form-text text-muted">Tell people about yourself in fewer than 250 characters</small>
+</div>
+
+  <button class="userProfileUpdate">Update</button>
 </form>
 
+<h1>Edit pet profile</h1>
+
+<form action="/pets" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name">Upload Image of Pet:</label>
+     <input type="file" accept="image/*" name="petpic" id="petpic">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" name="petname" id="petname" value="">
+  </div>
+  <div class="form-group">
+    <label for="name">Age:</label>
+    <input type="text" class="form-control" name="petage" id="petage" value="">
+  </div>
+<div class="form-group">
+  <label for="user_bio">Description: </label><br />
+  <textarea rows="4" maxlength="250" class="form-control" name="pet[bio]" id="pet_bio"></textarea>
+</div>
+
+  <button class="petProfileUpdate">Update</button>
+</form>
+
+<!--
 <p><a href="/users/{{username}}" target="_blank">View your profile</a></p>
-
-
+-->
 </body>
-<script></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/profile/profile.js"></script>
 </html>
