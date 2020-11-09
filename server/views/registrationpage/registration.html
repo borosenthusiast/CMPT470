@@ -15,7 +15,7 @@
 		</nav>
 		<main>
 			<section id="formsection">
-				<form>
+				<form id="registrationform">
 				<!--
 				<form action="account/register" method="post" name=regiform>
 				-->
@@ -23,9 +23,9 @@
 					<input type="textbox" placeholder="Enter Username" id="username" required>
 					<br>
 					<label for="password">Password</label><br>
-					<input type="password" placeholder="Enter Password" id="password" requiredf>
+					<input type="password" placeholder="Enter Password" id="password" required>
 					<br>
-					<input type="submit" value="SUBMIT">
+					<button id="registerbutton">REGISTER</button><br>
 					<a href="/profile" id="profile">profile page after user log in</a>	
 				</form>
 			</section>			
@@ -35,5 +35,6 @@
 
 		</main>
 	</body>
-	<script></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/register/registration.js"></script>
 </html>

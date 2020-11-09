@@ -12,6 +12,10 @@ router.get('/registration.css', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "registrationpage/registration.css"));
 });
 
+router.get('/registration.js', function(req,res) {
+	res.sendFile(path.join(__dirname + file_path + "registrationpage/registration.js"));
+});
+
 router.post('/submit', userController.signUp);
 
 module.exports = router;
