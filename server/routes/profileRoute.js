@@ -12,6 +12,10 @@ router.get('/profile.css', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "profilepage/profile.css"));
 });
 
+router.get('/profile.js', function(req,res) {
+	res.sendFile(path.join(__dirname + file_path + "profilepage/profile.js"));
+});
+
 router.post('/submit', profileController.submitProfile);
 
 
