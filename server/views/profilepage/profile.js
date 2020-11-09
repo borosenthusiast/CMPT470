@@ -14,7 +14,7 @@ $(document).ready(function() {
         console.log(formData);
 
         $.ajax({
-            url: "http://localhost:3000/profile/submit",
+            url: "/profile/submit",
             type: "POST",
             data: formData,
             error : function(err) {

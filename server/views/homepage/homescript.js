@@ -35,7 +35,7 @@ $(document).ready(function() {
 		console.log(json_query);
 		
 		$.ajax({
-			url: "http://localhost:3000/login",
+			url: "/login",
 			type: 'POST',
 			dataType: 'json',
 			data: json_query,
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			success: function(data) {
 			  console.log('Success!')
 			  localStorage.setItem('token', JSON.stringify(data));
-			  window.location.href = "http://localhost:3000/cardflip" // redirect user
+			  window.location.href = "/cardflip" // redirect user
 			}
 		  });
 		

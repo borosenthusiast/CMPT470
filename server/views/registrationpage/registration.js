@@ -26,7 +26,7 @@ $(document).ready(function() {
 		console.log(json_query);
 		
 		$.ajax({
-			url: "http://localhost:3000/register/submit",
+			url: "/register/submit",
 			type: 'POST',
 			dataType: 'json',
 			data: json_query,
@@ -35,7 +35,7 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 			  console.log('Success!')
-			  window.location.href = "http://localhost:3000/profile";
+			  window.location.href = "/profile";
 			}
 		  });
 		
