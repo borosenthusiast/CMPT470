@@ -24,6 +24,14 @@ router.get('/images/home2.jpg', function(req, res) {
 });
 
 
-router.post('/login', userController.logIn);
+index = (req, res) => {
+       res.json({
+           success:true,
+           message: 'Index page'
+       });
+}
+
+
+router.post('/login', userController.logIn, index);
 
 module.exports = router;

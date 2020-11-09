@@ -34,6 +34,7 @@ exports.logIn = async (req, res) => {
                     message: 'Authentication Success',
                     token: token
                 });
+                
 			} else {
                 res.sendStatus(403).json({
                     success: false,
