@@ -24,5 +24,10 @@ User.getUserbyUsername = async(username) => {
 	return response.data;
 };
 
+User.getUserbyId = async(id) => {
+	let response = await axios.get('http://localhost:8080/users/getusersbyid/' + id);
+	return response.data
+}
+
 
 module.exports = User;
