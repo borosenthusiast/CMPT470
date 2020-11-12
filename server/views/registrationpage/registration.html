@@ -19,12 +19,33 @@
 				<!--
 				<form action="account/register" method="post" name=regiform>
 				-->
+					<label for="first_name">First Name</label><br>
+					<input type="textbox" placeholder="Enter first name" id="first_name" required>
+					<br>
+
+					<label for="last_name">Last Name</label><br>
+					<input type="textbox" placeholder="Enter last name" id="last_name" required>
+					<br>
+
+					<label for="email">Email</label><br>
+					<input type="textbox" placeholder="Enter last email" id="email" required>
+					<br>
+
 					<label for="username">Username</label><br>
 					<input type="textbox" placeholder="Enter Username" id="username" required>
 					<br>
+
 					<label for="password">Password</label><br>
 					<input type="password" placeholder="Enter Password" id="password" required>
 					<br>
+
+					<label for="account_type">You are:</label>
+  					<select id="account_type" name="account_type">
+    					<option value="dog_owner">dog owner</option>
+    					<option value="adoption_agency">adoption agency</option>
+  					</select>
+  					<br>
+
 					<button id="registerbutton">REGISTER</button><br>
 					<a href="/profile" id="profile">profile page after user log in</a>	
 				</form>

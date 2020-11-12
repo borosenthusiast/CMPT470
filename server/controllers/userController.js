@@ -2,9 +2,28 @@ var User = require("../models/user.js");
 let jwt = require('jsonwebtoken');
 let config = require('../config.js');
 
+const account_type = {
+	ADMIN: 'Admin',
+	ADOPT: 'Adopt',
+	USER: 'User'
+};
 
 exports.signUp = async (req, res) => {
-	var user = new User({username: req.body.username, password: req.body.password});
+	var type_account = "";
+	if(req.body.account_type === "dog_owner") {
+		type_account = account_type.USER;
+	}
+
+	if(req.body.account_type === "adoption_agency") {
+		type_account = account_type.ADOPT;
+	}
+	var user = new User({username:   req.body.username, 
+						 password:   req.body.password,
+						 first_name: req.body.first_name,
+						 last_name:  req.body.last_name,
+						 email:      req.body.email,
+						 account_type: type_account
+						});
 
 	try {
 		let id = await User.create(user); //id is currently undefined edit later
