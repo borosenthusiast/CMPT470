@@ -1,0 +1,115 @@
+body{
+	margin:0;
+	font-family: sans-serif;
+}
+
+#navbar{
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 70px;
+	color:white;
+	font-weight: 600;
+}
+
+#appname{
+	position: absolute;
+	left:3%;
+	top: 20px;
+
+	font-size: 25px;
+}
+
+#processname{
+	position: absolute;
+	right:3%;
+	top: 26px;
+	font-size: 16px;
+}
+
+#pageheader{
+	width: 700px;
+	position:relative;
+	top: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+
+#filtersection{
+	top: 32px;
+	position: relative;
+	float: right;
+	border:1px solid black;
+	width: 90%;
+	height: 50px;
+}
+
+#adoptposts{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-bottom: 70px;
+	padding: 0;
+	top: 50px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+
+}
+
+#adoptposts > * {
+	margin-bottom: 1.5em;
+}
+
+.dogcard{
+	position: relative;
+	margin-left: auto;
+	margin-right:auto;
+	width: 300px;
+	height: 400px;
+	text-align: center;
+	background-color: #D3D1CC;
+}
+
+
+.dogcard:hover{
+	box-shadow: 0 4px 8px 0 #352288;
+
+}
+
+.image{
+	margin-top: 10px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width:92%;
+	height: 75%;
+	background: url("../images/sample_adopt_profile.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.dogname{
+	position: relative;
+	top: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #7b6db6;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 65px;
+	width:100%;
+	color:white;
+}
