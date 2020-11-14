@@ -38,23 +38,70 @@ body{
 	text-align: center;
 }
 
+#tabbutton{
+	position: absolute;
+	top:-0.5px;
+	right: 90%;
+	font-size: 12px;
+	float: center;
+	padding: 15px;
+	border-radius: 30px;
+	z-index: 1;
+	font-weight: 600;
+	color:white;
+	background-color: #352288;
+
+
+}
+   
+#options{
+	list-style-type: none;
+}
+
+li{
+	position: relative;
+	top: -8px;
+	display: inline;
+	font-weight: 600;
+	font-size: 13px;
+	color: gray;
+	padding: 5px;
+}
+
+li:hover{
+	color: black;
+}
+
 #filtersection{
-	top: 32px;
+	top: 50px;
 	position: relative;
 	float: right;
-	border:1px solid black;
-	width: 90%;
-	height: 50px;
+	border:5px;
+	
+	width: 400px;
+	height: 34px;
+	background-color: white;
+}
+
+#filtertab{
+	position: relative;
+	float: right;
+	
+	border:5px;
+	border-style: solid hidden solid hidden;
+	border-color: #E0DBCF;
+	height: 100%;
+	width: 380px;
 }
 
 #adoptposts{
 	display: flex;
 	flex-wrap: wrap;
     justify-content: space-between;
-
+	
     margin-bottom: 70px;
 	padding: 0;
-	top: 50px;
+	top: 80px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
@@ -102,6 +149,27 @@ body{
 	font-weight: bold;
 	color: #7b6db6;
 }
+
+.doginfo{
+	padding: 0;
+	position: relative; 
+	top:5px;
+}
+
+.dogprofile{
+	margin: 2px;
+	font-size: 13px;
+}
+
+.doglocation{
+	margin: 2px;font-size: 13px;
+}
+
+.dateposted{
+	font-size: 10px;
+}
+
+
 
 footer{
 	position: fixed;

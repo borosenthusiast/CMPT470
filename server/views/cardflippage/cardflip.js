@@ -12,6 +12,7 @@ function card(id){
 }
 
 function deck(){
+	/*ajax*/
 	this.ids = ['1','2','3','4'];	/* 4 demo id */
 	var cards =[];
 
@@ -23,12 +24,13 @@ function deck(){
 
 var carddeck = new deck();
 
+
 window.onload = function(){
 
 	var ul = document.getElementById("cards");
 	for (var i = 0; i < carddeck.length; i++){
 		var li = document.createElement("li");
-		li.innerHTML = carddeck[i].id;
+		
 		ul.appendChild(li);
 	}
 
