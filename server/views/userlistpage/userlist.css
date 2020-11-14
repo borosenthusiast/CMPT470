@@ -1,0 +1,40 @@
+body{
+	margin:0;
+	font-family: sans-serif;
+	background-color:#a79ae0;
+}
+
+#appname{
+	position: absolute;
+	left:3%;
+	top: 20px;
+
+	font-size: 25px;
+}
+
+#navbar{
+	list-style-type: none;
+	color:white;
+	margin: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	font-weight: 600;
+}
+
+table, td, th { 
+ border: 1px solid #ddd; 
+ text-align: left; 
+} 
+table { 
+ border-collapse: collapse; 
+ width: 50%; 
+} 
+.table-data{ 
+ position: relative; 
+ left:150px; 
+ top:100px; 
+} 
+th, td { 
+ padding: 15px; 
+} 

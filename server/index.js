@@ -10,6 +10,8 @@ var app = express();
 var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
+var userlistRoute = require('./routes/userlistRoute');
+app.set('view engine','ejs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -26,7 +28,7 @@ app.use('/register', registerRoute);
 
 app.use('/profile', profileRoute);
 
-
+app.use('/userlist', userlistRoute);
 //////////////////////////// temp
 var cardFlipRoute = require('./routes/cardFlipRoute');
 app.use('/cardflip', cardFlipRoute);
