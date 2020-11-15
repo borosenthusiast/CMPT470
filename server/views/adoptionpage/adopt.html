@@ -17,18 +17,41 @@
 
 
 			<section id="filtersection">
-				<botton id="tabbutton">FILTER</botton>
+				<botton id="tabbutton">REFRESH</botton>
 				<section id="filtertab">
 					<ul id="options">
-						<li>DATE</li>
-						<li>GENDER</li>
-						<li>WEIGHT</li>
-						<li>AGE</li>
-						<li>LOCATION</li>
-						
+						<li class="filteroption" id="datefilter">NEWEST</li>
+						<li class="filteroption" onmouseover="genderdrop()">GENDER</li>
+						<li class="filteroption" onmouseover="weightdrop()">WEIGHT</li>
+						<li class="filteroption">LOCATION</li>						
 					</ul>
 				</section>
+
+				<section id="dropdowns">
+
+					<section onmouseleave="genderpullup()" id="genderfilter">
+						<ul id="genderoptions">
+							<li onclick="setgenderfilter(0)" id="allgender" class="genderoption">ALL</li>
+							<li onclick="setgenderfilter(1)" id="female" class="genderoption">FEMALE</li>
+							<li onclick="setgenderfilter(2)" id="male" class="genderoption">MALE</li>
+						</ul>
+					</section>
+					
+					<section onmouseleave="weightpullup()" id="weightfilter">
+						<ul id="weightoptions">
+							<li onclick="setweightfilter(0)" id="under5" class="weightoption">< 5KG</li>
+							<li onclick="setweightfilter(1)" id="5to10" class="weightoption">5KG - 10KG</li>
+							<li onclick="setweightfilter(2)" id="10to25" class="weightoption">10KG - 25KG</li>
+							<li onclick="setweightfilter(3)" id="25to35" class="weightoption">25KG - 35KG</li>
+							<li onclick="setweightfilter(4)" id="over35" class="weightoption">35KG <<li>
+						</ul>
+					</section>
+			
+
+				</section>
+
 			</section>
+
 
 
 			<section id="adoptposts">  			
