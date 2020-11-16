@@ -27,6 +27,7 @@ function weightpullup(){
 
 
 
+
 function deck(filterstat){
 	/*
 	ajax to get dog table according to filterstat (ORDER BY)
@@ -115,6 +116,11 @@ function updatecards(dogcarddeck){
 
 }
 
+//click card send get request to load dog/adoption agency profile
+$(document).on('click', '.dogcard', function() {
+		console.log("clicked!");
+
+});
 
 
 $("#tabbutton").click(function(){
@@ -140,7 +146,6 @@ $("#datefilter").click(function(){
 		
 	}
 });
-
 
 
 function setgenderfilter(n){

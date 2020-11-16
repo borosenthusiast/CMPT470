@@ -1,0 +1,180 @@
+html{
+	scroll-behavior: smooth;   
+}
+
+body{
+	margin:0;
+	font-family: sans-serif;
+}
+
+#navbar{
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 70px;
+	color:white;
+	font-weight: 600;
+}
+
+#appname{
+	position: absolute;
+	left:3%;
+	top: 20px;
+
+	font-size: 25px;
+}
+
+#processname{
+	position: absolute;
+	right:3%;
+	top: 26px;
+	font-size: 16px;
+}
+
+#pageheader{
+	width: 1250px;
+	position:relative;
+	top: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+
+#dogname{
+	margin:0; 
+	position: relative; 
+	margin-left:auto; 
+	margin-right: auto; 
+	font-size: 30px; 
+	font-weight: bold; 
+	color:#7b6db6;
+}
+
+#profilesection{
+	padding: 0;
+	top: 50px;
+	margin: 0;
+	width: 1250px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+
+#doginfo{
+	border:5px solid #D3D1CC;
+	width: 350px;
+	float:left;
+	height: 450px;
+	margin-right: 10px;
+}
+
+#infotextsection{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 93%;
+	height: 86%;
+}
+
+#desctextsection{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 93%;
+	height: 86%;
+}
+
+#description{
+	border:5px solid #D3D1CC;
+	width: 350px;
+	float:left;
+	height: 450px;
+	margin-left: 10px;
+}
+
+#graphicsection{
+	float: left;
+	width: 510px;
+	padding: 0;
+	position: relative;
+	top: 25px;
+}
+
+.slidebutton{
+	width:100%;
+	opacity:60%;
+}
+
+.slidebutton:hover{
+	opacity: 100%;
+}
+
+#leftbutton{
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: 160px;
+
+}
+
+#imagenumber{
+	position: absolute;
+	right: 49%;
+	color: gray;
+	font-size: 15px;
+	z-index: 1;
+	padding: 0;
+	margin:0;
+}
+
+#imagesection{
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 400px;
+	height: 400px;
+	background-color: #E0DBCF;
+	text-align: center;
+}
+
+.image{
+	position: relative;
+	padding:0;
+	margin: 0;
+	max-height: 100%;
+	max-width: 100%;
+	top: 50%;
+
+	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
+
+
+
+#rightbutton{
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: 160px;
+}
+
+
+footer{
+	position: fixed;
+	bottom: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 65px;
+	width:100%;
+	color:white;
+}

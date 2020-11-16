@@ -108,9 +108,6 @@ body{
 	padding: 0;
 }
 
-.weightoption:hover{
-	color:black;
-}
 
 #genderfilter{
 	visibility: hidden;
@@ -132,9 +129,6 @@ body{
 	padding: 0;
 }
 
-.genderoption:hover{
-	color: black;
-}
 
 #filtersection{
 	top: 50px;
