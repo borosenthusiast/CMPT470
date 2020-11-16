@@ -22,13 +22,14 @@ let checkToken = (req, res, next) => {
             });
         } else {
             req.decoded = decoded;
-            let user = await User.getUserbyUsername(username);
+            let user = User.getUserbyUsername(username);
             req.account_type = user.account_type;
             console.log("User matched from DB: " + JSON.stringify(user));
             next();
         }
         });
     } else {
+        console.log("No authentication token was provided.");
         return res.json({
         success: false,
         message: 'Auth token is not supplied'
