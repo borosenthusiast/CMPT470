@@ -5,15 +5,18 @@
   <link rel="stylesheet" type="text/css" href="/userlist/userlist.css">
   <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
-<body>
+<body> 
     <nav id="navbar">
         <h id="appname">MATCHPAW</h>
-    </nav>   
-<div class="table-data">
-<h2>User List</h2>
-<p>Type something in the input field to search the table for names, emails or account types:</p>  
-<input id="searchInput" type="text" placeholder="Search..">
-<br><br>
+    </nav>
+        <section id="pageheader">
+    <p style="margin:0; font-size: 30px; font-weight: bold; color:#7b6db6;">User List</p>
+    </section>       
+<main class="table-data">
+
+    <p>Type something in the input field to search the table for names, emails or account types:</p>  
+    <input id="searchInput" type="text" placeholder="Search..">
+    <br><br>
     <table border="1">
         <thead>
         <tr>
@@ -33,7 +36,7 @@
         <tbody id="userTable">
         <tr>
             <td><%=i; %></td>
-            <td><%=data.username %></td>
+            <td class="username"><%=data.username %></td>
             <td><%=data.first_name %></td>
             <td><%=data.last_name %></td>
             <td><%=data.email %></td>
@@ -47,7 +50,13 @@
             </tr>
         <% } %>
     </table>
-    </div>
+    </main>
+
+        <footer>
+            <p style="position: absolute;">menu and direction to aboutus</p>
+            <p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+        </footer>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/userlist/userlist.js"></script>

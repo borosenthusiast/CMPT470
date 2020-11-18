@@ -8,3 +8,14 @@ $(document).ready(function(){
     });
   });
 });
+
+$(document).ready(function(){
+  $(".username").click(function(){
+    $.ajax({
+      url: '',
+      type: 'GET',
+      success: alert("Redirecte to the user page")
+    })
+  })
+})
+
