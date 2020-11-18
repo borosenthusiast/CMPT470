@@ -16,6 +16,6 @@ app = express();
 
 app.use(express.json());
 var profileQueryRoute = require('./routes/profileQueryRoute');
-app.user('/profile', profileQueryRoute);
+app.use('/profile', profileQueryRoute);
 
 app.listen(8081);
