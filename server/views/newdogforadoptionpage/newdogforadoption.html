@@ -35,13 +35,11 @@
 							<td>
 								<input type = "number" id="age" name="age" placeholder="ex. 3" required>
 							</td>		
-							<td>
+							<td >
 								 <input type="radio" id="monthsOld" name="monthyear" value="monthsOld">
-								 <label for="monthsOld">MONTHS OLD</label><br>
-							</td>
-							<td>
+								 <label for="monthsOld">MONTHS OLD</label>
 								 <input type="radio" id="yearsOld" name="monthyear" value="yearsOld">
-								 <label for="yearsOld">YEARS OLD</label><br>
+								 <label for="yearsOld">YEARS OLD</label>
 							</td>				
 						</tr>
 						<tr>
@@ -50,11 +48,9 @@
 							</td>
 							<td>
 								 <input type="radio" id="male" name="gender" value="male">
-								 <label for="male">Male</label><br>
-							</td>
-							<td>
+								 <label for="male">Male</label>
 								 <input type="radio" id="female" name="gender" value="female">
-								 <label for="female">FEMALE</label><br>
+								 <label for="female">FEMALE</label>
 							</td>
 						</tr>
 						<tr>
@@ -66,29 +62,39 @@
 							</td>
 						</tr>
 					</table>
-					<p>TELL US MORE!</p>
+					<br>
+					<p style="font-weight: bold; font-size: 20px; padding:0;">TELL US MORE!</p>
 					<table id="dogDescriptionForm">
 						<tr>
-							<td>
+							<td >
 								<label for = "description">DESCRIPTION</label>
 							</td>
 						</tr>
 						<tr>
+							<td colspan="2">
+								<input style="width:99%; height: 150px; overflow-y: auto; "type = "textbox" id="description"><br>
+							</td>
+						</tr>
+						<tr>
 							<td>
-								<input type = "textbox" id="description"><br>
+								<label for = "images">PICTURES</label>
+							</td>
+							<td >
+								<input style="width:90%;" type="file" id="img" name="img" accept="image\*" multiple>
 							</td>
 						</tr>
 					</table>
 					<!--
 						THIS PART CAN BE AUTO-FILLED BY USER'S INFO
 					-->
-					<p>CONFIRM YOUR INFORMATION</p>
+					<br>
+					<p style="font-weight: bold; font-size: 20px; padding:0;">CONFIRM YOUR INFORMATION</p>
 					<table id="agencyForm">
 						<tr>
-							<td>
-								<label for = "agencyName">ADOPTION AGENCY NAME</label> 
+							<td style="width:25%;">
+								<label for = "agencyName">ADOPTION AGENCY</label> 
 							</td>
-							<td>
+							<td colspan="2">
 								<input type = "textbox" id="agencyName" placeholder="NAME OF AGENCY/SHELTER" required>
 							</td>
 						</tr>
