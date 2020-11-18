@@ -34,14 +34,33 @@ body{
 	font-size: 16px;
 }
 
-#headerImg{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: url("../images/home2Cropped.jpg");
-	/*background-size: cover; */
-    max-width: 100%;
-    max-height: 400px;
+/* Header image */
+#overlay{
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #a7a6ba;
+}
+
+#overlay:hover {
+	opacity: 0.75;
+}
+
+#overlayText{
+	color: white;
+	font-size: 50px;
+	font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
 }
 
 /* Body */
