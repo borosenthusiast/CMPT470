@@ -19,7 +19,7 @@ exports.signUp = async (req, res) => {
 			console.log("User module")
 			res.send("User created with id: " + id);
 		} else {
-			res.send("Username or email already exists");
+			res.send("Username or email already exists"); //
 		}
 	} catch (err) {
 		console.log("error");

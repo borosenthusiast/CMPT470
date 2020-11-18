@@ -16,6 +16,7 @@ $(document).ready(function() {
         $.ajax({
             url: "/profile/submit",
             type: "POST",
+            headers: {Authorization: 'Bearer ' + localStorage.getItem('token')},
             data: formData,
             error : function(err) {
                 console.log('Error!', err)
