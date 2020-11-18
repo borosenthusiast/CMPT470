@@ -50,7 +50,7 @@ $(document).ready(function() {
 			  $.ajax({
 				url: "/cardflip",
 				type: "GET",
-				headers: {"Authorization": localStorage.getItem('token')}
+				headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}
 				// send the token when redirecting the user
 			  });
 			}
