@@ -18,10 +18,10 @@ $(document).ready(function() {
         e.preventDefault();
 
         let formData = new FormData();
-        let file = userpic.files[0];
-        let b64_string = getB64Img(file);
-        formData.append("file", b64_string);
-        //formData.append("file", userpic.files[0]);
+        //let file = userpic.files[0];
+        //let b64_string = getB64Img(file);
+        //formData.append("file", b64_string);
+        formData.append("file", userpic.files[0]);
         formData.append("bio", user_bio.value);
         //console.log(user_bio.value);
         console.log(formData);
