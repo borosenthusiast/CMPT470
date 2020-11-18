@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="newdogforadoption.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		<nav id="navbar">
+			<h id="appname">MATCHPAW</h>
+			<h id="processname">NEW DOG FOR ADOPTION</h>
+		</nav>
+		<main>
+			<section id="pageheader">
+				<p style="margin:0; font-size: 30px; font-weight: bold; color:#7b6db6;">INTRODUCE US TO THE NEW FRIEND</p>
+			</section>
+
+			<section id="formSection">
+				<form > 
+					<table id="dogForm">
+						<tr>
+							<td>
+								<label for = "name">Name</label>	
+							</td>
+							<td>
+								<input type = "textbox" placeholder="ex. WAFFLES" id="name" name="name" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "age">AGE</label>
+							</td>
+							<td>
+								<input type = "number" id="age" name="age" placeholder="ex. 3" required>
+							</td>		
+							<td>
+								 <input type="radio" id="monthsOld" name="monthyear" value="monthsOld">
+								 <label for="monthsOld">MONTHS OLD</label><br>
+							</td>
+							<td>
+								 <input type="radio" id="yearsOld" name="monthyear" value="yearsOld">
+								 <label for="yearsOld">YEARS OLD</label><br>
+							</td>				
+						</tr>
+						<tr>
+							<td>
+								<label for = "gender">GENDER</label>
+							</td>
+							<td>
+								 <input type="radio" id="male" name="gender" value="male">
+								 <label for="male">Male</label><br>
+							</td>
+							<td>
+								 <input type="radio" id="female" name="gender" value="female">
+								 <label for="female">FEMALE</label><br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "breed">BREED</label>
+							</td>
+							<td>
+								<input type = "textbox" id="breed" name="breed" placeholder="ex. PUG">
+							</td>
+						</tr>
+					</table>
+					<p>TELL US MORE!</p>
+					<table id="dogDescriptionForm">
+						<tr>
+							<td>
+								<label for = "description">DESCRIPTION</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type = "textbox" id="description"><br>
+							</td>
+						</tr>
+					</table>
+					<!--
+						THIS PART CAN BE AUTO-FILLED BY USER'S INFO
+					-->
+					<p>CONFIRM YOUR INFORMATION</p>
+					<table id="agencyForm">
+						<tr>
+							<td>
+								<label for = "agencyName">ADOPTION AGENCY NAME</label> 
+							</td>
+							<td>
+								<input type = "textbox" id="agencyName" placeholder="NAME OF AGENCY/SHELTER" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "location">LOCATION</label>
+							</td>
+							<td>
+								<input type = "textbox" id="location" placeholder="LOCATION OF AGENCY" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "website">WEBSITE</label>
+							</td>
+							<td>
+								<input type = "url" id="website" placeholder="WEBSITE URL">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "tel">PHONE NUMBER</label>
+							</td>
+							<td>
+								<input type = "tel" id="tel" placeholder="CONTACT NUMBER">
+							</td>
+						</tr>
+
+					</table>
+
+					<input type="submit" id="submitButton" value="SUBMIT">
+
+			
+				
+				
+				</form>
+			</section>
+
+
+			 
+
+		</main>
+	
+	</body>
+	<script src="newdogforadoption.js"></script>
+</html>

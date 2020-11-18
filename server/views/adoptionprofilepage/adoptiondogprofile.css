@@ -169,9 +169,9 @@ body{
 
 
 footer{
-	position: fixed;
+	position: relative;
 	bottom: 0;
-	overflow: hidden;
+	top: 100px;
 	background-color:#a79ae0;
 	padding: 0;
 	height: 65px;
