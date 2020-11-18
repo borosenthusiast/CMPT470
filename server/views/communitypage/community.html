@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="community.css">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="community.js"></script>
+    </head>
+    <body>
+        <nav id="navbar">
+			<h id="appname">MATCHPAW</h>
+			<h id="processname">ADOPT A FRIEND</h>
+        </nav>
+        
+        <section class="title">
+            <p style="margin:0; font-size: 30px; font-weight: bold; color:#7b6db6;">Community Posts</p>
+        </section>
+
+        <main>
+            <section id="commPosts" class="column">
+                <section class="post">
+                    <h class="title">Look at my dog!</h>
+                    <section class="postInfo" style="font-size: 10px;">
+                        <p class="datePosted">Posted: 2020-11-15</p>
+                        <p class="numComments">TODO: add number here from commPost page</p>
+                        <p class="tags">Dog Appreciation</p>
+                    </section>
+                </section>
+
+            </section>
+
+            <aside id="sidebar" class="column">
+
+                <h1>Submit a New Post</h1>
+                <form id="postForm">
+                    <label for="Title">Title</label><br>
+                    <input id="Title" type="textbox" placeholder="Title" required><br>
+
+                    <label for="Text">Text (Optional)</label><br>
+                    <input id="Text" type="textbox"><br>
+
+                    <button id="submitPostButton">SUBMIT</button><br>
+                </form>
+
+                <aside id="filters">
+                <!-- TODO: setup this filters section-->
+            </aside>
+        </main>
+		<footer>
+			<p style="position: absolute;">menu and direction to aboutus</p>
+			<p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+		</footer>
+    </body>
+</html>
