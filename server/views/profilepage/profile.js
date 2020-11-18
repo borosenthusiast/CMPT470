@@ -12,11 +12,12 @@ $(document).ready(function() {
         formData.append("bio", user_bio.value);
         //console.log(user_bio.value);
         console.log(formData);
+        console.log(localStorage.getItem('token'));
 
         $.ajax({
             url: "/profile/submit",
             type: "POST",
-            headers: {Authorization: 'Bearer ' + localStorage.getItem('token')},
+            headers: {"Authorization": localStorage.getItem('token')},
             data: formData,
             error : function(err) {
                 console.log('Error!', err)

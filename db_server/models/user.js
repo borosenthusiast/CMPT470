@@ -43,8 +43,12 @@ User.isEmailAvailable = async(user) => {
 }
 
 User.getUserbyUsername = async(username) => {
-	let query = await user_db.query("SELECT username, password FROM user WHERE username = ?", [username]);
-	//console.log(query[0]);
+	let query = await user_db.query("SELECT id, username, password FROM user WHERE username = ?", [username]);
+	return query[0];
+}
+
+User.getUserbyId = async(id) => {
+	let query = await user_db.query("SELECT * FROM user WHERE id = ?", [id]);
 	return query[0];
 }
 
