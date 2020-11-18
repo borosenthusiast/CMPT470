@@ -50,7 +50,11 @@ $(document).ready(function() {
 			  $.ajax({
 				url: "/cardflip",
 				type: "GET",
-				headers: {Authorization: 'Bearer ' + localStorage.getItem('token')}
+				headers: {Authorization: 'Bearer ' + localStorage.getItem('token')},
+				error: function(err) {
+					console.log('Error in redirect', err)
+					alert("Error redirecting user to card flip page")
+				}
 				// send the token when redirecting the user
 			  });
 			}
