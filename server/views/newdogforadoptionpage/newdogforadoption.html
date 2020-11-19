@@ -63,7 +63,7 @@
 						</tr>
 					</table>
 					<br>
-					<p style="font-weight: bold; font-size: 20px; padding:0;">TELL US MORE!</p>
+					<p style="color:#352288; font-weight: bold; font-size: 20px; padding:0;">TELL US MORE!</p>
 					<table id="dogDescriptionForm">
 						<tr>
 							<td >
@@ -72,7 +72,7 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<input style="width:99%; height: 150px; overflow-y: auto; "type = "textbox" id="description"><br>
+								<textarea id="description" name="description" rows="5" cols="50"></textarea>
 							</td>
 						</tr>
 						<tr>
@@ -84,11 +84,26 @@
 							</td>
 						</tr>
 					</table>
+					<section style="width:100%;" id="uploadedImages">
+						<table style="font-size: 13px;">
+							<tbody id="imageTable">
+							<!--
+							<td>
+							<section class="uploadedImage">
+								<img class="image" src="../images/sample_adopt_profile(2).jpg">	
+							</section>
+							</td>
+							<td>
+							<p class="imageName">IMAGE NAME</p>
+							</td>-->
+							</tbody>
+						</table>
+					</section>
 					<!--
 						THIS PART CAN BE AUTO-FILLED BY USER'S INFO
 					-->
 					<br>
-					<p style="font-weight: bold; font-size: 20px; padding:0;">CONFIRM YOUR INFORMATION</p>
+					<p style="color: #352288; font-weight: bold; font-size: 20px; padding:0;">CONFIRM YOUR INFORMATION</p>
 					<table id="agencyForm">
 						<tr>
 							<td style="width:25%;">
@@ -123,7 +138,7 @@
 							</td>
 						</tr>
 
-					</table>
+					</table> 
 
 					<input type="submit" id="submitButton" value="SUBMIT">
 

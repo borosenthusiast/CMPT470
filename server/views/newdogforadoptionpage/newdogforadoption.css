@@ -74,4 +74,25 @@ body{
 
 label{
 	font-size: 13px;
+	font-weight: bold;
+}
+
+.uploadedImage{
+	text-align: center;
+	width: 70px;
+	height: 70px;
+	border: 1px solid black;
+}
+
+.image{
+	position: relative;
+	padding:0;
+	margin: 0;
+	max-height: 100%;
+	max-width: 100%;
+	top: 50%;
+
+	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
 }
