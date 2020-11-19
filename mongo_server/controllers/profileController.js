@@ -1,3 +1,6 @@
 exports.addProfile = async(req, res) => {
-	res.send('Got you');
+	res.status(200).json({
+			success: true,
+			message: 'Profile created'
+	});
 }
