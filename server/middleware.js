@@ -9,20 +9,24 @@ const account_type = {
 };
 
 let checkToken = (req, res, next) => {
-    let token = req.headers['x-access-token'] || req.headers['authorization'];
-    if (token.startsWith('Bearer ')) {
-        token = token.slice(8, token.length);
-    }
+    let headers = req.headers['x-access-token'] || req.headers['authorization'];
+    // if (token.startsWith('Bearer ')) {
+    //     token = token.slice(8, token.length);
+    // }
+    token = JSON.parse(headers).token;
+    //console.log(token);
     if (token) {
         jwt.verify(token, config.secret, (err, decoded) => {
         if (err) {
+            console.log("err in token");
             return res.json({
             success: false,
             message: 'Token is not valid'
             });
         } else {
             req.decoded = decoded;
-            let user = User.getUserbyUsername(username);
+            //console.log("decoded: " + JSON.stringify(decoded.id));
+            let user = User.getUserbyId(decoded.id);
             req.account_type = user.account_type;
             console.log("User matched from DB: " + JSON.stringify(user));
             next();

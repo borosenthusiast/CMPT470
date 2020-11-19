@@ -56,7 +56,7 @@ exports.logIn = async (req, res) => {
                         expiresIn: '2h'
                     }
                 );
-                
+                //console.log(jwt.verify(token, config.secret));
                 res.status(200).json({
                     success: true,
                     message: 'Authentication Success',
