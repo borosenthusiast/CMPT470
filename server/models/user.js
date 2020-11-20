@@ -20,9 +20,14 @@ User.create = async(user) => {
 
 User.getUserbyUsername = async(username) => {
 	let response = await axios.get('http://localhost:8080/users/getusersbyusername/' + username);
-	//console.log(response.data);
+	console.log("User.getusersbyusername" + response.data);
 	return response.data;
 };
+
+User.getUserbyId = async(id) => {
+	let response = await axios.get('http://localhost:8080/users/getusersbyid/' + id);
+	return response.data
+}
 
 
 module.exports = User;

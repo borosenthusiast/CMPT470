@@ -1,15 +1,21 @@
 var mongo_db = require("./mongodb.js");
 
 var Profile = function(profile) {
-	this.username = profile.username;
+	this.userId = profile.userId;
 	this.bio = profile.bio;
-	this.userImage = profile.userImage;
-	this.petname = profile.petname;
-	this.petage = profile.petage;
-	this.petDescription = profile.petDescription;
-	this.petImage = profile.petImage;
+	this.profile_img = profile.profile_img;
+	this.pet = profile.pet;
 }
 
-Profile.createProfile = async(Profile) => {
-	
+Profile.createProfile = async (profile) => {
+	try {
+		let profile_collection = await mongo_db.mongo_collection('ProfilePage');
+		let result = await profile_collection.insertOne(profile);
+		return result;
+	} catch(err) {
+		console.log(err);
+		console.log("Error in Profile.createProfile");
+	}
 }
+
+module.exports = Profile;
