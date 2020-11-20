@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="newdogforadoption.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<title>NEW DOG FOR ADOPTION</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<nav id="navbar">
+			<h id="appname">MATCHPAW</h>
+			<h id="processname">NEW DOG FOR ADOPTION</h>
+		</nav>
+		<main>
+			<section id="pageheader">
+				<p style="margin:0; font-size: 30px; font-weight: bold; color:#7b6db6;">INTRODUCE US TO THE NEW FRIEND</p>
+			</section>
+
+			<section id="formSection">
+				<form > 
+					<table id="dogForm">
+						<tr>
+							<td>
+								<label for = "name">Name</label>	
+							</td>
+							<td>
+								<input type = "textbox" placeholder="ex. WAFFLES" id="name" name="name" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "age">AGE</label>
+							</td>
+							<td>
+								<input type = "number" id="age" name="age" placeholder="ex. 3" required>
+							</td>		
+							<td >
+								 <input type="radio" id="monthsOld" name="monthyear" value="monthsOld">
+								 <label for="monthsOld">MONTHS OLD</label>
+								 <input type="radio" id="yearsOld" name="monthyear" value="yearsOld">
+								 <label for="yearsOld">YEARS OLD</label>
+							</td>				
+						</tr>
+						<tr>
+							<td>
+								<label for = "gender">GENDER</label>
+							</td>
+							<td>
+								 <input type="radio" id="male" name="gender" value="male">
+								 <label for="male">MALE</label>
+								 <input type="radio" id="female" name="gender" value="female">
+								 <label for="female">FEMALE</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "breed">BREED</label>
+							</td>
+							<td>
+								<input type = "textbox" id="breed" name="breed" placeholder="ex. PUG">
+							</td>
+						</tr>
+					</table>
+					<br>
+					<p style="color:#352288; font-weight: bold; font-size: 20px; padding:0;">TELL US MORE!</p>
+					<table id="dogDescriptionForm">
+						<tr>
+							<td >
+								<label for = "description">DESCRIPTION</label>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<textarea id="description" name="description" rows="5" cols="50"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "images">PICTURES</label>
+							</td>
+							<td >
+								<input style="width:90%;" type="file" id="img" name="img" accept="image\*" multiple>
+							</td>
+						</tr>
+					</table>
+					<section style="width:100%;" id="uploadedImages">
+						<table style="font-size: 13px;">
+							<tbody id="imageTable">
+							<!--
+							<td>
+							<section class="uploadedImage">
+								<img class="image" src="../images/sample_adopt_profile(2).jpg">	
+							</section>
+							</td>
+							<td>
+							<p class="imageName">IMAGE NAME</p>
+							</td>-->
+							</tbody>
+						</table>
+					</section>
+					<!--
+						THIS PART CAN BE AUTO-FILLED BY USER'S INFO
+					-->
+					<br>
+					<p style="color: #352288; font-weight: bold; font-size: 20px; padding:0;">CONFIRM YOUR INFORMATION</p>
+					<table id="agencyForm">
+						<tr>
+							<td style="width:25%;">
+								<label for = "agencyName">ADOPTION AGENCY</label> 
+							</td>
+							<td colspan="2">
+								<input type = "textbox" id="agencyName" placeholder="NAME OF AGENCY/SHELTER" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "location">LOCATION</label>
+							</td>
+							<td>
+								<input type = "textbox" id="location" placeholder="LOCATION OF AGENCY" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "website">WEBSITE</label>
+							</td>
+							<td>
+								<input type = "url" id="website" placeholder="WEBSITE URL">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for = "tel">PHONE NUMBER</label>
+							</td>
+							<td>
+								<input type = "tel" id="tel" placeholder="CONTACT NUMBER">
+							</td>
+						</tr>
+
+					</table> 
+
+					<input type="submit" id="submitButton" value="SUBMIT">
+
+			
+				
+				
+				</form>
+			</section>
+
+
+			 
+
+		</main>
+		<footer>
+			<p style="position: absolute;">menu and direction to aboutus</p>
+			<p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+		</footer>
+	
+	</body>
+	<script src="newdogforadoption.js"></script>
+</html>
