@@ -1,5 +1,5 @@
 var fileHandler = require('../fileHandler.js');
-var Profile = require('../models/petProfile.js');
+var PetProfile = require('../models/petProfile.js');
 
 exports.submitPetProfile = async (req, res) => {
 	// console.log(req.body.bio);
@@ -34,6 +34,7 @@ exports.submitPetProfile = async (req, res) => {
 		}
 	} catch (err) {
 		console.log("Error at petProfileController.submitProfile");
+		//console.log(err);
 		res.status(500).json({
 			error:err,
 			message: "Pet profile creation failed"

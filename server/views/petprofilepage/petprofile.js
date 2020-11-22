@@ -14,7 +14,7 @@ function getB64Img(file) {
 $(document).ready(function() {
     console.log("document ready")
 
-    $('#userForm').submit(function(e) {
+    $('#petForm').submit(function(e) {
         e.preventDefault();
 
         let formData = new FormData();
