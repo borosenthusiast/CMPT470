@@ -13,8 +13,11 @@ var url = "mongodb://localhost:27017";
 // 	}
 // });
 
-//mongo_db = mongo;
+// mongo_db = mongo;
 
+
+
+//////////////////////////////////////////////////////////////////////
 exports.mongo_collection = async (collection_name) => {
 	var mongo_connection, db;
 
@@ -27,4 +30,21 @@ exports.mongo_collection = async (collection_name) => {
 	}
 }
 
-//module.exports = mongo_connection;
+
+
+// var get_mongo_db = async () => {
+// 	var mongo_connection, db;
+
+// 	try {
+// 		 mongo_connection = await mongo.connect(url, {useUnifiedTopology: true});
+// 		 db = await mongo_connection.db('Matchpaw');
+// 		 console.log("Connected");
+// 		 return db;
+// 	} catch(err) {
+// 		console.log(err);
+// 	}
+// }
+
+// var mongo_db = get_mongo_db();
+
+// module.exports = mongo_db;
