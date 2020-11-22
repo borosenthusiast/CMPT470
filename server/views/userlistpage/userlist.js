@@ -9,13 +9,31 @@ $(document).ready(function(){
   });
 });
 
-$(document).ready(function(){
-  $(".username").click(function(){
+// $(document).ready(function(){
+//   $(".username").click(function(){
+//     $.ajax({
+//       url: '',
+//       type: 'GET',
+//       success: alert("Redirecte to the user page" )
+//     })
+//   })
+// })
+
+var table = document.getElementById("table");
+if (table != null) {
+    for (var i = 0; i < table.rows.length; i++) {
+        for (var j = 0; j < table.rows[i].cells.length; j++)
+        table.rows[i].cells[1].onclick = function () {
+            redirecte(this);
+        };
+    }
+}
+
+function redirecte(tableCell) {
     $.ajax({
       url: '',
       type: 'GET',
-      success: alert("Redirecte to the user page")
+      success: alert("Redirecte to the " + tableCell.innerHTML + " profile page")
     })
-  })
-})
-
+    
+}
