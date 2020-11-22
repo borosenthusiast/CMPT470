@@ -10,6 +10,7 @@ var app = express();
 var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
+var petProfileRoute = require('./routes/petProfileRoute');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -25,6 +26,8 @@ app.use('/', indexRoute);
 app.use('/register', registerRoute);
 
 app.use('/profile', profileRoute);
+
+app.use('/petprofile', petProfileRoute);
 
 
 //////////////////////////// temp

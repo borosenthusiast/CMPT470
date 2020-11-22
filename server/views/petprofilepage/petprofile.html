@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+  <head>
+      <link rel="stylesheet" type="text/css" href="/petprofile/petprofile.css">
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+<body>
+
+<h1>Edit pet profile</h1>
+
+<form id="petForm" action="/pets" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="name">Upload Image of Pet:</label>
+     <input type="file" accept="image/*" name="petpic" id="petpic">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" name="petname" id="petname" value="">
+  </div>
+  <div class="form-group">
+    <label for="name">Age:</label>
+    <input type="text" class="form-control" name="petage" id="petage" value="">
+  </div>
+<div class="form-group">
+  <label for="user_bio">Description: </label><br />
+  <textarea rows="4" maxlength="250" class="form-control" name="pet[bio]" id="pet_bio"></textarea>
+</div>
+
+  <button class="petProfileUpdate">Update</button>
+</form>
+
+<!--
+<p><a href="/users/{{username}}" target="_blank">View your profile</a></p>
+-->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/petprofile/petprofile.js"></script>
+</html>

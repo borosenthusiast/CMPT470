@@ -21,14 +21,16 @@ $(document).ready(function() {
         //let file = userpic.files[0];
         //let b64_string = getB64Img(file);
         //formData.append("file", b64_string);
-        formData.append("file", userpic.files[0]);
-        formData.append("bio", user_bio.value);
+        formData.append("file", petpic.files[0]);
+        formData.append("petName", petname.value);
+        formData.append("age", petage.value);
+        formData.append("description", pet_bio.value);
         //console.log(user_bio.value);
         console.log(formData);
         console.log(localStorage.getItem('token'));
 
         $.ajax({
-            url: "/profile/submit",
+            url: "/petprofile/submit",
             type: "POST",
             headers: {"Authorization": localStorage.getItem('token')},
             data: formData,
@@ -36,8 +38,7 @@ $(document).ready(function() {
                 console.log('Error!', err)
             },
             success: function(data) {
-                //alert("he")
-                window.location.href = "/petprofile";
+                alert("he")
                 console.log(data)
             },
             cache: false,
