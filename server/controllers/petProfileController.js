@@ -27,7 +27,7 @@ exports.submitPetProfile = async (req, res) => {
 			});
 		} else {
 			console.log('Pet Profile not created');
-			res.status(500).json({
+			res.status(200).json({
 				success: false,
 				message: 'Pet Profile creation failed'
 			});

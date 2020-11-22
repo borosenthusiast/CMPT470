@@ -35,7 +35,7 @@ exports.addPetProfile = async(req, res) => {
 	let query_result = await Profile.checkProfileExists(petProfile.userId);
 	if(query_result === null) {
 		console.log("No such profile with userID" + petProfile.userId);
-		res.status(500).json({
+		res.status(200).json({
 				success: false,
 				message: 'User profile must exists in mongoDB first'
 		});
@@ -53,7 +53,7 @@ exports.addPetProfile = async(req, res) => {
 				});
 			} else {
 				console.log('Pet not successfully updated');
-				res.status(500).json({
+				res.status(200).json({
 					success: false,
 					message: 'Pet Profile was not able to added in mongoDB'
 				});
@@ -61,7 +61,7 @@ exports.addPetProfile = async(req, res) => {
 		} else {
 			console.log('Pet section is not null');
 			console.log('Pet profile already exists in mongoDB');
-			res.status(500).json({
+			res.status(200).json({
 				success: false,
 				message: 'Pet Profile already exists in mongoDB'
 			});
