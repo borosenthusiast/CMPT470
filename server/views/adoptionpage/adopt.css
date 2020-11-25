@@ -1,0 +1,243 @@
+html{
+	scroll-behavior: smooth;   
+}
+
+body{
+	margin:0;
+	font-family: sans-serif;
+}
+
+#navbar{
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 70px;
+	color:white;
+	font-weight: 600;
+}
+
+#appname{
+	position: absolute;
+	left:3%;
+	top: 20px;
+
+	font-size: 25px;
+}
+
+#processname{
+	position: absolute;
+	right:3%;
+	top: 26px;
+	font-size: 16px;
+}
+
+#pageheader{
+	width: 700px;
+	position:relative;
+	top: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+
+#tabbutton{
+	position: absolute;
+	top:-0.5px;
+	right: 90%;
+	font-size: 12px;
+	float: center;
+	padding: 10px;
+	border-radius: 30px;
+	border: 5px solid #352288;
+	z-index: 3;
+	font-weight: 600;
+	color:white;
+	background-color: #352288;
+}
+
+#tabbutton:hover{
+	color:#352288;
+	background-color: white;
+}
+   
+#options{
+	list-style-type: none;
+}
+
+
+.filteroption{
+	position: relative;
+	top: -8px;
+	display: inline;
+	font-weight: 600;
+	font-size: 13px;
+	color: gray;
+	padding: 5px;
+}
+
+.filteroption:hover{
+	color: black;
+}
+
+#dropdowns{
+	position: relative;
+	top: 40px;
+	z-index: 3;
+}
+
+#weightfilter{
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	z-index: 3;
+	
+	left: 198px;
+	font-weight: 600;
+	font-size: 13px;
+	color: gray;
+	padding: 10px;
+	background-color: #E0DBCF;
+}
+
+#weightoptions{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+#genderfilter{
+	visibility: hidden;
+	position: absolute;
+	z-index: 1; /*change to 1 later*/
+
+	left: 127px;
+	font-weight: 600;
+	font-size: 13px;
+	color: gray;
+	padding: 10px;
+	background-color: #E0DBCF;
+
+}
+
+#genderoptions{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+#filtersection{
+	top: 50px;
+	position: relative;
+	float: right;
+	right:0px;
+	border:5px;
+	
+	width: 450px;
+	height: 34px;
+	background-color: white;
+}
+
+#filtertab{
+	position: relative;
+	float: right;
+	z-index: 2;
+	
+	border:5px;
+	border-style: solid hidden solid hidden;
+	border-color: #E0DBCF;
+	height: 100%;
+	width: 430px;
+	background-color:white;
+}
+
+#adoptposts{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+	
+    margin-bottom: 70px;
+	padding: 0;
+	top: 80px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+
+}
+
+#adoptposts > * {
+	margin-bottom: 1.5em;
+}
+
+.dogcard{
+	position: relative;
+	margin-left: auto;
+	margin-right:auto;
+	width: 300px;
+	height: 400px;
+	text-align: center;
+	background-color: #D3D1CC;
+}
+
+
+.dogcard:hover{
+	box-shadow: 0 4px 8px 0 #352288;
+
+}
+
+.image{
+	margin-top: 10px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width:92%;
+	height: 75%;
+	background: url("../images/sample_adopt_profile.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.dogname{
+	position: relative;
+	top: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #7b6db6;
+}
+
+.doginfo{
+	padding: 0;
+	position: relative; 
+	top:5px;
+}
+
+.dogprofile{
+	margin: 2px;
+	font-size: 13px;
+}
+
+.doglocation{
+	margin: 2px;font-size: 13px;
+}
+
+.dateposted{
+	font-size: 10px;
+}
+
+
+
+footer{
+	bottom: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 65px;
+	width:100%;
+	color:white;
+}

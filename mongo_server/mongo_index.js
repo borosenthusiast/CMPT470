@@ -12,10 +12,14 @@
 // });
 
 var express = require('express');
+const bodyParser = require('body-parser');
 app = express();
 
-app.use(express.json());
+//app.use(express.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
 var profileQueryRoute = require('./routes/profileQueryRoute');
-app.user('/profile', profileQueryRoute);
+app.use('/profile', profileQueryRoute);
 
 app.listen(8081);

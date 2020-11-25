@@ -26,7 +26,7 @@ exports.signUp = async (req, res) => {
 						});
 
 	try {
-		let id = await User.create(user); //id is currently undefined edit later
+		let id = await User.create(user); 
 		res.status(200).json({
 			success: true,
 			message: 'User Creation Success'
@@ -50,13 +50,13 @@ exports.logIn = async (req, res) => {
 		console.log("User matched from DB: " + JSON.stringify(user));
 		if(username && password) {
 			if(username === user.username && password === user.password) {
-				console.log("Test login success!");
-				let token = jwt.sign({username: username},
+				console.log("Login success!");
+				let token = jwt.sign({id: user.id},
                     config.secret, {
-                        expiresIn: '1h'
+                        expiresIn: '2h'
                     }
                 );
-                
+                //console.log(jwt.verify(token, config.secret));
                 res.status(200).json({
                     success: true,
                     message: 'Authentication Success',
@@ -80,7 +80,6 @@ exports.logIn = async (req, res) => {
             return;
         }
 
-		//console.log(user);
 	} catch (err) {
 		console.log("error");
 		res.status(500).send(err);

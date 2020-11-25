@@ -1,2 +1,7 @@
 var router = require('express').Router();
-var userController = require('../controllers/profileController');
+var profileController = require('../controllers/profileController');
+
+router.post('/createprofile', profileController.addProfile);
+router.post('/createpetprofile', profileController.addPetProfile);
+
+module.exports = router;

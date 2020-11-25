@@ -5,4 +5,6 @@ router.post('/signup', userController.signUp);
 
 router.get('/getusersbyusername/:username', userController.getUserbyUsername);
 
+router.get('/getusersbyid/:id', userController.getUserbyId);
+
 module.exports = router;

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="adopt.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<title>ADOPT A FRIEND</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<nav id="navbar">
+			<h id="appname">MATCHPAW</h>
+			<h id="processname">ADOPT A FRIEND</h>
+		</nav>
+		<main>
+			<section id="pageheader">
+				<p style="margin:0; font-size: 30px; font-weight: bold; color:#7b6db6;">WHO IS READY TO COME HOME?</p>
+			</section>
+
+
+			<section id="filtersection">
+				<botton id="tabbutton">REFRESH</botton>
+				<section id="filtertab">
+					<ul id="options">
+						<li class="filteroption" id="datefilter">NEWEST</li>
+						<li class="filteroption" onmouseover="genderdrop()">GENDER</li>
+						<li class="filteroption" onmouseover="weightdrop()">WEIGHT</li>
+						<li class="filteroption">LOCATION</li>						
+					</ul>
+				</section>
+
+				<section id="dropdowns">
+
+					<section onmouseleave="genderpullup()" id="genderfilter">
+						<ul id="genderoptions">
+							<li onclick="setgenderfilter(0)" id="allgender" class="genderoption">ALL</li>
+							<li onclick="setgenderfilter(1)" id="female" class="genderoption">FEMALE</li>
+							<li onclick="setgenderfilter(2)" id="male" class="genderoption">MALE</li>
+						</ul>
+					</section>
+					
+					<section onmouseleave="weightpullup()" id="weightfilter">
+						<ul id="weightoptions">
+							<li onclick="setweightfilter(0)" id="under5" class="weightoption">< 5KG</li>
+							<li onclick="setweightfilter(1)" id="5to10" class="weightoption">5KG - 10KG</li>
+							<li onclick="setweightfilter(2)" id="10to25" class="weightoption">10KG - 25KG</li>
+							<li onclick="setweightfilter(3)" id="25to35" class="weightoption">25KG - 35KG</li>
+							<li onclick="setweightfilter(4)" id="over35" class="weightoption">35KG <<li>
+						</ul>
+					</section>
+			
+
+				</section>
+
+			</section>
+
+
+
+			<section id="adoptposts">  	
+							
+					<!-- cards inserted in this format 		
+            		<section class = "dogcard">
+            			<section class="image"></section>
+            			<h class="dogname" >WAFFLES</h>
+            			<section class="doginfo" style="padding: 0;position: relative; top:5px;">
+            			
+            				<p class="dogprofile" style="margin: 2px;font-size: 13px;">FEMALE / 3KG / 2 YEARS OLD</p>
+            				<p class="doglocation" style="margin: 2px;font-size: 13px;">BURNABY, BC</p>
+            				<p class="dateposted" style="font-size: 10px;">POSTED: NOV-13-2020</p>
+            			</section>
+            		</section>
+            		-->
+			</section>
+			 
+
+		</main>
+		<footer>
+			<p style="position: absolute;">menu and direction to aboutus</p>
+			<p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+		</footer>
+	</body>
+	<script src="adopt.js"></script>
+</html>
