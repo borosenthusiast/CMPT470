@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<link rel="stylesheet" type="text/css" href="/cardflip/cardflip.css">-->
+		<link rel="stylesheet" type="text/css" href="matchedusers.css">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	</head>
+	<body>
+		<nav id="navbar">
+			<table id="headertable" cellspacing="15px">
+				<td><h id="appname">MATCHPAW</h></td>
+				<td><h id="processname">VIEWING YOUR MATCHES</h></td>
+			</table>
+			<table id="navitable" cellspacing="5px">
+				<td>ADOPT</td>
+				<td>COMMUNITY</td>
+				<td>PROFILE</td>
+				<td>MATCHES</td>
+				<td><p id=matchalerts>0</p></td>
+			</table>
+
+		</nav>
+		<main>
+			<section id="pageheader">
+				<p style="margin:0; font-size: 30px; font-weight: bold; color:#7b6db6;">YOUR MATCHED PAWS</p>
+			</section>
+			<!-- 
+				temporary height
+			-->
+			<table id="mainTable" cellpadding="10px">
+				<tr>
+					<td style="width:30%; height: 500px;">
+						
+							<p id="userlistTitle">MATCHES</p>
+							<form id="searchForm" style="width:95%; border-radius: 25px; margin: 5px; margin-bottom: 10px;text-align: center; background-color: #E0DBCF;">
+								<input id="searchbox" type="text" placeholder="Search.." name="search">
+      							<button id="searchbutton" type="submit">GO</button>
+							</form>
+							<section id="matchedusers" style="width:100%; height: 420px; overflow-y: auto; border: 3px solid #E0DBCF;">
+
+
+								<!--<section class="usercard">
+									<section class="profileimage"></section>
+									
+									<section class="description">
+										<h class="username">NAME</h>
+										<p class="preview">asdfasdfasdfasdfasdfasdfadswgwergwergwergf</p>
+									</section>
+								</section>-->
+								
+
+							<!--<table id="userstable" style="table-layout: fixed; width: 100%;">
+								<tbody id=
+
+
+
+
+
+							</table>-->
+						</section>
+					</td>
+					<td style="width:70%;">
+						<section id="chatroom" style="width:100%; height: 500px;">
+							<section id="messages" style="overflow-y: auto;">
+							
+								<!--	<section class="messageSection">
+									<section class="message">
+									</section>
+								</section>
+								<section class="messageSection">
+								</section>
+								<section class="messageSection">
+								</section>
+								<section class="messageSection">
+								</section>-->
+
+								<!--<section class="uploadedImage">
+									<img class="image" src="../images/sample_adopt_profile(2).jpg">	
+								</section>-->
+
+
+
+
+
+							</section>
+
+							<form id="messageForm">
+								<section id="previewSection">
+									<p id="imgpreview"></p>
+									<!--<section id="cancelimg"></section>-->
+									<input type="file" name="img" id="img" accept="image\*" style="display:none;"/>
+									<label id="imagelabel" for="img">IMG</label>
+								</section>
+								
+							
+								<!--
+									maxlength of message set at 50 for now
+								-->
+								<section id="messageSection">
+									<input id="messageInput" type="text" name="message" maxlength="50">								
+									<button id="sendbutton" type="submit">SEND</button>
+								</section>
+
+							</form>
+						</section>
+					</td>
+				</tr>
+			</table>
+			
+
+
+		</main>
+		<footer>
+			<p style="position: absolute;">menu and direction to aboutus</p>
+			<p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+		</footer>
+	</body>
+	<script src="matchedusers.js"></script>
+</html>
