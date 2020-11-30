@@ -11,7 +11,7 @@ var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
-
+app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended:true
