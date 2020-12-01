@@ -19,7 +19,8 @@ function logout() {
             console.log("Failed to log out with error: ", err)
         },
         success: function(data) {
-            
+            localStorage.removeItem('token');
+            sessionStorage.removeItem('token');
         }
     });
 }
