@@ -11,6 +11,7 @@ function logout() {
       success: function(data) {
           localStorage.removeItem('token');
           sessionStorage.removeItem('token');
+          window.location = data.redirect;
       }
   });
 }
