@@ -45,7 +45,10 @@ exports.signUp = async (req, res) => {
 exports.logout = async(req, res) => {
 	//Instruct the clientside to delete the token on success, as to invalidate their current session and require logging in again.
 	try {
-		res.status(200).send();
+		res.status(200).send({
+			status: "success",
+			redirect: "/"
+		});
 	}
 	catch (err) {
 		res.status(500).send({
