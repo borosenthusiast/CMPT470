@@ -11,6 +11,19 @@ function getB64Img(file) {
     };
 }
 
+function logout() {
+    $.ajax({
+        url: "/logout",
+        type: "GET",
+        error: function(err) {
+            console.log("Failed to log out with error: ", err)
+        },
+        success: function(data) {
+            
+        }
+    });
+}
+
 $(document).ready(function() {
     console.log("document ready")
 
