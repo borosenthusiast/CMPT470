@@ -29,10 +29,21 @@ function weightpullup(){
 
 
 function deck(filterstat){
+		$.ajax({
+    	url: "/adoption/alldogs",
+    	type: "GET",
+    	headers: {"Authorization": localStorage.getItem('token')},
+  		}).done(function(data) {
+
+    	console.log(data);
+
+  	});
 	/*
 	ajax to get dog table according to filterstat (ORDER BY)
 	jasonquery = filterstat;
 	*/
+
+	//get all dogs data: no need to send request data
 	
 	this.ids = ['1','3','4','5','6','7'];	/* 6 demo id */
 	if (filterstat != undefined && filterstat[0] == "oldest" ){

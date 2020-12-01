@@ -11,6 +11,8 @@ var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
+var dogforadoptionRoute = require('./routes/dogforadoptionRoute');
+var adoptionRoute = require('./routes/adoptionRoute');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -28,6 +30,10 @@ app.use('/register', registerRoute);
 app.use('/profile', profileRoute);
 
 app.use('/petprofile', petProfileRoute);
+
+app.use('/dogforadoption', dogforadoptionRoute);
+
+app.use('/adoption', adoptionRoute);
 
 
 //////////////////////////// temp

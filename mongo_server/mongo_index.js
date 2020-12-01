@@ -22,4 +22,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 var profileQueryRoute = require('./routes/profileQueryRoute');
 app.use('/profile', profileQueryRoute);
 
+var dogforadoptionQueryRoute = require('./routes/dogforadoptionQueryRoute');
+app.use('/dogforadoption', dogforadoptionQueryRoute);
+
 app.listen(8081);
