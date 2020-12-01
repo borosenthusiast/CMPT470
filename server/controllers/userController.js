@@ -42,6 +42,19 @@ exports.signUp = async (req, res) => {
 	}
 };
 
+exports.logout = async(req, res) => {
+	//Instruct the clientside to delete the token on success, as to invalidate their current session and require logging in again.
+	try {
+		res.status(200).send();
+	}
+	catch (err) {
+		res.status(500).send({
+			error: err,
+			message: "Failed user logout."
+		});
+	}
+}
+
 exports.logIn = async (req, res) => {
 	let username = req.body.username;
 	let password = req.body.password;
