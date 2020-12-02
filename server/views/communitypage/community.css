@@ -34,6 +34,35 @@ body{
 	font-size: 16px;
 }
 
+/* Header image */
+#overlay{
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+	transition: .5s ease;
+	text-shadow:
+		-2px -2px 0 #a7a6ba,
+		2px -2px 0 #a7a6ba,
+		-2px 2px 0 #a7a6ba,
+		2px 2px 0 #a7a6ba;
+}
+
+#overlayText{
+	color: white;
+	font-size: 50px;
+	font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
 /* Body */
 .title{
 	width: 700px;
@@ -48,42 +77,101 @@ body{
 .column {
     float: left;
     padding: 10px;
-  }
-  
+}
+
+
+/* Community Posts */
 #commPosts {
     width: 60%;
-    display: flex;
-	flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.post {
 	position: relative;
-	margin-left: auto;
-	margin-right: auto;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	border-radius: 15px 15px 15px 2px;
+
+	width: 95%;
+	background-color: lightgray;
 }
 
+.postTitle {
+	position: relative;
+	font-weight: bold;
+
+	left: 15px;
+	top: 5px;
+}
+
+.postInfo {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+
+	left: 15px;
+	margin: 0px;
+	/*background-color: lime;*/
+}
+
+.datePosted {
+	margin-right: 15px;
+	margin-bottom: 0px;
+}
+
+.author {
+	margin-right: 15px;
+	margin-bottom: 0px;
+}
+
+.numComments {
+	margin-bottom: 0px;
+}
+
+/* Sidebar */
 #sidebar {
-    width: 30%;
+	background-color: lightslategray;
+
+	position: sticky;
+    width: 35%;
 }
 
+.newPost {
+	background-color: lightgray;
+	border-radius: 15px;
+
+}
+
+#submitNewPost {
+	position: relative;
+	text-align: center;
+	top: 10px;
+}
+
+label {
+	position: relative;
+	left: 30px;
+}
+
+input {
+	position: relative;
+	left: 20px;
+}
+
+
+/* Page after the community posts and sidebar */
 #main:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/*
-.post{
-    position: relative;
-	margin-left: 0.5em;
-	width: 500px;
-	height: 80px;
-	text-align: center;
-	background-color: #D3D1CC;
-}
-*/
+
 /* Footer */
 footer{
-    position: sticky;  /*changed this from fixed to help with scrolling */
+    position: absolute;  /*changed this from fixed to help with scrolling */
 	bottom: 0;
 	overflow: hidden;
 	background-color:#a79ae0;

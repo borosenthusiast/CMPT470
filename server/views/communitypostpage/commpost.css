@@ -34,7 +34,7 @@ body{
 	font-size: 16px;
 }
 
-/* Header image */
+/* Header Image */
 #overlay{
 	position: relative;
 	top: 0;
@@ -63,53 +63,75 @@ body{
 	-ms-transform: translate(-50%, -50%);
 }
 
-/* Body */
-.title{
+main {
+	padding-bottom: 20px;
+}
+/* Post */
+.PostTitle{
 	width: 700px;
 	position:relative;
 	top: 15px;
-	bottom: 30px;
-	margin-left:auto;
-	margin-right:auto;
-	text-align: center;
+    bottom: 30px;
+    left: 50px;
+	text-align: left;
 }
 
-p {
-	margin-left: auto;
-	margin-right: auto;
-	width:70%;
-	text-align: center;
-
-	font-size: 20px;
-}
-
-#team{
-    display: flex;
-	flex-wrap: wrap;
-    justify-content: space-between;
-	padding: 0;
-	top: 40px;
-	position: relative;
-	margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 70px;
-	width: 90%;
-}
-
-.team_member{
+.PostContent{
     position: relative;
-	margin-left: auto;
-    margin-right:auto;
-    margin-bottom: 15px;
-	width: 300px;
-	height: 400px;
-	text-align: center;
-	background-color: #D3D1CC;
+    left: 50px;
+    width: 60%;
+    font-size: large;
+}
+
+form{
+    position: relative;
+    left: 50px;
+}
+
+/* Comments */
+.allComments{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	left: 50px;
+	top: 15px;
+	padding-bottom: 30px;
+}
+
+.comment{
+	position: relative;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	border-radius: 15px 30px 35px 2px;
+
+	width: 80%;
+	background-color: lightgray;
+}
+
+.author{
+	position: relative;
+	font-size: large;
+
+	left: 15px;
+	margin: 0px;
+	margin-top: 5px;
+	padding: 0px;
+}
+
+.content{
+	position: relative;
+
+	width: 90%;
+	margin: 0px;
+	margin-left: 10px;
+
+	/*padding: 20px;*/
 }
 
 /* Footer */
 footer{
-    position: sticky;  /*changed this from fixed to help with scrolling */
+    position: relative;  /*changed this from fixed to help with scrolling */
 	bottom: 0;
 	overflow: hidden;
 	background-color:#a79ae0;
