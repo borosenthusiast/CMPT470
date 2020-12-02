@@ -1,0 +1,142 @@
+html{
+	scroll-behavior: smooth;   
+}
+
+body{
+	margin:0;
+	font-family: sans-serif;
+}
+
+/* Header */
+#navbar{
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 70px;
+	color:white;
+	font-weight: 600;
+}
+
+#appname{
+	position: absolute;
+	left:3%;
+	top: 20px;
+
+	font-size: 25px;
+}
+
+#processname{
+	position: absolute;
+	right:3%;
+	top: 26px;
+	font-size: 16px;
+}
+
+/* Header Image */
+#overlay{
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #a7a6ba;
+}
+
+#overlay:hover {
+	opacity: 0.75;
+}
+
+#overlayText{
+	color: white;
+	font-size: 50px;
+	font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+main {
+	padding-bottom: 20px;
+}
+/* Post */
+.PostTitle{
+	width: 700px;
+	position:relative;
+	top: 15px;
+    bottom: 30px;
+    left: 50px;
+	text-align: left;
+}
+
+.PostContent{
+    position: relative;
+    left: 50px;
+    width: 60%;
+    font-size: large;
+}
+
+form{
+    position: relative;
+    left: 50px;
+}
+
+/* Comments */
+.allComments{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	left: 50px;
+	top: 15px;
+	padding-bottom: 30px;
+}
+
+.comment{
+	position: relative;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	border-radius: 15px 30px 35px 2px;
+
+	width: 80%;
+	background-color: lightgray;
+}
+
+.author{
+	position: relative;
+	font-size: large;
+
+	left: 15px;
+	margin: 0px;
+	margin-top: 5px;
+	padding: 0px;
+}
+
+.content{
+	position: relative;
+
+	width: 90%;
+	margin: 0px;
+	margin-left: 10px;
+
+	/*padding: 20px;*/
+}
+
+/* Footer */
+footer{
+    position: relative;  /*changed this from fixed to help with scrolling */
+	bottom: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 40px;
+	width:100%;
+	color:white;
+}
