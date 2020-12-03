@@ -118,3 +118,7 @@ exports.logIn = async (req, res) => {
 		//return;
 	}
 };
+
+exports.getUserById = async (res, req) => {
+	
+}

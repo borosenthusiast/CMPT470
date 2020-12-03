@@ -57,6 +57,12 @@ $(document).ready(function() {
       });
     }
   });
+
+  //add click functionalities to generated rows
+  $(document).on('click', '[id^=view]', function() {
+    let id = $(this).attr('id').split('_')[1];
+    window.location.href = '/admin/view/' + id;
+  });
 });
 
 // $(document).ready(function(){

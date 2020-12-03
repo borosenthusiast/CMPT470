@@ -56,7 +56,7 @@ $(document).ready(function() {
 					alert("Error redirecting user to card flip page")
 				},
 				success: function(data) {
-					console.log('Success!')
+					console.log('Success!');
 					window.location.href = "/cardflip";
 				}
 				// send the token when redirecting the user
