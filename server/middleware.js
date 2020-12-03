@@ -22,7 +22,7 @@ let checkToken = (req, res, next) => {
     }
     token = JSON.parse(headers).token;
     console.log(token);
-    if (token || typeof token !== "undefined") {
+    if (token && typeof token !== "undefined") {
         jwt.verify(token, config.secret, (err, decoded) => {
         if (err) {
             console.log("err in token");

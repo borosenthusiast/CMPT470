@@ -5,7 +5,7 @@ var file_path = "/../views/";
 var multer = require('multer');
 let middleware = require('../middleware.js');
 
-router.get('/', middleware.checkToken, function(req,res) {
+router.get('/', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "profilepage/profile.html"));
 });
 
