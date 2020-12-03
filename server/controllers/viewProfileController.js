@@ -49,4 +49,6 @@ exports.viewProfile = async (req, res) => {
             mode: 'view'
         });
     }
+
+    res.sendFile(path.join(__dirname + file_path + "viewprofilepage/viewprofile.html"));
 }

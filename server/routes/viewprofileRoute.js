@@ -1,27 +1,22 @@
 var router = require('express').Router();
-var profileController = require('../controllers/viewprofileController');
+var viewProfileController = require('../controllers/viewprofileController');
 var path = require('path');
 var file_path = "/../views/";
 var multer = require('multer');
 let middleware = require('../middleware.js');
 
-router.get('/', function(req,res) {
-	res.sendFile(path.join(__dirname + file_path + "profilepage/profile.html"));
-});
+router.get('/', middleware.checkToken, viewProfileController.viewProfile); //sendfile in controller function
 
 router.get('/profile.css', function(req,res) {
-	res.sendFile(path.join(__dirname + file_path + "profilepage/profile.css"));
+	res.sendFile(path.join(__dirname + file_path + "viewprofilepage/viewprofile.css"));
 });
 
 router.get('/profile.js', function(req,res) {
-	res.sendFile(path.join(__dirname + file_path + "profilepage/profile.js"));
+	res.sendFile(path.join(__dirname + file_path + "viewprofilepage/viewprofile.js"));
 });
 
 
-var upload = multer({dest: './uploads/'});
-
-
-router.post('/submit', middleware.checkToken, upload.single('file'), profileController.submitProfile);
+router.post('/submit', middleware.checkToken, viewProfileController.viewProfile);
 
 
 module.exports = router;
