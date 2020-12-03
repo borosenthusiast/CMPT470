@@ -34,6 +34,7 @@ let checkToken = (req, res, next) => {
             req.decoded = decoded;
             //console.log("decoded: " + JSON.stringify(decoded.id));
             let user = User.getUserbyId(decoded.id);
+            req.uid = decoded.id;
             req.account_type = user.account_type;
             console.log("User matched from DB: " + JSON.stringify(user));
             next();
