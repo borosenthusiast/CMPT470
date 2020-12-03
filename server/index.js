@@ -10,6 +10,7 @@ var app = express();
 var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
+var viewprofileRoute = require('./routes/viewprofileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
 app.set('view engine','ejs');
 app.use(bodyParser.json());
@@ -28,6 +29,8 @@ app.use('/register', registerRoute);
 app.use('/profile', profileRoute);
 
 app.use('/petprofile', petProfileRoute);
+
+app.use('viewprofile', viewprofileRoute)
 
 
 //////////////////////////// temp
