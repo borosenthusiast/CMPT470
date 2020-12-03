@@ -46,3 +46,13 @@ exports.getUserbyId = async (req, res) => {
 
 	}
 }
+
+exports.getAllUsers = async (req, res) => {
+	try {
+		let userlist = await User.getAllUsers();
+		res.send(userlist);
+	} catch (err) {
+		console.log("Error from getAllUsers from userController.js");
+		res.status(500).send(err);
+	}
+}
