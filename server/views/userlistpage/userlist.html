@@ -28,27 +28,27 @@
             <th>Account Type</th>
         </tr>
         </thead>
-        <%
+        <!-- <%
         if(userData.length!=0){
         var i=1;
         userData.forEach(function(data){
-        %>
+        %> -->
         <tbody id="userTable">
-        <tr>
+        <!-- <tr>
             <td><%=i; %></td>
             <td class="username"><%=data.username %></td>
             <td><%=data.first_name %></td>
             <td><%=data.last_name %></td>
             <td><%=data.email %></td>
             <td><%=data.account_type %></td>
-        </tr>
+        </tr> -->
         </tbody>
-        <%  i++; }) %>
+        <!-- <%  i++; }) %>
         <% } else{ %>
             <tr>
                 <td colspan="7">No User Found</td>
             </tr>
-        <% } %>
+        <% } %> -->
     </table>
     </main>
 
