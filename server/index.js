@@ -30,7 +30,7 @@ app.use('/profile', profileRoute);
 
 app.use('/petprofile', petProfileRoute);
 
-app.use('viewprofile', viewprofileRoute)
+app.use('/viewprofile', viewprofileRoute)
 
 
 //////////////////////////// temp
