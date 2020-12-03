@@ -15,7 +15,8 @@ exports.viewProfile = async (req, res) => {
         console.log("invalid viewprofile input parameters");
         res.status(400).json({
             status: false,
-            message: 'Invalid input parameters'
+            message: 'Invalid input parameters',
+            mode: 'view'
         });
     }
 

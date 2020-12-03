@@ -1,8 +1,9 @@
 var router = require('express').Router();
 var path = require('path');
+var middleware = require('../middleware.js');
 var file_path = "/../views/";
 
-router.get('/', function(req,res) {
+router.get('/', middleware.checkToken,  function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "cardflippage/cardflip.html"));
 });
 
