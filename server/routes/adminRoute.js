@@ -29,6 +29,6 @@ router.get('/view/:id', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "viewprofilepage/viewprofile.html"));
 });
 
-router.get('/view/:id/get', userController.getUserById);
+router.get('/view/:id/userinfo', userController.getUserById);
 
 module.exports = router;

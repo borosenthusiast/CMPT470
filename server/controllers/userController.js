@@ -119,6 +119,24 @@ exports.logIn = async (req, res) => {
 	}
 };
 
-exports.getUserById = async (res, req) => {
-	
+exports.getUserById = async (req, res) => {
+	try {
+		id = req.params.id;
+		let user = await User.getUserbyId(id);
+		if(user) {
+			res.status(200).json({
+				status: "success",
+				message: "Successfully got the users",
+				data: user
+			});
+		} else {
+			res.status(200).json({
+				status: "failed",
+				message: "Failed to get user information"
+			});
+		}
+	} catch (err) {
+		console.log(err);
+		res.status(500).send(err);
+	}
 }
