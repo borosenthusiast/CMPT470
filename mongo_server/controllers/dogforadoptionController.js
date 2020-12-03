@@ -2,6 +2,7 @@ var Dogforadoption = require('../models/dogforadoption.js');
 
 exports.addDogforadoption = async(req, res) => {
 	var doginfo = req.body;
+	console.log(doginfo);
 
 	//no need to check for duplicates
 

@@ -68,3 +68,83 @@ exports.addPetProfile = async(req, res) => {
 		}
 	}
 }
+
+exports.getTenRandomProfiles = async(req,res) => {
+	var userid = req.body.userId;
+	let result = await Profile.gettenrandomprofiles(userid);
+	if (result === undefined || result.length == 0){
+		res.status(500).json({
+			success:false,
+			message: 'getTenRandomProfiles was not able to grab random profiles from mongoDB'
+		});
+	} else {
+		res.send(result);
+	}
+
+}
+
+exports.checkifmatch = async(req, res) => {
+	let isMatch = await Profile.checkifmatch(req.body);
+	if (isMatch === null){
+		res.status(500).json({
+			success:false,
+			message: 'unable to check if match by mongoDB'
+		});
+	} else {
+		res.send(isMatch);
+	}
+	
+
+}
+
+exports.pushtoaddedlist = async(req, res) =>{
+	let pushToCurrent = await Profile.pushToCurrentUser(req.body);
+	if (pushToCurrent == true){
+		res.status(200).json({
+			success: true,
+			message: 'pushed addedId to addedlist'
+		});
+	} 
+	
+	else {
+		res.status(500).json({
+			success:false,
+			message: 'unable to push addedUser to currentUser'
+		});
+
+	}
+}
+
+exports.chosenIdpriority = async(req, res) => {
+	let state = await Profile.prioritizeChosenId(req.body);
+	if (state === null){
+		res.status(500).json({
+			success:false,
+			message: 'unable to prioritize chosenID'
+		});		
+	} else {
+		res.status(200).json({
+			success: true,
+			message: 'prioritized chosenID'
+		});
+
+	}
+
+
+}
+
+exports.getmatchedusers = async(req, res) => {
+	var request = {
+		userId: req.body.userId	
+	}
+	let matchedusers = await Profile.getmatchedusers(request);
+	if (matchedusers === null){
+		res.status(500).json({
+			success:false,
+			message: 'unable to get matchedusers'
+		});		
+	} else {
+		res.send(matchedusers);
+	}
+
+}

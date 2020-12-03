@@ -13,6 +13,7 @@ var profileRoute = require('./routes/profileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
 var dogforadoptionRoute = require('./routes/dogforadoptionRoute');
 var adoptionRoute = require('./routes/adoptionRoute');
+var matchedusersRoute = require('./routes/matchedusersRoute');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -34,6 +35,8 @@ app.use('/petprofile', petProfileRoute);
 app.use('/dogforadoption', dogforadoptionRoute);
 
 app.use('/adoption', adoptionRoute);
+
+app.use('/matchedusers', matchedusersRoute);
 
 
 //////////////////////////// temp

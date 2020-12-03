@@ -2,8 +2,8 @@ window.onload = function(){
 	readMatchedUsers();
 }
 
-function readMatchedUsers(){
-	var matched = [1,2,3];
+function initMatches(matcheslist){
+	var matched = matcheslist;
 
 	var matchedusers = document.getElementById("matchedusers");
 	for (var i = 0; i < matched.length; i++){
@@ -13,7 +13,7 @@ function readMatchedUsers(){
 
 		var profileimage = document.createElement("section");
 		profileimage.setAttribute("class", "profileimage");
-		usercard.appendChild(profileimage);
+		usercard.appendChild(profileimage);	//read profile_img to view
 
 		var description = document.createElement("section");
 		description.setAttribute("class", "description");
@@ -22,21 +22,31 @@ function readMatchedUsers(){
 		var username = document.createElement("h");
 		username.setAttribute("class", "username");
 		description.appendChild(username);
-		var usernametext = document.createTextNode(matched[i]);
+		var usernametext = document.createTextNode(matched[i].username);
 		username.appendChild(usernametext);
 
 		var preview = document.createElement("p");
 		preview.setAttribute("class", "preview");
-		description.appendChild(preview);
+		description.appendChild(preview);	//grab newest message
 		preview.innerHTML = "thisispreviewmessage.clicktoseemore";
 
 
-		usercard.id = matched[i]; //give id to each card
-
-
-
+		usercard.id = matched[i].userId; //give id to each card
 
 	}
+}
+
+function readMatchedUsers(){
+	/*ajax to get matched users*/
+	$.ajaxSetup({
+		headers: {"Authorization": localStorage.getItem('token')}
+	});
+	$.get("/matchedusers/getmatchedusers", function(result){
+		
+		initMatches(result);
+	});
+
+	
 }
 
 
