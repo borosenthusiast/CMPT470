@@ -43,7 +43,19 @@ exports.signUp = async (req, res) => {
 };
 
 exports.getAllUsers = async(req, res) => {
-	
+	try {
+		let userList = await User.getAllUsers();
+		res.status(200).send({
+			status: "success",
+			message: "Successfully got all the users",
+			data: userList
+		});
+	} catch (err) {
+		res.status(500).send({
+			error:err,
+			message: "Failed to get all users"
+		});
+	}
 }
 
 exports.logout = async(req, res) => {
