@@ -15,8 +15,4 @@ router.get('/profile.js', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "viewprofilepage/viewprofile.js"));
 });
 
-
-router.post('/submit', middleware.checkToken, viewProfileController.viewProfile);
-
-
 module.exports = router;
