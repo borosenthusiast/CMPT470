@@ -7,10 +7,12 @@ let config = require('./config.js');
 let middleware = require('./middleware.js');
 var app = express();
 
-var indexRoute = require('./routes/indexRoute');
-var registerRoute = require('./routes/registerRoute');
-var profileRoute = require('./routes/profileRoute');
+var indexRoute      = require('./routes/indexRoute');
+var registerRoute   = require('./routes/registerRoute');
+var profileRoute    = require('./routes/profileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
+var adminRoute      = require('./routes/adminRoute');
+
 app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -28,6 +30,8 @@ app.use('/register', registerRoute);
 app.use('/profile', profileRoute);
 
 app.use('/petprofile', petProfileRoute);
+
+app.use('/admin', adminRoute);
 
 
 //////////////////////////// temp
