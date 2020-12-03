@@ -1,6 +1,5 @@
 var fileHandler = require('../fileHandler.js');
-var Profile = require('../models/viewprofile.js');
-
+var User = require('../models/user.js');
 const account_type = {
 	ADMIN: 'Admin',
 	ADOPT: 'Adopt',
@@ -23,13 +22,31 @@ exports.viewProfile = async (req, res) => {
     if (role == account_type.ADMIN) {
         // Give the admin page anyways
         console.log("Sending admin page");
+        user = User.getUserbyId(userid);
+        res.status(200).json({
+            status: true,
+            user: user,
+            mode: 'edit'
+        });
     }
     else if (userid = target_page_id) {
         // Give the user management (admin) page for the user
         console.log("Sending User management page");
+        user = User.getUserbyId(userid);
+        res.status(200).json({
+            status: true,
+            user: user,
+            mode: 'edit'
+        });
     }
     else {
         // Give the generic page
         console.log("sending public page");
+        user = User.getUserbyId(userid);
+        res.status(200).json({
+            status: true,
+            user: user,
+            mode: 'view'
+        });
     }
 }
