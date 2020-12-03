@@ -13,9 +13,16 @@ let checkToken = (req, res, next) => {
     // if (token.startsWith('Bearer ')) {
     //     token = token.slice(8, token.length);
     // }
+    //console.log(headers);
+    if (typeof headers === "undefined") {
+        return res.status(404).json({
+            success: false,
+            message: 'invalid header'
+        });
+    }
     token = JSON.parse(headers).token;
-    //console.log(token);
-    if (token) {
+    console.log(token);
+    if (token || typeof token !== "undefined") {
         jwt.verify(token, config.secret, (err, decoded) => {
         if (err) {
             console.log("err in token");
@@ -34,7 +41,7 @@ let checkToken = (req, res, next) => {
         });
     } else {
         console.log("No authentication token was provided.");
-        return res.json({
+        return res.status(404).json({
         success: false,
         message: 'Auth token is not supplied'
         });
