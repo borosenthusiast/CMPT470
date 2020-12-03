@@ -79,13 +79,13 @@ window.onload = function(){
 
 function minusnumber(){
 	var flipsleft = parseInt(document.getElementById("flipsleft").innerHTML,10);
+	flipsleft--;
 	if (flipsleft == 0){
 		//redirect to match page
-
+		window.location.href = "/matchedusers";
 
 		return;
 	}
-	flipsleft--;
 	document.getElementById("flipsleft").innerHTML = flipsleft;
 
 }
@@ -181,14 +181,7 @@ $(document).ready(function(){
 			console.log(result);
 		});
 
-   /* $.redirect(http://localhost/test/test1.php,
-        {
-            user_name: "khan",
-            city : "Meerut",
-            country : "country"
-        });
-    });*/
-		//window.location.href = "/";
+		window.location.href = "/matchedusers";
 
 
 	});
