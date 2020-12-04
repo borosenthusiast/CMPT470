@@ -154,13 +154,45 @@ body{
 label {
 	position: relative;
 	left: 30px;
+	
+	padding-top: 100px;
+	font-size: large;
+	font-weight: bold;
 }
-
+/*
 input {
 	position: relative;
 	left: 20px;
 }
+*/
+#newPostTitle {
+	position: relative;
+	height: 20px;
+	width: 85%;
+	left: 20px;
 
+	padding: 10px;
+}
+
+
+#newPostText {
+	position: relative;
+	height: 80px;
+	width: 90%;
+	left: 20px;
+
+	resize: vertical;
+}
+
+button {
+	position: relative;
+	left: 40%;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 25px;
+	width: 20%;
+}
 
 /* Page after the community posts and sidebar */
 #main:after {
