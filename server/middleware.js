@@ -15,27 +15,31 @@ const getUser = async (id) => {
 
 const checkToken = (req, res, next) => {
     console.log('tokencheck');
-    console.log('This is middleware', req.originalUrl);
-    console.log(next);
-    let headers = req.headers['x-access-token'] || req.headers['authorization'] || req.headers['Authorization'];
-    if (typeof headers === "undefined") {
-        return res.redirect('/');
-    }
-    if (headers.startsWith('Bearer ')) {
-        headers = headers.slice(7, headers.length);
-    }
+    // console.log('This is middleware', req.originalUrl);
+    // console.log(req.cookies);
+    // let headers = req.headers['x-access-token'] || req.headers['authorization'] || req.headers['Authorization'];
+
+    // if (typeof headers === "undefined") {
+    //     return res.redirect('/');
+    // }
+    // if (headers.startsWith('Bearer ')) {
+    //     headers = headers.slice(7, headers.length);
+    // }
 
 
-    console.log(headers);
-    token = JSON.parse(headers).token;
+    // console.log(headers);
+    // token = JSON.parse(headers).token;
+    if (typeof req.cookies !== "undefined") {
+        token = req.cookies['Authentication'];
+    }
     console.log(token);
     if (token && typeof token !== "undefined") {
         jwt.verify(token, config.secret, async (err, decoded) => {
         if (err) {
             console.log("err in token");
-            return res.json({
-            success: false,
-            message: 'Token is not valid'
+            return res.status(403).json({
+                success: false,
+                message: 'Token is not valid'
             });
         } else {
             req.decoded = decoded;

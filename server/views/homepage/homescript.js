@@ -23,7 +23,6 @@ $(document).ready(function() {
 
 	$('#loginform').submit(function(e){
 		e.preventDefault();
-		//alert("ajax jquery request sent");
 		var user = getFormUser();
 		var pass = getFormPw();
 		console.log(user);
@@ -56,7 +55,7 @@ $(document).ready(function() {
 				},
 				success: function(data) {
 					console.log('Success sending token!')
-					//window.location.href = "/cardflip";
+					window.location.href = "/cardflip";
 				}
 				// send the token when redirecting the user
 			  });
