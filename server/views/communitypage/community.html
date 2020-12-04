@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <title>Community Overview</title> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="community.css">
+        <link rel="stylesheet" type="text/css" href="community.css">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="community.js"></script>
     </head>
@@ -33,7 +34,7 @@
             <section id="commPosts" class="column">
                 <section class="post">
                     <h class="postTitle">Look at my dog!</h>
-                    <section class="postInfo" style="font-size: 12px;">
+                    <section class="postInfo">
                         <p class="datePosted">Posted: 2020-11-15</p>
                         <p class="author">Author: Jon Doe</p>
                         <p class="numComments">3 Comments</p>
@@ -42,7 +43,7 @@
 
                 <section class="post">
                     <h class="postTitle">Any recommendations for vets?</h>
-                    <section class="postInfo" style="font-size: 12px;">
+                    <section class="postInfo">
                         <p class="datePosted">Posted: 2020-12-01</p>
                         <p class="author">Author: Jon Doe</p>
                         <p class="numComments">10 Comments</p>
@@ -51,7 +52,7 @@
 
                 <section class="post">
                     <h class="postTitle">Super long title that is super long to test width length</h>
-                    <section class="postInfo" style="font-size: 12px;">
+                    <section class="postInfo">
                         <p class="datePosted">Posted: 2020-12-31</p>
                         <p class="author">Author: Jon Doe</p>
                         <p class="numComments">3 Comments</p>
@@ -60,7 +61,7 @@
 
                 <section class="post">
                     <h class="postTitle">filler post</h>
-                    <section class="postInfo" style="font-size: 12px;">
+                    <section class="postInfo">
                         <p class="datePosted">Posted: 2020-12-31</p>
                         <p class="author">Author: Jon Doe</p>
                         <p class="numComments">3 Comments</p>
@@ -72,23 +73,24 @@
                 <section class="newPost">
                     <h1 id=submitNewPost>Submit a New Post</h1>
                     <form id="postForm">
-                        <label for="Title">Title</label><br>
-                        <input id="Title" type="textbox" placeholder="Title" required><br>
+                        <label for="newPostTitle">Title</label><br>
+                        <input id="newPostTitle" type="textbox" placeholder="Enter your Post Title" required><br><br>
 
-                        <label for="Text">Text (Optional)</label><br>
-                        <input id="Text" type="textbox" style="height:120px; width: 200px"><br>
+                        <label for="newPostText">Text (Optional)</label><br>
+                        <textarea id="newPostText" rows="10" cols="60" name="text" placeholder="Enter some text..."></textarea>
 
-                        <button id="submitPostButton">SUBMIT</button><br>
+                        <button id="submitPostButton" onclick="addNewPost()">SUBMIT</button><br>
                     </form>
                 </section>
 
                 <aside id="filters">
-                <!-- TODO: setup this filters section-->
+                <!-- TODO: setup this filters section if there's time-->
             </aside>
         </main>
 		<footer>
-			<p style="position: absolute;">menu and direction to aboutus</p>
-			<p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+            <p style="position: absolute;">menu and direction to aboutus</p>
+            <a href="#navbar" style="position: absolute; top: 5px; right: 20px; font-size: 15px;">TOP</a>
+			<!--<p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>-->
 		</footer>
     </body>
 </html>

@@ -63,9 +63,6 @@ body{
 	-ms-transform: translate(-50%, -50%);
 }
 
-main {
-	padding-bottom: 20px;
-}
 /* Post */
 .PostTitle{
 	width: 700px;
@@ -89,7 +86,7 @@ form{
 }
 
 /* Comments */
-.allComments{
+#allComments{
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -109,6 +106,15 @@ form{
 	background-color: lightgray;
 }
 
+.commentInfo{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+
+	height: 25px;
+	margin: 0px;
+}
+
 .author{
 	position: relative;
 	font-size: large;
@@ -117,6 +123,14 @@ form{
 	margin: 0px;
 	margin-top: 5px;
 	padding: 0px;
+}
+
+.dateCommented{
+	position: relative;
+	font-size: small;
+
+	left: 30px;
+	bottom: 5px;
 }
 
 .content{
