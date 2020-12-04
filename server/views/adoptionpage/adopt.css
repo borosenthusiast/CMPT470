@@ -17,7 +17,7 @@ body{
 	color:white;
 	font-weight: 600;
 }
-
+/*
 #appname{
 	position: absolute;
 	left:3%;
@@ -31,8 +31,59 @@ body{
 	right:3%;
 	top: 26px;
 	font-size: 16px;
+}*/
+/*----------------------------------------------------------------------------------------------------*/
+#appname{
+	font-size: 25px;
 }
 
+#processname{
+	/*right:3%;
+	top: 26px;*/
+	font-size: 16px;
+
+}
+
+#headertable{
+	position: relative;
+	float: left;
+	height: 100%;
+
+}
+
+#navitable{
+	position: relative;
+	float:right;
+	right: 15px;
+	height: 100%;
+	color: #352288;
+}
+
+#headertable a{
+	text-decoration: none;
+	color:white;
+}
+#navitable a{
+	text-decoration: none;
+	color: #352288;
+}
+#navitable a:hover{
+	
+	color: white;
+}
+
+
+#matchalerts{
+	padding: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 0; 
+	border-radius: 50px;
+	color: white;
+	background-color: red;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
 #pageheader{
 	width: 700px;
 	position:relative;

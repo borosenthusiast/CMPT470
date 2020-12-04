@@ -43,8 +43,18 @@ body{
 	color: #352288;
 }
 
-#navitable td:hover{
+#navitable a:hover{
 	color: white;
+}
+
+#headertable a{
+	text-decoration: none;
+	color:white;
+}
+
+#navitable a{
+	text-decoration: none;
+	color: #352288;
 }
 
 #matchalerts{
