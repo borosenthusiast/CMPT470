@@ -46,6 +46,10 @@ $(document).ready(function() {
   var url_list = window.location.href.split('/');
   var id = url_list.slice(-1)[0];
 
+
+  $('#edit_button').click(function() {
+    window.location.href = '/admin/view/' + id + '/edit';
+  });
   //user info from mysql
   $.ajax({
     url      : '/admin/view/' + id + '/userinfo',
