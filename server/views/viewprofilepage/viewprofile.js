@@ -24,11 +24,21 @@ function updateUserinfo(user) {
   $('#first_name').text(user.first_name);
   $('#email').text(user.email);
   $('#username').text(user.username);
-  $('#username_tag').text(user.username);
+  $('#username_tag').text('@' + user.username);
+  $('#processname').text(user.username + ' PROFILE');
 }
 
 function updateProfileinfo(profile) {
-  console.log("fuck this shit");
+  let profile_mimetype = profile.profile_img.mimetype;
+  let profile_img_buffer = profile.profile_img.buff;
+  let petprofile_mimetype = profile.pet.petImage.mimetype;
+  let petprofile_img_buffer = profile.pet.petImage.buff;
+  $('#profile_img').attr('src', 'data:' + profile_mimetype + ';base64,' + profile_img_buffer);
+  $('#bio').text(profile.bio);
+  $('#pet_image').attr('src', 'data:' + petprofile_mimetype + ';base64,' + petprofile_img_buffer);
+  $('#pet_name').text(profile.pet.petName);
+  $('#pet_age').text(profile.pet.age);
+  $('#pet_description').text(profile.pet.description);
 }
 
 $(document).ready(function() {
@@ -58,7 +68,8 @@ $(document).ready(function() {
       console.log('Error!', err);
     },
     success: function(data) {
-      
+      console.log('Success!');
+      updateProfileinfo(data.data);
     }
   });
 });

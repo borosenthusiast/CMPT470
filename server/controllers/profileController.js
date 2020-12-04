@@ -42,8 +42,27 @@ exports.submitProfile = async (req, res) => {
 
 exports.getProfileById = async (req, res) => {
 	try {
-		
+		let status = await Profile.getProfileById(req.params.id);
+		if(status.success) {
+			console.log('Profile found');
+			res.status(200).json({
+				success: true,
+				message: 'Profile found',
+				data: status.data
+			});
+		} else {
+			console.log('Profile not found');
+			res.status(500).json({
+				success: false,
+				message: 'Profile not found',
+				data: status.data
+			});
+		}
 	} catch (err) {
-		
+		console.log("Error at profileController.getProfileById");
+		res.status(500).json({
+			error:err,
+			message: "Profile search failed"
+		});
 	}
 }

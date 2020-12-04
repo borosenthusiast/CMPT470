@@ -14,4 +14,9 @@ Profile.create = async (profile) => {
 	return response.data;
 }
 
+Profile.getProfileById = async (id) => {
+	let response = await axios.get('http://localhost:8081/profile/getprofilebyid/' + id);
+	return response.data;
+}
+
 module.exports = Profile;

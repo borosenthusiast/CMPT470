@@ -2,6 +2,7 @@ var router = require('express').Router();
 var path           = require('path');
 var file_path      = "/../views/";
 var userController = require('../controllers/userController');
+var profileController = require('../controllers/profileController');
 
 router.get('/userlist.css', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "userlistpage/userlist.css"));
@@ -31,6 +32,6 @@ router.get('/view/:id', function(req,res) {
 
 router.get('/view/:id/userinfo', userController.getUserById);
 
-router.get('/view/:id/profileinfo', userController.getUserById);
+router.get('/view/:id/profileinfo', profileController.getProfileById);
 
 module.exports = router;
