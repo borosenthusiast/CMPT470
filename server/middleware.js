@@ -14,14 +14,18 @@ const getUser = async (id) => {
 }
 
 const checkToken = (req, res, next) => {
-    let headers = req.headers['x-access-token'] || req.headers['authorization'] || req.headers['Authorization'];
-    if (headers.startsWith('Bearer ')) {
-        headers = headers.slice(7, headers.length);
-    }
     console.log('tokencheck');
+    console.log('This is middleware', req.originalUrl);
+    console.log(next);
+    let headers = req.headers['x-access-token'] || req.headers['authorization'] || req.headers['Authorization'];
     if (typeof headers === "undefined") {
         return res.redirect('/');
     }
+    if (headers.startsWith('Bearer ')) {
+        headers = headers.slice(7, headers.length);
+    }
+
+
     console.log(headers);
     token = JSON.parse(headers).token;
     console.log(token);
@@ -41,12 +45,12 @@ const checkToken = (req, res, next) => {
             req.uid = decoded.id;
             req.account_type = user.account_type;
             console.log("User matched from DB: " + JSON.stringify(user));
-            await next();
+            next();
         }
         });
     } else {
         console.log("No authentication token was provided.");
-        return res.status(404).json({
+        return res.status(403).json({
         success: false,
         message: 'Auth token is not supplied'
         });

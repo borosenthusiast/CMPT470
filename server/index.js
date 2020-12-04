@@ -35,7 +35,7 @@ app.use('/viewprofile', viewprofileRoute)
 
 //////////////////////////// temp
 var cardFlipRoute = require('./routes/cardFlipRoute');
-app.use('/cardflip', cardFlipRoute);
+app.use('/cardflip', middleware.checkToken, cardFlipRoute);
 ///////////////////////////
 
 

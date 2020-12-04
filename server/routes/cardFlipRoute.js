@@ -3,7 +3,8 @@ var path = require('path');
 var middleware = require('../middleware.js');
 var file_path = "/../views/";
 
-router.get('/', middleware.checkToken,  function(req,res) {
+router.get('/',  function(req,res) {
+	console.log('This is cfr', req.originalUrl);
 	res.sendFile(path.join(__dirname + file_path + "cardflippage/cardflip.html"));
 });
 
