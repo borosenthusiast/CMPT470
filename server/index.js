@@ -30,7 +30,7 @@ app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
 
-app.use('/profile', middleware.checkToken, profileRoute); // use middleware checktoken for protected pages that require authentication from the user.
+app.use('/profile', profileRoute); // use middleware checktoken for protected pages that require authentication from the user.
 
 app.use('/petprofile', middleware.checkToken, petProfileRoute);
 
