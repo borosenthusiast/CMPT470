@@ -10,6 +10,7 @@ const account_type = {
 
 exports.signUp = async (req, res) => {
 	var type_account = "";
+	res.cookie('Authentication', null); // Invalidate the current cookie
 	if(req.body.account_type === "dog_owner") {
 		type_account = account_type.USER;
 	}
@@ -26,7 +27,13 @@ exports.signUp = async (req, res) => {
 						});
 
 	try {
-		let id = await User.create(user); 
+		let newUser = await User.create(user); 
+		let token = jwt.sign({id: newUser.id}, // issue a token upon completing registration
+			config.secret, {
+				expiresIn: '2h'
+			}
+		);
+		res.cookie('Authentication', token);
 		res.status(200).json({
 			success: true,
 			message: 'User Creation Success'
@@ -61,6 +68,7 @@ exports.logout = async(req, res) => {
 exports.logIn = async (req, res) => {
 	let username = req.body.username;
 	let password = req.body.password;
+	res.cookie('Authentication', null); // invalidate the current cooookie
 	try {
 		let user = await User.getUserbyUsername(username);
 		console.log("User matched from DB: " + JSON.stringify(user));
