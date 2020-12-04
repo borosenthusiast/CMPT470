@@ -14,6 +14,8 @@ var profileRoute = require('./routes/profileRoute');
 var viewprofileRoute = require('./routes/viewprofileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
 var adminRoute      = require('./routes/adminRoute');
+var aboutRoute      = require('./routes/aboutRoute');
+var communityRoute  = require('./routes/communityRoute');
 
 app.set('view engine','ejs');
 app.use(bodyParser.json());
@@ -38,6 +40,9 @@ app.use('/viewprofile', middleware.checkToken, viewprofileRoute)
 
 app.use('/admin', adminRoute);
 
+app.use('/about', aboutRoute);
+
+app.use('/community', communityRoute);
 
 //////////////////////////// temp
 var cardFlipRoute = require('./routes/cardFlipRoute');

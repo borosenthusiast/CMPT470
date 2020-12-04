@@ -34,6 +34,7 @@ exports.getUserbyUsername = async (req, res) => {
 		res.send(found_user);
 	} catch (err) {
 		console.log("Error from getUserbyUsername from userController.js");
+		console.log(err);
 		res.status(500).send(err);
 	}
 };

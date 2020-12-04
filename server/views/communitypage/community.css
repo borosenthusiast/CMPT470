@@ -204,7 +204,7 @@ button {
 
 /* Footer */
 footer{
-    position: absolute;  /*changed this from fixed to help with scrolling */
+    position: fixed;  /*changed this from fixed to help with scrolling */
 	bottom: 0;
 	overflow: hidden;
 	background-color:#a79ae0;
