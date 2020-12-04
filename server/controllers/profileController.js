@@ -8,14 +8,13 @@ exports.submitProfile = async (req, res) => {
 	let img_dir = req.file.destination + req.file.filename; 
 	req.file.buff = fileHandler.img2Base64(img_dir);
 	fileHandler.deleteFile(img_dir);
-
 	var profile = new Profile({
-		userId: req.decoded.id,
+		userId: req.uid,
 		bio: req.body.bio,
 		profile_img:  req.file,
 		pet: null
 	});
-
+	console.log("PROFILE" + profile);
 	try {
 		let status = await Profile.create(profile);
 		if(status.success) {
