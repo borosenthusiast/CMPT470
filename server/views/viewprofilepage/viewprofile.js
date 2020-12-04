@@ -27,11 +27,16 @@ function updateUserinfo(user) {
   $('#username_tag').text(user.username);
 }
 
+function updateProfileinfo(profile) {
+  console.log("fuck this shit");
+}
+
 $(document).ready(function() {
   console.log("document ready");
   var url_list = window.location.href.split('/');
   var id = url_list.slice(-1)[0];
 
+  //user info from mysql
   $.ajax({
     url      : '/admin/view/' + id + '/userinfo',
     type     : 'GET',
@@ -42,6 +47,18 @@ $(document).ready(function() {
     success: function(data) {
       console.log('Success!');
       updateUserinfo(data.data);
+    }
+  });
+
+  $.ajax({
+    url : '/admin/view/' + id + '/profileinfo',
+    type: 'GET',
+    dataType: 'json',
+    error: function(err) {
+      console.log('Error!', err);
+    },
+    success: function(data) {
+      
     }
   });
 });

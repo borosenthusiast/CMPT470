@@ -31,4 +31,6 @@ router.get('/view/:id', function(req,res) {
 
 router.get('/view/:id/userinfo', userController.getUserById);
 
+router.get('/view/:id/profileinfo', userController.getUserById);
+
 module.exports = router;

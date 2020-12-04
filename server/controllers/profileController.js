@@ -39,3 +39,11 @@ exports.submitProfile = async (req, res) => {
 		});
 	}
 }
+
+exports.getProfileById = async (req, res) => {
+	try {
+		
+	} catch (err) {
+		
+	}
+}

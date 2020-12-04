@@ -71,4 +71,17 @@ Profile.checkPetProfileNull = async (userId) => {
 	}
 }
 
+Profile.getProfileById = async (userId) => {
+	try {
+		console.log(typeof userId);
+		let profile_collection = await mongo_db.mongo_collection('ProfilePage');
+		let query = {userId: userId};
+		//let projection = {_id: 1, userId: 1, pet:1};
+		let result = await profile_collection.findOne(query);
+		return result;
+	} catch (err) {
+		console.log(err);
+	}
+}
+
 module.exports = Profile;

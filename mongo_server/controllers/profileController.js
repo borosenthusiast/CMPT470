@@ -68,3 +68,22 @@ exports.addPetProfile = async(req, res) => {
 		}
 	}
 }
+
+exports.getProfileById = async (req, res) => {
+	let id = parseInt(req.params.id);
+	let query_result = await Profile.getProfileById(id);
+	//console.log(query_result);
+	if(query_result !== null) {
+		res.status(200).json({
+			success: true,
+			message: 'Profile successfully return',
+			data: query_result
+		});
+	} else {
+		res.status(200).json({
+			success: false,
+			message: 'Profile is null',
+			data: query_result
+		});
+	}
+}
