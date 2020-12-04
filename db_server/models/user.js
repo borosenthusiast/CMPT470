@@ -49,7 +49,6 @@ User.getUserbyUsername = async(username) => {
 
 User.getUserbyId = async(id) => {
 	let query = await user_db.query("SELECT * FROM user WHERE id = ?", [id]);
-	//console.log(query[0])
 	return query[0];
 }
 

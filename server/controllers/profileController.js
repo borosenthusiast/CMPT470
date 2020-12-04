@@ -13,7 +13,9 @@ exports.submitProfile = async (req, res) => {
 		userId: req.decoded.id,
 		bio: req.body.bio,
 		profile_img:  req.file,
-		pet: null
+		pet: null,
+		
+		addedlist: [Number],
 	});
 
 	try {

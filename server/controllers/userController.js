@@ -42,22 +42,6 @@ exports.signUp = async (req, res) => {
 	}
 };
 
-exports.logout = async(req, res) => {
-	//Instruct the clientside to delete the token on success, as to invalidate their current session and require logging in again.
-	try {
-		res.status(200).send({
-			status: "success",
-			redirect: "/"
-		});
-	}
-	catch (err) {
-		res.status(500).send({
-			error: err,
-			message: "Failed user logout."
-		});
-	}
-}
-
 exports.logIn = async (req, res) => {
 	let username = req.body.username;
 	let password = req.body.password;
@@ -72,8 +56,7 @@ exports.logIn = async (req, res) => {
                         expiresIn: '2h'
                     }
                 );
-				//console.log(jwt.verify(token, config.secret));
-				res.cookie('Authentication', token);
+                //console.log(jwt.verify(token, config.secret));
                 res.status(200).json({
                     success: true,
                     message: 'Authentication Success',

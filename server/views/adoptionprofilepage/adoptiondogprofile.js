@@ -1,17 +1,4 @@
-function logout() {
-	$.ajax({
-		url: "/logout",
-		type: "GET",
-		error: function(err) {
-			console.log("Failed to log out with error: ", err)
-		},
-		success: function(data) {
-			localStorage.removeItem('token');
-			sessionStorage.removeItem('token');
-			window.location = data.redirect;
-		}
-	});
-  }
+
 
 
 
@@ -44,6 +31,35 @@ function updatedogname(dognametext){
 }
 
 window.onload = function(){
+	var dogforadoption = localStorage.getItem("dogforadoption");
+	var converted_dogforadoption = parseInt(dogforadoption,10);
+	const reqData = {
+		dogid: converted_dogforadoption
+	}
+
+	$.ajaxSetup({
+		headers: {"Authorization": localStorage.getItem('token')}
+	});
+	$.post("/adoptionprofile/loadDog", reqData, function(result){
+
+		var dognametext = result.name;
+		updatedogname(dognametext);
+
+		document.getElementById("info").innerHTML = "AGE: " + result.age + " " + result.monthyear + "<br>" +
+													"GENDER: " + result.gender + "<br>" +
+													"BREED: " + result.breed + "<br>" +
+													"<br>" + "<br>" +
+													"SHELTER: " + result.agencyName +
+													"LOCATION: " + result.location +
+													"WEBSITE: " + result.website + 
+													"TEL: " + result.tel +
+													"<br>" + "<br>" +
+													"POSTED: " + result.time;
+	
+		document.getElementById("aboutme").innerHTML = result.description;
+
+
+	});
 	/*
 	AJAX get req dog info 
 	*/
@@ -52,8 +68,6 @@ window.onload = function(){
 	imageArray[1] = "../images/sample_adopt_profile(3).jpg";
 	imageArray[2] = "../images/sample_adopt_profile(4).jpg";
 
-	var dognametext = "WAFFLES";
-	updatedogname(dognametext);
 	loadimages(0);
 
 }
