@@ -22,7 +22,7 @@ exports.signUp = async (req, res) => {
 			res.send("Username or email already exists"); //
 		}
 	} catch (err) {
-		console.log("error");
+		console.log(err);
 		res.status(500).send(err); //error statement
 	}
 };
