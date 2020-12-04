@@ -13,6 +13,8 @@ var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
 var viewprofileRoute = require('./routes/viewprofileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
+var adminRoute      = require('./routes/adminRoute');
+
 app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -33,6 +35,8 @@ app.use('/profile', middleware.checkToken, profileRoute); // use middleware chec
 app.use('/petprofile', middleware.checkToken, petProfileRoute);
 
 app.use('/viewprofile', middleware.checkToken, viewprofileRoute)
+
+app.use('/admin', adminRoute);
 
 
 //////////////////////////// temp

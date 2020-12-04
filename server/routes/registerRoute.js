@@ -1,7 +1,7 @@
-var router = require('express').Router();
+var router         = require('express').Router();
 var userController = require('../controllers/userController');
-var path = require('path');
-var file_path = "/../views/";
+var path           = require('path');
+var file_path      = "/../views/";
 
 
 router.get('/', function(req,res) {
