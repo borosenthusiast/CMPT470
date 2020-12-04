@@ -15,24 +15,10 @@ const getUser = async (id) => {
 
 const checkToken = (req, res, next) => {
     console.log('tokencheck');
-    // console.log('This is middleware', req.originalUrl);
-    // console.log(req.cookies);
-    // let headers = req.headers['x-access-token'] || req.headers['authorization'] || req.headers['Authorization'];
-
-    // if (typeof headers === "undefined") {
-    //     return res.redirect('/');
-    // }
-    // if (headers.startsWith('Bearer ')) {
-    //     headers = headers.slice(7, headers.length);
-    // }
-
-
-    // console.log(headers);
-    // token = JSON.parse(headers).token;
     if (typeof req.cookies !== "undefined") {
         token = req.cookies['Authentication'];
     }
-    console.log(token);
+    //console.log(token);
     if (token && typeof token !== "undefined") {
         jwt.verify(token, config.secret, async (err, decoded) => {
         if (err) {
@@ -43,12 +29,12 @@ const checkToken = (req, res, next) => {
             });
         } else {
             req.decoded = decoded;
-            console.log("decoded: " + JSON.stringify(decoded.id));
+            //console.log("decoded: " + JSON.stringify(decoded.id));
             let user = await getUser(decoded.id);
-            console.log(user);
+            //console.log(user);
             req.uid = decoded.id;
             req.account_type = user.account_type;
-            console.log("User matched from DB: " + JSON.stringify(user));
+            //console.log("User matched from DB: " + JSON.stringify(user));
             next();
         }
         });

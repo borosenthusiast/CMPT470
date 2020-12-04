@@ -28,11 +28,11 @@ app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
 
-app.use('/profile', profileRoute);
+app.use('/profile', middleware.checkToken, profileRoute); // use middleware checktoken for protected pages that require authentication from the user.
 
-app.use('/petprofile', petProfileRoute);
+app.use('/petprofile', middleware.checkToken, petProfileRoute);
 
-app.use('/viewprofile', viewprofileRoute)
+app.use('/viewprofile', middleware.checkToken, viewprofileRoute)
 
 
 //////////////////////////// temp

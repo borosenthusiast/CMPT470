@@ -45,20 +45,9 @@ $(document).ready(function() {
 			success: function(data) {
 			  console.log('Success logging in!');
 			  localStorage.setItem('token', JSON.stringify(data));
-			  $.ajax({
-				url: "/cardflip",
-				type: "GET",
-				headers: {Authorization: 'Bearer ' + localStorage.getItem('token')},
-				error: function(err) {
-					console.log('Error in redirect', err)
-					alert("Error redirecting user to card flip page")
-				},
-				success: function(data) {
-					console.log('Success sending token!')
-					window.location.href = "/cardflip";
-				}
+			  window.location.href = "/cardflip";
 				// send the token when redirecting the user
-			  });
+			
 			}
 		  });
 		

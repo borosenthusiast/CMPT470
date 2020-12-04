@@ -26,7 +26,7 @@ User.getUserbyUsername = async(username) => {
 
 User.getUserbyId = async(id) => {
 	let response = await axios.get('http://localhost:8080/users/getusersbyid/' + id);
-	console.log(response.data);
+	//console.log(response.data);
 	return response.data
 }
 
