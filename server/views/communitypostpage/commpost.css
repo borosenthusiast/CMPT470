@@ -63,9 +63,6 @@ body{
 	-ms-transform: translate(-50%, -50%);
 }
 
-main {
-	padding-bottom: 20px;
-}
 /* Post */
 .PostTitle{
 	width: 700px;
