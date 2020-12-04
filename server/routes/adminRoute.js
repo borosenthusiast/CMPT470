@@ -51,8 +51,10 @@ router.get('/view/:id/userinfo', userController.getUserById);
 
 router.get('/view/:id/profileinfo', profileController.getProfileById);
 
-router.post('/view/:id/edit/userinfo_submit', upload_userinfo.any() ,userController.updateUser);
+router.post('/view/:id/edit/userinfo_submit', upload_userinfo.none() ,userController.updateUser);
 
-router.post('/view/:id/edit/profileinfo_submit', upload_profileInfo.arry('files') ,profileController.updateProfile);
+//router.post('/view/:id/edit/profileinfo_submit', upload_profileInfo.array('files') ,profileController.updateProfile);
+
+router.post('/view/:id/edit/profileinfo_submit', upload_profileInfo.fields([{name:'profile_img', maxCount:1}, {name:'pet_img', maxCount:1}]) ,profileController.updateProfile);
 
 module.exports = router;

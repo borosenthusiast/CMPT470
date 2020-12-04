@@ -29,6 +29,7 @@ function updateUserinfo(user) {
 }
 
 function updateProfileinfo(profile) {
+  console.log(profile);
   let profile_mimetype = profile.profile_img.mimetype;
   let profile_img_buffer = profile.profile_img.buff;
   let petprofile_mimetype = profile.pet.petImage.mimetype;
@@ -60,6 +61,7 @@ $(document).ready(function() {
     },
     success: function(data) {
       console.log('Success!');
+      //console.log(data.data);
       updateUserinfo(data.data);
     }
   });
@@ -73,6 +75,7 @@ $(document).ready(function() {
     },
     success: function(data) {
       console.log('Success!');
+      console.log(data);
       updateProfileinfo(data.data);
     }
   });

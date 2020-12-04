@@ -81,6 +81,7 @@ $(document).ready(function() {
     },
     success: function(data) {
       console.log('Success!');
+      console.log(data);
       updateProfileinfo(data.data);
     }
   });
@@ -100,60 +101,60 @@ $(document).ready(function() {
   $('#update_form').submit(function(e) {
     e.preventDefault();
     let formData_userinfo = new FormData();
-    let formData_profile  = new FormData();
 
     let last_name       = $('#last_name').val();
     let first_name      = $('#first_name').val();
     let username        = $('#username').val();
     let email           = $('#email').val();
-    let bio             = $('#bio').val();
-    let pet_name        = $('#pet_name').val();
-    let pet_age         = $('#pet_age').val();
-    let pet_description = $('#pet_description').val();
-    let profile_img     = $('#profile_img_input')[0].files[0];
-    let pet_image       = $('#pet_img_input')[0].files[0];
 
     formData_userinfo.append('last_name', last_name);
     formData_userinfo.append('first_name', first_name);
     formData_userinfo.append('username', username);
     formData_userinfo.append('email', email);
-    
-    formData_profile.append('bio', bio);
-    formData_profile.append('pet_name', pet_name);
-    formData_profile.append('pet_age', pet_age);
-    formData_profile.append('pet_description', pet_description);
-    formData_profile.append('files', profile_img);
-    formData_profile.append('files', pet_image);
-
-    for (var key of formData_userinfo.entries()) {
-        console.log(key[0] + ', ' + key[1]);
-    }
-
-    // $.ajax({
-    //     url : '/admin/view/' + id + '/edit/userinfo_submit',
-    //     type: 'POST',
-    //     data: formData_userinfo,
-    //     error: function(err) {
-    //       console.log('Error!', err);
-    //     },
-    //     success: function(data) {
-    //       alert(data);
-    //       //updateProfileinfo(data.data);
-    //     },
-    //     cache: false,
-    //     contentType: false,
-    //     processData: false
-    // });
 
     $.ajax({
-        url : '/admin/view/' + id + '/edit/profileinfo_submit',
+        url : '/admin/view/' + id + '/edit/userinfo_submit',
         type: 'POST',
-        data: formData_profile,
+        data: formData_userinfo,
         error: function(err) {
           console.log('Error!', err);
         },
         success: function(data) {
-          alert(data);
+          //alert(data);
+          let formData_profile  = new FormData();
+          let bio             = $('#bio').val();
+          let pet_name        = $('#pet_name').val();
+          let pet_age         = $('#pet_age').val();
+          let pet_description = $('#pet_description').val();
+          let profile_img     = $('#profile_img_input')[0].files[0];
+          let pet_image       = $('#pet_img_input')[0].files[0];
+
+          formData_profile.append('bio', bio);
+          formData_profile.append('pet_name', pet_name);
+          formData_profile.append('pet_age', pet_age);
+          formData_profile.append('pet_description', pet_description);
+          formData_profile.append('profile_img', profile_img);
+          formData_profile.append('pet_img', pet_image);
+
+          for (var key of formData_userinfo.entries()) {
+            console.log(key[0] + ', ' + key[1]);
+          }
+          $.ajax({
+            url : '/admin/view/' + id + '/edit/profileinfo_submit',
+            type: 'POST',
+            data: formData_profile,
+            error: function(err) {
+              console.log('Error!', err);
+            },
+            success: function(data) {
+              alert(data);
+              window.location.href = '/admin/view/' + id;
+            //updateProfileinfo(data.data);
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
           //updateProfileinfo(data.data);
         },
         cache: false,

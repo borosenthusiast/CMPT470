@@ -7,4 +7,6 @@ router.post('/createpetprofile', profileController.addPetProfile);
 
 router.get('/getprofilebyid/:id', profileController.getProfileById);
 
+router.post('/updateprofile/:id', profileController.updateProfile);
+
 module.exports = router;
