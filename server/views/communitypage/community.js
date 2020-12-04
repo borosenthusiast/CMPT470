@@ -1,5 +1,5 @@
 function postCard(id){
-	this.is = id;
+	this.id = id;
 }
 
 function deck(){
@@ -30,7 +30,7 @@ function updatePosts(postDeck){
 		//TODO: switch this to "a" tag for linking to commposts later
 		var title = document.createElement("h");
 		var titleText = document.createTextNode("Javascript title test");
-		title.appendChild(titleText)
+		title.appendChild(titleText);
 		title.setAttribute("class", "postTitle");
 		post.appendChild(title);
 
@@ -72,6 +72,12 @@ function updatePosts(postDeck){
 	
 }
 
-function addPost(postDeck){
-	var newPostTitle = document.getElementById("")
+//TODO: this should be on the backend
+function addNewPost(){
+	var postTitle = document.getElementById("newPostTitle").action;
+	var postContents = document.getElementById("newPostText").action;
+	console.log(postTitle, postContents)
+
+
+	/*updatePosts(postDeck);*/
 }
