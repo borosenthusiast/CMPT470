@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang = "en" dir="ltr">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<link rel="stylesheet" type="text/css" href="editprofile.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">	
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
-	</head>
-	<body>
-		<nav id="navbar">
-			<h id="appname">MATCHPAW</h>
-			<h id="processname">EDITING YOUR PROFILE</h>
-		</nav>
-	<main>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" type="text/css" href="/admin/editprofile.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">  
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </head>
+    <body>
+        <nav id="navbar">
+            <h id="appname">MATCHPAW</h>
+            <h id="processname">Timothy318 PROFILE</h>
+        </nav>
+    <main>
 <div class="container">
-<div id="content" class="content p-0">
+<form id="update_form" enctype="multipary/form-data" class="content p-0">
     <div class="profile-header">
         <div class="profile-header-cover"></div>
 
         <div class="profile-header-content">
             <div class="profile-header-img">
-                <img src="../images/paw.png" alt="" />
+                <img id="profile_img" src="../images/paw.png" alt="" />
             </div>
 
             <div class="profile-header-info">
-                <h4 class="m-t-sm">Timothy Lam</h4>
-                <p class="m-b-sm">@Timothy318</p>
-                <a href="#" class="btn btn-xs btn-primary mb-3">Change Photo</a>
+                <h4 id="first_last_name" class="m-t-sm">Timothy Lam</h4>
+                <p id="username_tag" class="m-b-sm">@Timothy318</p>
+                <!-- <button class="btn btn-xs btn-primary mb-3">Change Photo</button> -->
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="profile_img_input">
+                    <label class="custom-file-label" for="customInput">Choose file...</label>
+                </div>
             </div>
         </div>
     </div>
@@ -47,11 +51,7 @@
                                     <td class="field">Username</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b>Timothy318</b> <a onclick="displayDetails('editusername')" class="m-l-10">Edit</a></br>
-                                            <div style="display: none;" id="editusername">
-                                                <input id="username" class="form-control" type="text" name="username" value="">
-                                                <a href="#" class="m-l-10">Update</a>
-                                            </div>
+                                            <input id="username" type="text" placeholder="username"></input> 
                                         </div>
                                     </td>
                                 </tr>
@@ -59,11 +59,7 @@
                                     <td class="field">Last Name</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b>Lam</b> <a onclick="displayDetails('editlname')" class="m-l-10">Edit</a>
-                                            <div style="display: none;" id="editlname">
-                                                <input id="lname" class="form-control" type="text" name="lname" value="">
-                                                <a href="#" class="m-l-10">Update</a>
-                                            </div>
+                                            <input id="last_name" type="text" placeholder="Last Name"></input>
                                         </div>
                                     </td>
                                 </tr>
@@ -71,11 +67,7 @@
                                     <td class="field">First Name</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b>Timothy</b> <a onclick="displayDetails('editfname')" class="m-l-10">Edit</a>
-                                            <div style="display: none;" id="editfname">
-                                                <input id="fname" class="form-control" type="text" name="fname" value="">
-                                                <a href="#" class="m-l-10">Update</a>
-                                            </div>
+                                            <input id="first_name" type="text" placeholder="First Name"></input>
                                         </div>
                                     </td>
                                 </tr>
@@ -83,22 +75,14 @@
                                     <td class="field">Email</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b>timothy123@gmail.com</b> <a onclick="displayDetails('editemail')" class="m-l-10">Edit</a>
-                                            <div style="display: none;" id="editemail">
-                                                <input id="email" class="form-control" type="text" name="email" value="">
-                                                <a href="#" class="m-l-10">Update</a>
-                                            </div>
+                                            <input id="email" type="email" placeholder="Email"></input>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="field">About</td>
+                                    <td class="field">Bio</td>
                                     <td class="value">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a onclick="displayDetails('editabout')" class="m-l-10">Edit</a>
-                                        <div style="display: none;" id="editabout">
-                                                <textarea rows="4" maxlength="250" class="form-control" name="user_bio" id="user_bio"></textarea>
-                                                <a href="#" class="m-l-10">Update</a>
-                                        </div>
+                                        <input id="bio" type="textbox" placeholder="Bio"></input> 
                                     </td>
                                 </tr>
                             </tbody>
@@ -112,83 +96,63 @@
                             <tbody>
                                 <tr>
                                     <td class="field">Pet Picture</td>
-                                    <td ><img src="../images/paw.png" alt="" />
-                                          <a href="#" class="">Change Photo</a>  
+                                    <td >
+                                        <img id="pet_image" src="../images/paw.png" alt="" />
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="pet_img_input">
+                                            <label class="custom-file-label" for="customInput">Choose file...</label>
+                                        </div>
                                     </td>
                                 </tr>                        
                                 <tr>
                                     <td class="field">Name</td>
                                     <td class="value">
-                                        Buddy
-                                        <a onclick="displayDetails('editpetname')"  class="m-l-10">Edit</a>
-                                        <div style="display: none;" id="editpetname">
-                                            <input id="petname" class="form-control" type="text" name="petname" value="">
-                                            <a href="#" class="m-l-10">Update</a>
-                                        </div>
+                                        <input id="pet_name" type="text" placeholder="Name"></input>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Age</td>
                                     <td class="value">
-                                        3
-                                        <a onclick="displayDetails('editage')"  class="m-l-10">Edit</a>
-                                        <div style="display: none;" id="editage">
-                                            <input id="petage" class="form-control" type="text" name="petage" value="">
-                                            <a href="#" class="m-l-10">Update</a>
-                                        </div>
+                                        
+                                        <input id="pet_age" type="number" placeholder="Age"></input>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Gender</td>
                                     <td class="value">
-                                        Male
-                                        <a onclick="displayDetails('editgender')" class="m-l-10">Edit</a>
-                                        <div style="display: none;" id="editgender">
-                                                <input type="radio" id="male" name="gender" value="male">
-                                                <label for="male">Male</label><br>
-                                                <input type="radio" id="female" name="gender" value="female">
-                                                <label for="female">Female</label><br>
-                                            <a href="#" class="m-l-10">Update</a>
-                                        </div>
+                                        <input id="pet_gender" type="text" placeholder="gender"></input>
                                     </td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td class="field">Breed</td>
-                                    <td class="value">
+                                    <td id="pet_breed" class="value">
                                         Shiba Inu
-                                        <a onclick="displayDetails('editbreed')" class="m-l-10">Edit</a>
-                                        <div style="display: none;" id="editbreed">
-                                            <input id="breed" class="form-control" type="text" name="breed" value="">
-                                            <a href="#" class="m-l-10">Update</a>
-                                        </div>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td class="field">About</td>
                                     <td class="value">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a onclick="displayDetails('editpetabout')" class="m-l-10">Edit</a>
-                                        <div style="display: none;" id="editpetabout">
-                                                <textarea rows="4" maxlength="250" class="form-control" name="pet_bio" id="pet_bio"></textarea>
-                                                <a href="#" class="m-l-10">Update</a>
-                                        </div>
+                                         <input id="pet_description" type="textbox" placeholder="About"></input>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-
+                            <input type="submit" id="update_button" class="btn btn-primary btn-lg"></input>
+                            <button type="button" id="cancel_button" class="btn btn-secondary btn-lg">Cancel</button>
+                            <!-- <button type="button" class="btn btn-danger">Delete</button> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 </div>
         
     </main>
-		 <footer>
+         <footer>
             <p style="position: absolute;">menu and direction to aboutus</p>
             <p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
         </footer>
-	</body>
-    <script type="text/javascript" src="editprofile.js"></script>
+    </body>
+    <script type="text/javascript" src="/admin/editprofile.js"></script>
 </html>

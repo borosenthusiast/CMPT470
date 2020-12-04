@@ -6,6 +6,7 @@ exports.addProfile = async(req, res) => {
 	let query_result = await Profile.checkProfileExists(profile.userId);
 	if(query_result === null) {
 		console.log('Profile does not exists can be proceed to add');
+		console.log(profile.userId);
 		let result = await Profile.createProfile(profile);
 		console.log(result.insertedId);
 		if(result.insertedId) {
@@ -66,5 +67,43 @@ exports.addPetProfile = async(req, res) => {
 				message: 'Pet Profile already exists in mongoDB'
 			});
 		}
+	}
+}
+
+exports.getProfileById = async (req, res) => {
+	let id = parseInt(req.params.id);
+	let query_result = await Profile.getProfileById(id);
+	console.log(query_result);
+	if(query_result !== null) {
+		res.status(200).json({
+			success: true,
+			message: 'Profile successfully return',
+			data: query_result
+		});
+	} else {
+		res.status(200).json({
+			success: false,
+			message: 'Profile is null',
+			data: query_result
+		});
+	}
+}
+
+exports.updateProfile = async (req, res) => {
+	let id = parseInt(req.params.id);
+	let update_field = req.body;
+	let update_result = await Profile.updateProfile(id, update_field);
+	console.log("here");
+	console.log(update_result);
+	if(update_result === 1) {
+			res.status(200).json({
+				success: true,
+				message: 'Profile updated'
+			});
+	} else {
+			res.status(200).json({
+				success: false,
+				message: 'Profile was not updated'
+			});
 	}
 }
