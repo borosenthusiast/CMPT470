@@ -68,4 +68,19 @@ User.getAllUsers = async() => {
 	return query;
 }
 
+User.updateUser = async(id, update_fields) => {
+	let query_string = "UPDATE user SET username = ";
+	query_string = query_string + "'" + update_fields.username + "',";
+	query_string = query_string + " first_name = ";
+	query_string = query_string + "'" + update_fields.first_name + "',";
+	query_string = query_string + " last_name = ";
+	query_string = query_string + "'" + update_fields.last_name + "',";
+	query_string = query_string + " email = ";
+	query_string = query_string + "'" + update_fields.email + "'";
+	query_string = query_string + " WHERE id = " + id;
+	let query = await user_db.query(query_string);
+	//console.log(query.affectedRows);
+	return query.affectedRows;
+}
+
 module.exports = User;

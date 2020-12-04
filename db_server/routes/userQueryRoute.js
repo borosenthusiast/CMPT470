@@ -9,4 +9,6 @@ router.get('/getusersbyid/:id', userController.getUserbyId);
 
 router.get('/getallusers', userController.getAllUsers);
 
+router.post('/updateuser/:id', userController.updateUser);
+
 module.exports = router;

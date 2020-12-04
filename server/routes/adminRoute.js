@@ -3,6 +3,8 @@ var path           = require('path');
 var file_path      = "/../views/";
 var userController = require('../controllers/userController');
 var profileController = require('../controllers/profileController');
+var multer = require('multer');
+
 
 router.get('/userlist.css', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "userlistpage/userlist.css"));
@@ -40,12 +42,17 @@ router.get('/editprofile.js', function(req, res) {
 	res.sendFile(path.join(__dirname + file_path + "editprofilepage/editprofile.js"));
 });
 
+let upload_userinfo = multer();
+let upload_profileInfo = multer({dest: './uploads/'});
+
 router.get('/getallusers', userController.getAllUsers);
 
 router.get('/view/:id/userinfo', userController.getUserById);
 
 router.get('/view/:id/profileinfo', profileController.getProfileById);
 
-router.post('/view/:id/edit/userinfo_submit', userController.updateUser);
+router.post('/view/:id/edit/userinfo_submit', upload_userinfo.any() ,userController.updateUser);
+
+router.post('/view/:id/edit/profileinfo_submit', upload_profileInfo.arry('files') ,profileController.updateProfile);
 
 module.exports = router;

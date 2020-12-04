@@ -34,8 +34,8 @@ User.getAllUsers = async() => {
 	return response.data;
 }
 
-User.updateUser = async(id) => {
-	let response = await axios.get('http://localhost:8080/users/updateuser/' + id);
+User.updateUser = async(id, data) => {
+	let response = await axios.post('http://localhost:8080/users/updateuser/' + id, data);
 	return response.data;
 }	
 

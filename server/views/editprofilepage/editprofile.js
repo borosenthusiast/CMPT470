@@ -97,8 +97,8 @@ $(document).ready(function() {
     window.location.href = '/admin/view/' + id;
   });
 
-  $('#update_button').click(function() {
-    //e.preventDefault();
+  $('#update_form').submit(function(e) {
+    e.preventDefault();
     let formData_userinfo = new FormData();
     let formData_profile  = new FormData();
 
@@ -122,28 +122,45 @@ $(document).ready(function() {
     formData_profile.append('pet_name', pet_name);
     formData_profile.append('pet_age', pet_age);
     formData_profile.append('pet_description', pet_description);
-    formData_profile.append('profile_img', profile_img);
-    formData_profile.append('pet_image', pet_image);
+    formData_profile.append('files', profile_img);
+    formData_profile.append('files', pet_image);
 
-    for (var key of formData.entries()) {
+    for (var key of formData_userinfo.entries()) {
         console.log(key[0] + ', ' + key[1]);
     }
 
+    // $.ajax({
+    //     url : '/admin/view/' + id + '/edit/userinfo_submit',
+    //     type: 'POST',
+    //     data: formData_userinfo,
+    //     error: function(err) {
+    //       console.log('Error!', err);
+    //     },
+    //     success: function(data) {
+    //       alert(data);
+    //       //updateProfileinfo(data.data);
+    //     },
+    //     cache: false,
+    //     contentType: false,
+    //     processData: false
+    // });
+
     $.ajax({
-        url : '/admin/view/' + id + '/edit/userinfo_submit',
+        url : '/admin/view/' + id + '/edit/profileinfo_submit',
         type: 'POST',
-        data: formData_userinfo,
+        data: formData_profile,
         error: function(err) {
           console.log('Error!', err);
         },
         success: function(data) {
-          alert('Success!');
+          alert(data);
           //updateProfileinfo(data.data);
         },
         cache: false,
         contentType: false,
         processData: false
     });
+    
   });
 
 });
