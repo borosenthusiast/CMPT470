@@ -20,9 +20,9 @@ router.get('/matchedusers.js', function(req,res) {
 var upload = multer({dest: './uploads/'});
 
 
-router.get('/getmatchedusers', middleware.checkToken, matchedusersController.getmatchedusers);
-router.post('/newmessage', middleware.checkToken, upload.single('img'), matchedusersController.newmessage);
-router.post('/loadMessages', middleware.checkToken, matchedusersController.loadMessages);
+router.get('/getmatchedusers', matchedusersController.getmatchedusers);
+router.post('/newmessage', upload.single('img'), matchedusersController.newmessage);
+router.post('/loadMessages', matchedusersController.loadMessages);
 
 
 module.exports = router;

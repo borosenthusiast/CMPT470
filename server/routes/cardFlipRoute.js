@@ -28,11 +28,11 @@ router.get('/images/choosebutton.png', function(req, res) {
 	res.sendFile(path.join(__dirname + file_path + "images/choosebutton.png"));
 });
 
-router.get('/getcards', middleware.checkToken, cardflipController.getcards);
+router.get('/getcards', cardflipController.getcards);
 
-router.post('/pushtoaddedlist', middleware.checkToken, cardflipController.pushtoaddedlist);
+router.post('/pushtoaddedlist', cardflipController.pushtoaddedlist);
 
-router.post('/checkifmatch', middleware.checkToken, cardflipController.checkifmatch);
+router.post('/checkifmatch', cardflipController.checkifmatch);
 
 
 

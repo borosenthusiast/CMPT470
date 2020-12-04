@@ -20,7 +20,7 @@ router.get('/newdogforadoption.js', function(req,res){
 
 const upload = multer({ dest: './uploads/'});
 
-router.post('/submit', middleware.checkToken, upload.array("img"), dogforadoptionController.submitDogforadoption);
+router.post('/submit', upload.array("img"), dogforadoptionController.submitDogforadoption);
 
 
 module.exports = router;

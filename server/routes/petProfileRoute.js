@@ -21,7 +21,7 @@ router.get('/petprofile.js', function(req,res) {
 var upload = multer({dest: './uploads/'});
 
 
-router.post('/submit', middleware.checkToken, upload.single('file'), petProfileController.submitPetProfile);
+router.post('/submit', upload.single('file'), petProfileController.submitPetProfile);
 
 
 module.exports = router;
