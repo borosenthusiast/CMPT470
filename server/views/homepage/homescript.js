@@ -23,7 +23,6 @@ $(document).ready(function() {
 
 	$('#loginform').submit(function(e){
 		e.preventDefault();
-		//alert("ajax jquery request sent");
 		var user = getFormUser();
 		var pass = getFormPw();
 		console.log(user);
@@ -44,23 +43,11 @@ $(document).ready(function() {
 			  alert("Incorrect Login Username or Password")
 			},
 			success: function(data) {
-			  console.log('Success!')
+			  console.log('Success logging in!');
 			  localStorage.setItem('token', JSON.stringify(data));
-			  //window.location.href = "/cardflip" // redirect user
-			  $.ajax({
-				url: "/cardflip",
-				type: "GET",
-				headers: {Authorization: 'Bearer ' + localStorage.getItem('token')},
-				error: function(err) {
-					console.log('Error in redirect', err)
-					alert("Error redirecting user to card flip page")
-				},
-				success: function(data) {
-					console.log('Success!');
-					window.location.href = "/cardflip";
-				}
+			  window.location.href = "/cardflip";
 				// send the token when redirecting the user
-			  });
+			
 			}
 		  });
 		
@@ -68,11 +55,3 @@ $(document).ready(function() {
 	});
 	
 });
-
-
-// $.ajax({ // use this to send the token when the server requires it, ex. accessing profile page
-// 	url: "http://localhost:3000/login",
-// 	type: 'GET',
-// 	// Fetch the stored token from localStorage and set in the header
-// 	headers: {"Authorization": localStorage.getItem('token')}
-//   });
