@@ -49,9 +49,9 @@ window.onload = function(){
 													"GENDER: " + result.gender + "<br>" +
 													"BREED: " + result.breed + "<br>" +
 													"<br>" + "<br>" +
-													"SHELTER: " + result.agencyName +
-													"LOCATION: " + result.location +
-													"WEBSITE: " + result.website + 
+													"SHELTER: " + result.agencyName + "<br>" +
+													"LOCATION: " + result.location + "<br>" +
+													"WEBSITE: " + result.website + "<br>" +
 													"TEL: " + result.tel +
 													"<br>" + "<br>" +
 													"POSTED: " + result.time;
