@@ -18,6 +18,7 @@ var matchedusersRoute = require('./routes/matchedusersRoute');
 var adoptionprofileRoute = require('./routes/adoptionprofileRoute');
 var viewprofileRoute = require('./routes/viewprofileRoute');
 var adminRoute = require('./routes/adminRoute');
+var aboutRoute = require('./routes/aboutRoute');
 
 app.set('view engine','ejs');
 app.use(bodyParser.json());
