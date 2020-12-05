@@ -14,7 +14,7 @@ function loadimages(n){
 
 	var imagesection = document.getElementById("imagesection");
 	var image = new Image();
-	image.src = imageArray[n];
+	image.src = 'data:' + imageArray[n].mimetype + ';base64,' + imageArray[n].buff;
 	image.setAttribute("class", "image");
 
 	imagesection.appendChild(imagepages);
@@ -58,17 +58,17 @@ window.onload = function(){
 	
 		document.getElementById("aboutme").innerHTML = result.description;
 
+		/*imageArray[0] = "../images/sample_adopt_profile(2).jpg";
+		imageArray[1] = "../images/sample_adopt_profile(3).jpg";
+		imageArray[2] = "../images/sample_adopt_profile(4).jpg";*/
+
+		imageArray = result.dogimgs;
+
+		loadimages(0);
+
 
 	});
-	/*
-	AJAX get req dog info 
-	*/
-	/*temp image array. */
-	imageArray[0] = "../images/sample_adopt_profile(2).jpg";
-	imageArray[1] = "../images/sample_adopt_profile(3).jpg";
-	imageArray[2] = "../images/sample_adopt_profile(4).jpg";
-
-	loadimages(0);
+	
 
 }
 

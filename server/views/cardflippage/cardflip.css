@@ -71,6 +71,7 @@ body{
 	position:absolute;
 	background-color: #D3D1CC;
 	color: black;
+	text-align: center;
 }
 
 .profileImage{
@@ -86,9 +87,8 @@ body{
 .username{
 	top: 20px;
 	position: relative;
-	border: 1px solid black;
 	text-align: center;
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: bold;
 
 }
@@ -131,6 +131,9 @@ body{
 
 .image{
 	position: relative;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 	padding:0;
 	margin: 0;
 	max-height: 100%;

@@ -18,7 +18,7 @@ router.get('/adopt.js', function(req,res){
 });
 
 
-router.get('/alldogs',  dogforadoptionController.getAlldogs);
+router.get('/alldogs', middleware.checkToken, dogforadoptionController.getAlldogs);
 
 
 module.exports = router;

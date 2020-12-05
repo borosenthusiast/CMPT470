@@ -1,6 +1,7 @@
 var Profile = require('../models/profile.js');
 var User = require("../models/user.js");
 var Message = require("../models/message.js");
+var fileHandler = require('../fileHandler.js');
 
 
 /*grab profile pics and usernames (from users)*/
@@ -38,6 +39,10 @@ exports.newmessage = async(req,res) =>{
 	console.log("in server users controller");
 	console.log(req.body.targetuser);
 	console.log(parseInt(req.body.targetuser,10));
+
+	let img_dir = req.file.destination + req.file.filename; 
+	req.file.buff = fileHandler.img2Base64(img_dir);
+	fileHandler.deleteFile(img_dir);
 
 	const convertedTargetuser = parseInt(req.body.targetuser,10);
 

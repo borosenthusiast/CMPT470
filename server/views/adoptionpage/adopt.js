@@ -95,13 +95,15 @@ function updatecards(dogcarddeck){
 			var dogcard = document.createElement("section");
 			dogcard.setAttribute("class", "dogcard");
 			posts.appendChild(dogcard);
-			dogcard.id = dogcarddeck[i].id;
-			console.log("id is: " + dogcard.id); 
+			dogcard.id = dogcarddeck[i].id; 
 
 
 			//dog profile image
-			var image = document.createElement("section");
+			var image = document.createElement("img");
 			image.setAttribute("class", "image");
+			
+			image.setAttribute('src', 'data:' +  dogcarddeck[i].images[0].mimetype + ';base64,' + dogcarddeck[i].images[0].buff);
+			
 
 			//dog name
 			var dogname = document.createElement("h");

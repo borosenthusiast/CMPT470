@@ -21,11 +21,13 @@ router.get('/adoptiondogprofile.js', function(req,res){
 	res.sendFile(path.join(__dirname + file_path + "adoptionprofilepage/adoptiondogprofile.js"));
 });
 
-/*router.get('../images/paw.png', function(req, res) {
-	res.sendFile(path.join(__dirname + file_path + "/images/paw.png"));
-});*/
+router.get('/images/paw.png', function(req, res) {
+	res.sendFile(path.join(__dirname + file_path + "images/paw.png"));
+});
 
-router.post('/loadDog', dogforadoptionController.loadDog); 
+router.post('/loadDog', middleware.checkToken, dogforadoptionController.loadDog); 
 
 
 module.exports = router;
+
+

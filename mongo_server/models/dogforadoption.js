@@ -20,7 +20,7 @@ Dogforadoption.createDogforadoption = async (doginfo) => {
 
 	try {
 		let dogforadoption_collection = await mongo_db.mongo_collection('DogForAdoption');
-		let count = await dogforadoption_collection.count();
+		let count = await dogforadoption_collection.countDocuments();
 
 		let result = await dogforadoption_collection.insertOne( 
 						{
@@ -69,7 +69,6 @@ Dogforadoption.loadDog = async (dogrequest)=>{
 	try{
 		let dogforadoption_collection = await mongo_db.mongo_collection('DogForAdoption');
 		let result = await dogforadoption_collection.findOne({id: converted_dogid});
-		console.log(result);
 		return result;
 	} catch(err) {
 		console.log(err);

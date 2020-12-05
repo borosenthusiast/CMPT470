@@ -9,9 +9,13 @@ function producecards(matcheduser){
 	usercard.setAttribute("class", "usercard");
 	matchedusers.appendChild(usercard);
 
-	var profileimage = document.createElement("section");
+	var profileimage = document.createElement("img");
 	profileimage.setAttribute("class", "profileimage");
 	usercard.appendChild(profileimage);	//read profile_img to view
+
+	var imgindata = matcheduser.profile_img;
+	profileimage.src = 'data:' + imgindata.mimetype + ';base64,' + imgindata.buff;
+
 
 	var description = document.createElement("section");
 	description.setAttribute("class", "description");
@@ -41,9 +45,12 @@ function prependcard(chosenuser){
 	usercard.setAttribute("class", "usercard");
 	matchedusers.prepend(usercard);
 
-	var profileimage = document.createElement("section");
+	var profileimage = document.createElement("img");
 	profileimage.setAttribute("class", "profileimage");
 	usercard.appendChild(profileimage);	//read profile_img to view
+
+	var imgindata = chosenuser.profile_img;
+	profileimage.src = 'data:' + imgindata.mimetype + ';base64,' + imgindata.buff;
 
 	var description = document.createElement("section");
 	description.setAttribute("class", "description");
@@ -184,12 +191,14 @@ function loadMessages(selectedChat){
 				imgmessage.appendChild(imgSection);
 
 
-				//var image = document.createElement("img");
-				//var img = messages[i].attachedimg;
-				//let mimetype = img.mimetype;
-				//let buffer = img.buff;
-				//image.setAttribute('src', 'data:' + mimetype + ';base64,' + buffer);
-				//imgSection.appendChild(image);
+
+				var image = document.createElement("img");
+				image.setAttribute("class", "imageinmessage");
+				var img = messages[i].attachedimg;
+				image.src = 'data:' + img.mimetype + ';base64,' + img.buff;
+
+				imgSection.appendChild(image);
+				
 
 				if (messages[i].targetuser == parseInt(selectedChat,10)){
 					imgmessage.style.float = "right";

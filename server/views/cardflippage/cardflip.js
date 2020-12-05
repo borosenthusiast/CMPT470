@@ -54,7 +54,9 @@ window.onload = function(){
 				var img = document.createElement("img");
 				imgSection.appendChild(img);
 				img.setAttribute("class", "image");
-				//img.src = "";
+				
+				var profile_img = carddeck[i].profile_img;
+				img.src = 'data:' + profile_img.mimetype + ';base64,' + profile_img.buff;
 		
 
 				var username = document.createElement("p");

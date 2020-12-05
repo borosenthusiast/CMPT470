@@ -1,3 +1,4 @@
+var fileHandler = require('../fileHandler.js');
 var Dogforadoption = require('../models/dogforadoption.js');
 
 exports.getAlldogs = async (req,res) =>{
@@ -20,7 +21,15 @@ exports.getAlldogs = async (req,res) =>{
 	}
 }
 
-exports.submitDogforadoption = async (req, res) => {	
+exports.submitDogforadoption = async (req, res) => {
+	console.log("in dogfor adoption controller");
+	console.log(req.files.length);
+	for (var i = 0; i < req.files.length; i ++){
+		let img_dir = req.files[i].destination + req.files[i].filename;
+		req.files[i].buff = fileHandler.img2Base64(img_dir);
+		fileHandler.deleteFile(img_dir);
+	}
+
 	var dogforadoption = new Dogforadoption ({
 		name: req.body.name,
 		age: req.body.age,
@@ -28,7 +37,7 @@ exports.submitDogforadoption = async (req, res) => {
 		gender: req.body.gender,
 		breed: req.body.breed,
 		description: req.body.description,
-		dogimgs: req.files,
+		dogimgs: req.files, //buffer should exist in img object
 		agencyName: req.body.agencyName,
 		location: req.body.location,
 		website: req.body.website,
