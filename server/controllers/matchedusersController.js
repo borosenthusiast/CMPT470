@@ -40,9 +40,11 @@ exports.newmessage = async(req,res) =>{
 	console.log(req.body.targetuser);
 	console.log(parseInt(req.body.targetuser,10));
 
-	let img_dir = req.file.destination + req.file.filename; 
-	req.file.buff = fileHandler.img2Base64(img_dir);
-	fileHandler.deleteFile(img_dir);
+	if (req.file !=null){
+		let img_dir = req.file.destination + req.file.filename; 
+		req.file.buff = fileHandler.img2Base64(img_dir);
+		fileHandler.deleteFile(img_dir);	
+	}
 
 	const convertedTargetuser = parseInt(req.body.targetuser,10);
 
