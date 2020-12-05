@@ -6,9 +6,16 @@
   </head>
 <body>
 
-<h1>Edit pet profile</h1>
+        <nav>
+      <nav id="navbar">
+      <h id="appname">MATCHPAW</h>
+      <h id="processname">HELPING YOU GET STARTED</h>
+    </nav>
+
+
 
 <form id="petForm" action="/pets" method="POST" enctype="multipart/form-data">
+  <h1>Edit pet profile</h1>
   <div class="form-group">
     <label for="name">Upload Image of Pet:</label>
      <input type="file" accept="image/*" name="petpic" id="petpic">
@@ -30,9 +37,10 @@
   <button class="petProfileUpdate">Update</button>
 </form>
 
-<!--
-<p><a href="/users/{{username}}" target="_blank">View your profile</a></p>
--->
+     <footer>
+            <p style="position: absolute;">menu and direction to aboutus</p>
+            <p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+      </footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/petprofile/petprofile.js"></script>

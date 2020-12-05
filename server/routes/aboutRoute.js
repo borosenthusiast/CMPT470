@@ -11,6 +11,11 @@ router.get('/about.css', function(req, res) {
     res.sendFile(path.join(__dirname + file_path + "aboutuspage/about.css"));
 });
 
+router.get('/about.js', function(req,res){
+	res.sendFile(path.join(__dirname + file_path + "aboutuspage/about.js"));
+});
+
+
 router.get('/images/home2Cropped.jpg', function(req, res) {
     res.sendFile(path.join(__dirname + file_path + "images/home2Cropped.jpg"));
 });

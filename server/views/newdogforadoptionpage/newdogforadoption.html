@@ -9,9 +9,22 @@
 	</head>
 	<body>
 		<nav id="navbar">
-			<h id="appname">MATCHPAW</h>
-			<h id="processname">NEW DOG FOR ADOPTION</h>
+			<table id="headertable" cellspacing="15px">
+				<td><a href="/cardflip" id="appname"><h>MATCHPAW</h></a></td>
+				<td><h id="processname">NEW DOG FOR ADOPTION</h></td>
+			</table>
+			<table id="navitable" cellspacing="5px">
+				<td><a href="/about">ABOUT</a></td>
+				<td><a href="/adoption">ADOPT</a></td>
+				<td><a href="/dogforadoption">SHELTER</a></td>
+				<td><a onclick="userprofile();">PROFILE</a></td>
+				<td><a href="/matchedusers">MATCHES</a></td>
+				<td><p id=matchalerts></p></td>
+				<td><a href="/">SIGN OUT</a></td>
+			</table>
+
 		</nav>
+
 		<main>
 			<section id="pageheader">
 				<p style="margin:0; font-size: 30px; font-weight: bold; color:#7b6db6;">INTRODUCE US TO THE NEW FRIEND</p>

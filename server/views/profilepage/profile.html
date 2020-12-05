@@ -7,8 +7,11 @@
       <script src="http://code.jquery.com/jquery-latest.js"></script>
   </head>
 <body>
-
-<h1>Edit your profile</h1>
+      <nav>
+      <nav id="navbar">
+      <h id="appname">MATCHPAW</h>
+      <h id="processname">HELPING YOU GET STARTED</h>
+    </nav>
 <!--
 <form action="/upload" method="post" enctype="multipart/form-data">
         <label for="name">Upload Your Image:</label>
@@ -16,6 +19,7 @@
 </form>
 -->
 <form id="userForm" action="/users" method="POST" enctype="multipart/form-data">
+  <h1>Edit your profile</h1>
   <div class="form-group">
     <label for="name">Upload Your Image:</label>
     <input type="file" accept="image/*" name="userpic" id="userpic">
@@ -29,10 +33,10 @@
   <button class="userProfileUpdate">Update</button>
 </form>
 
-
-<!--
-<p><a href="/users/{{username}}" target="_blank">View your profile</a></p>
--->
+     <footer>
+            <p style="position: absolute;">menu and direction to aboutus</p>
+            <p onclick="autoscrollTop()" style="position: absolute; right: 10px; font-size: 11px;">TOP</p>
+      </footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/profile/profile.js"></script>

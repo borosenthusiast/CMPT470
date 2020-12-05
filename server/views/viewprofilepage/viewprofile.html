@@ -8,10 +8,22 @@
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 	</head>
 	<body>
-		<nav id="navbar">
-			<h id="appname">MATCHPAW</h>
-			<h id="processname">Timothy318 PROFILE</h>
-		</nav>
+        <nav id="navbar">
+            <table id="headertable" cellspacing="15px">
+                <td><a href="/cardflip" id="appname"><h>MATCHPAW</h></a></td>
+                <td><h id="processname">Loading PROFILE</h></td>
+            </table>
+            <table id="navitable" cellspacing="5px">
+                <td><a href="/about">ABOUT</a></td>
+                <td><a href="/adoption">ADOPT</a></td>
+                <td><a href="/dogforadoption">SHELTER</a></td>
+                <td><a onclick="userprofile();">PROFILE</a></td>
+                <td><a href="/matchedusers">MATCHES</a></td>
+                <td><p id=matchalerts></p></td>
+                <td><a href="/">SIGN OUT</a></td>
+            </table>
+
+        </nav>
 	<main>
 <div class="container">
 <div id="content" class="content p-0">
@@ -20,12 +32,12 @@
 
         <div class="profile-header-content">
             <div class="profile-header-img">
-                <img id="profile_img" src="../images/paw.png" alt="" />
+                <img id="profile_img" src="" alt="" />
             </div>
 
             <div class="profile-header-info">
-                <h4 id="first_last_name" class="m-t-sm">Timothy Lam</h4>
-                <p id="username_tag" class="m-b-sm">@Timothy318</p>
+                <h4 id="first_last_name" class="m-t-sm">Loading</h4>
+                <p id="username_tag" class="m-b-sm">@Loading</p>
             </div>
         </div>
     </div>
@@ -46,7 +58,7 @@
                                     <td class="field">Username</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b id="username">Timothy318</b> 
+                                            <b id="username">Loading</b> 
                                         </div>
                                     </td>
                                 </tr>
@@ -54,7 +66,7 @@
                                     <td class="field">Last Name</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b id="last_name">Lam</b>
+                                            <b id="last_name">Loading</b>
                                         </div>
                                     </td>
                                 </tr>
@@ -62,7 +74,7 @@
                                     <td class="field">First Name</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b id="first_name">Timothy</b> 
+                                            <b id="first_name">Loading</b> 
                                         </div>
                                     </td>
                                 </tr>
@@ -70,14 +82,14 @@
                                     <td class="field">Email</td>
                                     <td class="value">
                                         <div class="m-b-5">
-                                            <b id="email">timothy123@gmail.com</b> 
+                                            <b id="email">Loading</b> 
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Bio</td>
                                     <td id="bio" class="value">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                                        Loading
                                     </td>
                                 </tr>
                             </tbody>
@@ -91,19 +103,22 @@
                             <tbody>
                                 <tr>
                                     <td class="field">Pet Picture</td>
-                                    <td ><img id="pet_image" src="../images/paw.png" alt="" />
+                                    <td >
+                                        <div class="pet-img">
+                                            <img id="pet_image" src="" alt="" />
+                                        </div>
                                     </td>
                                 </tr>                        
                                 <tr>
                                     <td class="field">Name</td>
                                     <td id="pet_name" class="value">
-                                        Buddy
+                                        Loading
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="field">Age</td>
                                     <td id="pet_age" class="value">
-                                        3
+                                        Loading
                                     </td>
                                 </tr>
                                 <tr>
@@ -121,7 +136,7 @@
                                 <tr>
                                     <td class="field">About</td>
                                     <td id="pet_description" class="value">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                                        Loading
                                     </td>
                                 </tr>
                             </tbody>
