@@ -65,7 +65,7 @@ User.create = async(user) => {
 
 User.getAllUsers = async() => {
 	let query = await user_db.query("SELECT id, username, first_name, last_name, email, account_type FROM user");
-	console.log(query);
+	//console.log(query);
 	return query;
 }
 

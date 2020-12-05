@@ -27,7 +27,8 @@ exports.signUp = async (req, res) => {
 						});
 
 	try {
-		let newUser = await User.create(user); 
+		let n = await User.create(user); 
+		let newUser = await User.getUserbyUsername(req.body.username);
 		let token = jwt.sign({id: newUser.id}, // issue a token upon completing registration
 			config.secret, {
 				expiresIn: '2h'
@@ -151,30 +152,39 @@ exports.getUserById = async (req, res) => {
 }
 
 exports.updateUser = async (req, res) => {
-	try {
-		id = req.params.id;
-		console.log(id);
-		let update_fields = {
-					last_name: req.body.last_name,
-					first_name: req.body.first_name,
-					username:  req.body.username,
-					email: req.body.email
-				};
-		let result = await User.updateUser(id, update_fields);
-		console.log(result);
-		if(result.status === "success") {
-			res.status(200).json({
-				status: "success",
-				message: "user info updated"
-			});
-		} else {
-			res.status(200).json({
-				status: "failed",
-				message: "user info updated failed"
-			});
+	let id = req.params.id;
+	if (req.account_type === account_type.ADMIN || req.uid == id) {
+		try {
+			id = req.params.id;
+			console.log(id);
+			let update_fields = {
+						last_name: req.body.last_name,
+						first_name: req.body.first_name,
+						username:  req.body.username,
+						email: req.body.email
+					};
+			let result = await User.updateUser(id, update_fields);
+			console.log(result);
+			if(result.status === "success") {
+				res.status(200).json({
+					status: "success",
+					message: "user info updated"
+				});
+			} else {
+				res.status(200).json({
+					status: "failed",
+					message: "user info updated failed"
+				});
+			}
+		} catch (err) {
+			console.log(err);
+			res.status(500).send(err);
 		}
-	} catch (err) {
-		console.log(err);
-		res.status(500).send(err);
+	}
+	else {
+		res.status(403).json({
+			status: "failed",
+			message: "Forbidden to edit this user's profile"
+		});
 	}
 }

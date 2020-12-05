@@ -3,9 +3,9 @@ const config = require('./config.js');
 var User = require('./models/user.js')
 
 const account_type = {
-	ADMIN: 'Admin',
-	ADOPT: 'Adopt',
-	USER: 'User'
+    ADMIN: 'Admin',
+    ADOPT: 'Adopt',
+    USER: 'User'
 };
 
 const getUser = async (id) => {
@@ -16,7 +16,7 @@ const getUser = async (id) => {
 const checkToken = (req, res, next) => {
     console.log('tokencheck');
     if (typeof req.cookies !== "undefined") {
-        token = req.cookies['Authentication'];
+        var token = req.cookies['Authentication'];
     }
     //console.log(token);
     if (token && typeof token !== "undefined") {

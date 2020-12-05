@@ -4,6 +4,13 @@ var file_path      = "/../views/";
 var userController = require('../controllers/userController');
 var profileController = require('../controllers/profileController');
 var multer = require('multer');
+var middleware = require('../middleware.js');
+
+const account_type = {
+	ADMIN: 'Admin',
+	ADOPT: 'Adopt',
+	USER: 'User'
+};
 
 
 router.get('/userlist.css', function(req,res) {
@@ -30,8 +37,17 @@ router.get('/view/:id', function(req,res) {
 	res.sendFile(path.join(__dirname + file_path + "viewprofilepage/viewprofile.html"));
 });
 
-router.get('/view/:id/edit', function(req, res) {
-	res.sendFile(path.join(__dirname + file_path + "editprofilepage/editprofile.html"));
+router.get('/view/:id/edit', middleware.checkToken, function(req, res) {
+	let id = req.params.id;
+	if (req.account_type === account_type.ADMIN || req.uid == id) { // either the user's own profile or an administrator
+		res.sendFile(path.join(__dirname + file_path + "editprofilepage/editprofile.html"));
+	}
+	else {
+		res.status(403).json({
+			status: false,
+			message: "403 Forbidden."
+		});
+	}
 });
 
 router.get('/editprofile.css', function(req, res) {
@@ -51,10 +67,10 @@ router.get('/view/:id/userinfo', userController.getUserById);
 
 router.get('/view/:id/profileinfo', profileController.getProfileById);
 
-router.post('/view/:id/edit/userinfo_submit', upload_userinfo.none() ,userController.updateUser);
+router.post('/view/:id/edit/userinfo_submit', middleware.checkToken, upload_userinfo.none() , userController.updateUser);
 
 //router.post('/view/:id/edit/profileinfo_submit', upload_profileInfo.array('files') ,profileController.updateProfile);
 
-router.post('/view/:id/edit/profileinfo_submit', upload_profileInfo.fields([{name:'profile_img', maxCount:1}, {name:'pet_img', maxCount:1}]) ,profileController.updateProfile);
+router.post('/view/:id/edit/profileinfo_submit', middleware.checkToken, upload_profileInfo.fields([{name:'profile_img', maxCount:1}, {name:'pet_img', maxCount:1}]) ,profileController.updateProfile);
 
 module.exports = router;

@@ -11,10 +11,13 @@ var app = express();
 var indexRoute = require('./routes/indexRoute');
 var registerRoute = require('./routes/registerRoute');
 var profileRoute = require('./routes/profileRoute');
-var viewprofileRoute = require('./routes/viewprofileRoute');
 var petProfileRoute = require('./routes/petProfileRoute');
-var adminRoute      = require('./routes/adminRoute');
-var aboutRoute      = require('./routes/aboutRoute');
+var dogforadoptionRoute = require('./routes/dogforadoptionRoute');
+var adoptionRoute = require('./routes/adoptionRoute');
+var matchedusersRoute = require('./routes/matchedusersRoute');
+var adoptionprofileRoute = require('./routes/adoptionprofileRoute');
+var viewprofileRoute = require('./routes/viewprofileRoute');
+var adminRoute = require('./routes/adminRoute');
 
 app.set('view engine','ejs');
 app.use(bodyParser.json());
@@ -31,8 +34,15 @@ app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
 
-app.use('/profile', profileRoute); 
+app.use('/profile', middleware.checkToken, profileRoute);
 
+app.use('/dogforadoption', dogforadoptionRoute);
+
+app.use('/adoption', adoptionRoute);
+
+app.use('/matchedusers', matchedusersRoute);
+
+app.use('/adoptionprofile', adoptionprofileRoute);
 
 // use middleware checktoken for protected pages that require authentication from the user.
 

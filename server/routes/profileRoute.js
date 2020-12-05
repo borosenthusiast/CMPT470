@@ -21,7 +21,8 @@ router.get('/profile.js', function(req,res) {
 var upload = multer({dest: './uploads/'});
 
 
-router.post('/submit', upload.single('file'), profileController.submitProfile);
+router.post('/submit', middleware.checkToken, upload.single('file'), profileController.submitProfile);
 
+router.get('/getUID', profileController.getUID);
 
 module.exports = router;
