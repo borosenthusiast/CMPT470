@@ -13,9 +13,7 @@ exports.submitProfile = async (req, res) => {
 		userId: req.uid,
 		bio: req.body.bio,
 		profile_img:  req.file,
-		pet: null,
-		
-		addedlist: [Number],
+		pet: null
 	});
 
 	try {

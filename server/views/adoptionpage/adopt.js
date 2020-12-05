@@ -1,16 +1,15 @@
-var filterstat = ["oldest"];
+var filterstat = ["newest","all","all","all"];
 
-
-function dogcard(name, images, gender, age, monthyear, postdate, location, id){ //input other attributes as well 
-	this.name = name; //unique key
-	
-	this.images = images;
+function dogcard(id){ //input other attributes as well 
+	this.id = id; //unique key
+	/*
+	this.image = image;
+	this.name = name;
 	this.gender = gender;
+	this.weight = weight;
 	this.age = age;
-	this.monthyear = monthyear;
-	this.postdate = postdate;
 	this.location = location;
-	this.id = id;
+	this.postdate = postdate;*/ 
 }
 
 function genderdrop(){
@@ -27,62 +26,46 @@ function weightpullup(){
 }
 
 
-
+function logout() {
+	$.ajax({
+		url: "/logout",
+		type: "GET",
+		error: function(err) {
+			console.log("Failed to log out with error: ", err)
+		},
+		success: function(data) {
+			localStorage.removeItem('token');
+			sessionStorage.removeItem('token');
+			window.location = data.redirect;
+		}
+	});
+  }
 
 function deck(filterstat){
-	$.ajax({
-    	url: "/adoption/alldogs",
-    	type: "GET",
-    	headers: {"Authorization": localStorage.getItem('token')},
-  		}).done(function(data) {
-  			var allDogs = data;
-
-  		if (filterstat != undefined && filterstat[0] == "oldest" ){
-			allDogs = allDogs.sort(sortByDate);
+	/*
+	ajax to get dog table according to filterstat (ORDER BY)
+	jasonquery = filterstat;
+	*/
 	
-		} 
-
-		
-		var dogcards =[];
-		for (var i = 0; i < allDogs.length;i++){
-			dogcards.push(new dogcard(allDogs[i].name, 
-									allDogs[i].dogimgs,
-									allDogs[i].gender,
-									allDogs[i].age,
-									allDogs[i].monthyear,
-									allDogs[i].time,
-									allDogs[i].location,
-									allDogs[i].id
-						 ));	
-		}
-		
-		updatecards(dogcards);
+	this.ids = ['1','3','4','5','6','7'];	/* 6 demo id */
+	if (filterstat != undefined && filterstat[0] == "oldest" ){
+		this.ids.sort(function(a,b){return b-a});
+	} 
 
 
-  	});
-
-
-
+	/*create cards and insert to deck*/
+	var dogcards =[];
+	for (var i = 0; i < this.ids.length;i++){
+		dogcards.push(new dogcard(this.ids[i]));	
+	}
+	return dogcards;
 }
 
 //use this deck to pull dog attributes from db
-
-
-function sortByDate(a, b){
-	if ( a.time < b.time){
-		return 1;
-	}
-	if (a.time > b.time){
-		return -1;
-	}
-	return 0;
-}
-
-
+var dogcarddeck = new deck();	
 
 window.onload = function(){
-	var dogcarddeck = new deck();	
-	//updatecards(dogcarddeck);
+	updatecards(dogcarddeck);
 
 	
 }
@@ -95,19 +78,14 @@ function updatecards(dogcarddeck){
 			var dogcard = document.createElement("section");
 			dogcard.setAttribute("class", "dogcard");
 			posts.appendChild(dogcard);
-			dogcard.id = dogcarddeck[i].id; 
-
 
 			//dog profile image
-			var image = document.createElement("img");
+			var image = document.createElement("section");
 			image.setAttribute("class", "image");
-			
-			image.setAttribute('src', 'data:' +  dogcarddeck[i].images[0].mimetype + ';base64,' + dogcarddeck[i].images[0].buff);
-			
 
 			//dog name
 			var dogname = document.createElement("h");
-			var dognametext = document.createTextNode(dogcarddeck[i].name);
+			var dognametext = document.createTextNode(dogcarddeck[i].id);
 			dogname.appendChild(dognametext);
 			dogname.setAttribute("class", "dogname");
 
@@ -126,24 +104,20 @@ function updatecards(dogcarddeck){
 			doginfo section
 			*/
 			//dog profile
-
-
 			var dogprofile = document.createElement("p");
-			var profiletext = document.createTextNode( dogcarddeck[i].gender + " / "
-													+ dogcarddeck[i].age + " "
-													+ dogcarddeck[i].monthyear);
+			var profiletext = document.createTextNode("FEMALE / 3KG / 2 YEARS OLD");
 			dogprofile.appendChild(profiletext);
 			dogprofile.setAttribute("class", "dogprofile");
 
 			//dog location
 			var doglocation = document.createElement("p");
-			var locationtext = document.createTextNode(dogcarddeck[i].location);
+			var locationtext = document.createTextNode("BURNABY, BC");
 			doglocation.appendChild(locationtext);
 			doglocation.setAttribute("class", "doglocation");
 
 			//date posted
 			var dateposted = document.createElement("p");
-			var datetext = document.createTextNode(dogcarddeck[i].postdate);
+			var datetext = document.createTextNode("POSTED: NOV-13-2020");
 			dateposted.appendChild(datetext);
 			dateposted.setAttribute("class", "dateposted");
 
@@ -157,8 +131,7 @@ function updatecards(dogcarddeck){
 
 //click card send get request to load dog/adoption agency profile
 $(document).on('click', '.dogcard', function() {
-	localStorage.setItem("dogforadoption", this.id);
-	window.location.href = "/adoptionprofile";
+		console.log("clicked!");
 
 });
 
@@ -166,10 +139,10 @@ $(document).on('click', '.dogcard', function() {
 $("#tabbutton").click(function(){
 	console.log(filterstat);
 
-	deck(filterstat);
+	var newdeck = deck(filterstat);
 	//empty posts and reupdate
 	document.getElementById("adoptposts").innerHTML="";
-
+	updatecards(newdeck);
 });
 
 
@@ -188,7 +161,7 @@ $("#datefilter").click(function(){
 });
 
 
-/*function setgenderfilter(n){
+function setgenderfilter(n){
 	for (var i = 0; i < 3; i++){
 		$(".genderoption")[i].style.color="gray";
 		if ( i == n){
@@ -196,9 +169,9 @@ $("#datefilter").click(function(){
 			filterstat[1] = $(".genderoption")[i].id;
 		} 
 	}
-}*/
+}
 
-/*function setweightfilter(n){
+function setweightfilter(n){
 	for (var i = 0; i < 5; i++){
 		$(".weightoption")[i].style.color="gray";
 		if (i==n){
@@ -206,7 +179,7 @@ $("#datefilter").click(function(){
 			filterstat[2] = $(".weightoption")[i].id;
 		}
 	}
-}*/
+}
 
 function autoscrollTop(){
 	$('html, body').animate({scrollTop: '0px'}, 0);
