@@ -1,4 +1,3 @@
-/* image upload preview */
 $('#img').change(function () {
 	document.getElementById("imageTable").innerHTML="";
 	console.log(this.files.length);
@@ -29,41 +28,4 @@ $('#img').change(function () {
             reader.readAsDataURL(self.files[j])
         })(i, this);
     }
-});
-
-/*auto fill form with get request
-window.onload = function(){
-
-}*/
-
-$(document).ready(function() {
-    $('form').on('submit',function(event) {
-        event.preventDefault();
-   		
-   		let formData = new FormData(this);
-        //console.log("this is a form: ");
-        //console.log(formData.values());
-        var sentTime = new Date();
-        formData.append("time", sentTime);
-
-   		console.log(localStorage.getItem('token'));
-
-   		$.ajax({
-            url: "/dogforadoption/submit",
-            type: "POST",
-            headers: {"Authorization": localStorage.getItem('token')},
-            data: formData,
-            error : function(err) {
-                console.log('Error!', err)
-            },
-            success: function(data) {
-                console.log(data)
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-
-
-    });
 });
