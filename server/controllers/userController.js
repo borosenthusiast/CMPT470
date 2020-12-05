@@ -27,7 +27,8 @@ exports.signUp = async (req, res) => {
 						});
 
 	try {
-		let newUser = await User.create(user); 
+		let n = await User.create(user); 
+		let newUser = await User.getUserbyUsername(req.body.username);
 		let token = jwt.sign({id: newUser.id}, // issue a token upon completing registration
 			config.secret, {
 				expiresIn: '2h'
