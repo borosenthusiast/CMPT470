@@ -1,5 +1,4 @@
 
-
 /*after DB setup, pull 10-15 user profiles to put in array, insert as cards to html page*/
 /*for now, 4 demo cards*/
 
@@ -8,12 +7,29 @@ var addedlist = [];
 var matchlist = [];
 var subtractedlist = [];
 
+
+function logout() {
+	$.ajax({
+		url: "/logout",
+		type: "GET",
+		error: function(err) {
+			console.log("Failed to log out with error: ", err)
+		},
+		success: function(data) {
+			localStorage.removeItem('token');
+			sessionStorage.removeItem('token');
+			window.location = data.redirect;
+		}
+	});
+  }
+
+
+
 function card(data){
 	this.userId = data.userId;
 	this.username = data.username;
 	this.profile_img = data.profile_img; 
 }
-
 
 function builddeck(data){
 	var randomusers = data;
@@ -25,6 +41,7 @@ function builddeck(data){
 
     return cards;
 }
+
 
 
 window.onload = function(){
@@ -117,7 +134,6 @@ $(document).ready(function(){
 	});
 
 });
-
 
 function checkifmatch(id){
 	const reqData = {
@@ -237,4 +253,5 @@ $(document).ready(function(){
 		cardOnTop.style.backgroundColor = "#D3D1CC";
 	});
 })
+
 

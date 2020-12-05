@@ -27,9 +27,5 @@ app.use('/dogforadoption', dogforadoptionQueryRoute);
 
 var matchedusersQueryRoute = require('./routes/matchedusersQueryRoute');
 app.use('/matchedusers', matchedusersQueryRoute);
-	
-
-
-
 
 app.listen(8081);

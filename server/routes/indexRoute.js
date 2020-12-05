@@ -28,4 +28,6 @@ router.get('/images/home2.jpg', function(req, res) {
 
 router.post('/login', userController.logIn);
 
+router.get('/logout', userController.logout);
+
 module.exports = router;
