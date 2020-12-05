@@ -16,6 +16,8 @@ var dogforadoptionRoute = require('./routes/dogforadoptionRoute');
 var adoptionRoute = require('./routes/adoptionRoute');
 var matchedusersRoute = require('./routes/matchedusersRoute');
 var adoptionprofileRoute = require('./routes/adoptionprofileRoute');
+var viewprofileRoute = require('./routes/viewprofileRoute');
+var adminRoute = require('./routes/adminRoute');
 
 app.set('view engine','ejs');
 app.use(bodyParser.json());
