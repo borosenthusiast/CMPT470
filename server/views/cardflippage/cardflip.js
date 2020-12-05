@@ -31,6 +31,25 @@ function card(data){
 	this.profile_img = data.profile_img; 
 }
 
+
+function userprofile(){
+	$.ajax({
+
+        url: "/profile/getUID",
+        type: "GET",
+        dataType: 'json',
+        error : function(err) {
+            console.log('Error!', err)
+        },
+        success: function(data) {
+        	window.location.href = "/admin/view/" + data.uid; 
+        }
+    });	
+
+}
+
+
+
 function builddeck(data){
 	var randomusers = data;
     var cards = [];
@@ -41,7 +60,6 @@ function builddeck(data){
 
     return cards;
 }
-
 
 
 window.onload = function(){
