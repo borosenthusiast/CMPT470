@@ -58,6 +58,7 @@ $(document).ready(function() {
             },
             success: function(data) {
                 console.log(data)
+                window.location.href = "/adoption";
             },
             cache: false,
             contentType: false,
