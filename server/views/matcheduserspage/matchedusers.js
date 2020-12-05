@@ -44,6 +44,7 @@ function prependcard(chosenuser){
 	var usercard = document.createElement("section");
 	usercard.setAttribute("class", "usercard");
 	matchedusers.prepend(usercard);
+	usercard.style.backgroundColor = "#CABFDA";
 
 	var profileimage = document.createElement("img");
 	profileimage.setAttribute("class", "profileimage");
