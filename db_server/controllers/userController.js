@@ -43,7 +43,8 @@ exports.getUserbyId = async (req, res) => {
 		let found_user = await User.getUserbyId(req.params.id); 
 		res.send(found_user);
 	} catch (err) {
-
+		console.log("Error from getUserbyId from userController.js");
+		res.status(500).send(err);
 	}
 }
 

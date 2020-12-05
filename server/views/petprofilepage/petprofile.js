@@ -38,8 +38,8 @@ $(document).ready(function() {
                 console.log('Error!', err)
             },
             success: function(data) {
-                alert("he")
                 console.log(data)
+                window.location.href = "/cardflip"
             },
             cache: false,
             contentType: false,
