@@ -1,6 +1,12 @@
 var fileHandler = require('../fileHandler.js');
 var Profile = require('../models/profile.js');
 
+const account_type = {
+	ADMIN: 'Admin',
+	ADOPT: 'Adopt',
+	USER: 'User'
+};
+
 exports.submitProfile = async (req, res) => {
 	// console.log(req.body.bio);
 	// console.log(req.file);
