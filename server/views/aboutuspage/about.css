@@ -107,9 +107,15 @@ p {
 	background-color: #D3D1CC;
 }
 
+.info{
+	position: relative;
+	left: 5%;
+	width: 90%;
+}
+
 /* Footer */
 footer{
-    position: sticky;  /*changed this from fixed to help with scrolling */
+    position: fixed;  /*changed this from fixed to help with scrolling */
 	bottom: 0;
 	overflow: hidden;
 	background-color:#a79ae0;
