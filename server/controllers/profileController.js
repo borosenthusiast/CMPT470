@@ -16,10 +16,12 @@ exports.submitProfile = async (req, res) => {
 	fileHandler.deleteFile(img_dir);
 
 	var profile = new Profile({
-		userId: req.uid,
+		userId: req.decoded.id,
 		bio: req.body.bio,
 		profile_img:  req.file,
-		pet: null
+		pet: null,
+		
+		addedlist: [Number],
 	});
 
 	try {
