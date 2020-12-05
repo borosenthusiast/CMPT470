@@ -31,6 +31,12 @@ function card(data){
 	this.profile_img = data.profile_img; 
 }
 
+function func(){
+	//this.userId = data.userId;	
+	//var userId  = data.userId;
+	//window.location.href = "/admin/view/" + userId;
+} 
+
 function builddeck(data){
 	var randomusers = data;
     var cards = [];
