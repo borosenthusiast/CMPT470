@@ -73,7 +73,7 @@ exports.addPetProfile = async(req, res) => {
 exports.getProfileById = async (req, res) => {
 	let id = parseInt(req.params.id);
 	let query_result = await Profile.getProfileById(id);
-	console.log(query_result);
+	//console.log(query_result);
 	if(query_result !== null) {
 		res.status(200).json({
 			success: true,
@@ -93,8 +93,8 @@ exports.updateProfile = async (req, res) => {
 	let id = parseInt(req.params.id);
 	let update_field = req.body;
 	let update_result = await Profile.updateProfile(id, update_field);
-	console.log("here");
-	console.log(update_result);
+	//console.log("here");
+	//console.log(update_result);
 	if(update_result === 1) {
 			res.status(200).json({
 				success: true,
