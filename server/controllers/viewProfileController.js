@@ -10,6 +10,8 @@ exports.viewProfile = async (req, res) => {
     role = req.account_type;
     userid = req.uid;
     target_page_id = req.tid;
+    console.log(role);
+    console.log("uid is " + userid);
 
     if (typeof role === "undefined" || typeof userid === "undefined" || typeof target_page_id === "undefined") {
         console.log("invalid viewprofile input parameters");

@@ -43,6 +43,44 @@ exports.getUserbyId = async (req, res) => {
 		let found_user = await User.getUserbyId(req.params.id); 
 		res.send(found_user);
 	} catch (err) {
+		console.log("Error from getUserbyId from userController.js");
+		res.status(500).send(err);
+	}
+}
 
+exports.getAllUsers = async (req, res) => {
+	try {
+		let userlist = await User.getAllUsers();
+		res.send(userlist);
+	} catch (err) {
+		console.log("Error from getAllUsers from userController.js");
+		res.status(500).send(err);
+	}
+}
+
+exports.updateUser = async (req, res) => {
+	//console.log(req.body.last_name);
+	try {
+		let id = req.params.id;
+		let update_fields = {
+					last_name: req.body.last_name,
+					first_name: req.body.first_name,
+					username:  req.body.username,
+					email: req.body.email
+				};
+		let update_result = await User.updateUser(id, update_fields);
+		if(update_result === 1) {
+			res.status(200).json({
+				status: "success",
+				message: "updated user info"
+			});
+		} else {
+			res.status(200).json({
+				status: "failed",
+				message: "updated user info"
+			});
+		}
+	} catch (err) {
+		res.status(500).send(err);
 	}
 }

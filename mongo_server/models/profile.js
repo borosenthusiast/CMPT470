@@ -231,6 +231,59 @@ Profile.getaddedlist = async(request) => {
 
  };
 	
+Profile.getProfileById = async (userId) => {
+	try {
+		//console.log(typeof userId);
+		let profile_collection = await mongo_db.mongo_collection('ProfilePage');
+		let query = {userId: userId};
+		//let projection = {_id: 1, userId: 1, pet:1};
+		let result = await profile_collection.findOne(query);
+		return result;
+	} catch (err) {
+		console.log(err);
+	}
+}
+
+Profile.updateProfile = async (id, data) => {
+	try {
+		let profile_collection = await mongo_db.mongo_collection('ProfilePage');
+		let filter = {userId: id};
+		let options = {upsert: false};
+		
+		updateFields = {
+						bio: data.bio,
+						"pet.petName": data.pet_name,
+						"pet.age": data.pet_age,
+					    "pet.description": data.pet_description,
+						
+		}
+		
+
+		if(data.files !== null) {
+				for(var key in data.files) {
+					console.log(key);
+					if(key === 'profile_img') {
+						updateFields.profile_img = data.files[key];
+					}
+
+					if(key === 'pet_img') {
+						console.log(data.files[key]);
+						updateFields["pet.petImage"] = data.files[key];
+					}
+				}	
+		} 
+
+		let updateDoc = {
+			$set: updateFields
+		}
+
+		//updateDoc
+
+		let result = await profile_collection.updateOne(filter, updateDoc, options);
+		return result.modifiedCount;
+	} catch (err) {
+		console.log(err);
+	}
+}
 
 module.exports = Profile;
-

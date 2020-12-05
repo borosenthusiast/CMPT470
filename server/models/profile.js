@@ -16,6 +16,7 @@ Profile.create = async (profile) => {
 	return response.data;
 }
 
+
 Profile.getTenRandom = async (profile)=>{
 	let response = await axios.post('http://localhost:8081/profile/tenrandomprofiles', profile);
 	/*response.data is random users in array*/
@@ -39,6 +40,16 @@ Profile.checkifmatch = async (ids) => {
 
 Profile.getmatchedusers = async(userid) => {
 	let response = await axios.post('http://localhost:8081/profile/getmatchedusers', userid);
+    return response.data;
+}
+
+Profile.getProfileById = async (id) => {
+	let response = await axios.get('http://localhost:8081/profile/getprofilebyid/' + id);
+	return response.data;
+}
+
+Profile.updateProfile = async (id, data) => {
+	let response = await axios.post('http://localhost:8081/profile/updateprofile/' + id, data);
 	return response.data;
 }
 

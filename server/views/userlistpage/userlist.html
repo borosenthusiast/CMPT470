@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Fetch using MySQL and Node.js</title>
-  <link rel="stylesheet" type="text/css" href="/userlist/userlist.css">
+  <link rel="stylesheet" type="text/css" href="/admin/userlist.css">
   <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body> 
@@ -26,29 +26,30 @@
             <th>Last Name</th>
             <th>Email Address</th>
             <th>Account Type</th>
+            <th>View</th>
         </tr>
         </thead>
-        <%
+        <!-- <%
         if(userData.length!=0){
         var i=1;
         userData.forEach(function(data){
-        %>
+        %> -->
         <tbody id="userTable">
-        <tr>
+        <!-- <tr>
             <td><%=i; %></td>
             <td class="username"><%=data.username %></td>
             <td><%=data.first_name %></td>
             <td><%=data.last_name %></td>
             <td><%=data.email %></td>
             <td><%=data.account_type %></td>
-        </tr>
+        </tr> -->
         </tbody>
-        <%  i++; }) %>
+        <!-- <%  i++; }) %>
         <% } else{ %>
             <tr>
                 <td colspan="7">No User Found</td>
             </tr>
-        <% } %>
+        <% } %> -->
     </table>
     </main>
 
@@ -59,5 +60,5 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/userlist/userlist.js"></script>
+<script src="/admin/userlist.js"></script>
 </html>

@@ -26,8 +26,17 @@ User.getUserbyUsername = async(username) => {
 
 User.getUserbyId = async(id) => {
 	let response = await axios.get('http://localhost:8080/users/getusersbyid/' + id);
-	return response.data
+	return response.data;
 }
 
+User.getAllUsers = async() => {
+	let response = await axios.get('http://localhost:8080/users/getallusers');
+	return response.data;
+}
+
+User.updateUser = async(id, data) => {
+	let response = await axios.post('http://localhost:8080/users/updateuser/' + id, data);
+	return response.data;
+}	
 
 module.exports = User;
