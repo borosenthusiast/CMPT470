@@ -7,6 +7,32 @@ const account_type = {
 	USER: 'User'
 };
 
+exports.getUID = async (req, res) => {
+	console.log("sending uid");
+	try {
+		id = req.uid;
+		if (typeof id !== "undefined") {
+			res.status(200).json({
+				success: true,
+				uid: id,
+				message: "Success"
+			});
+		}
+		else {
+			res.status(500).json({
+				success: false,
+				message: "Failed to get UID"
+			});
+		}
+	}
+	catch (err) {
+		res.status(400).json({
+			success: false,
+			message: 'Failed to get UID'
+		});
+	}
+}
+
 exports.submitProfile = async (req, res) => {
 	// console.log(req.body.bio);
 	// console.log(req.file);
