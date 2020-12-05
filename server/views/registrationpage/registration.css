@@ -1,7 +1,7 @@
 body{
 	margin:0;
 	font-family: sans-serif;
-	background-color:#a79ae0;
+	
 }
 
 #navbar{
@@ -30,7 +30,92 @@ body{
 	font-size: 16px;
 }
 
-#formsection{
-	border: 1px solid black;
-	
+
+/*-------------------------------------*/
+input{
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid black;
+  height: 50px;
+  width: 300px;
 }
+
+legend{
+  font-size: 30px;
+  font-weight: 700;
+  font-family: Arial;
+  color: #8a307f;
+}
+
+form{
+  background-color:#a79ae0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  width: 400px;
+  margin-top:50px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+button{
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid black;
+  height: 50px;
+  width: 200px;
+  color:white;
+  background-color: #800080;
+}
+
+
+#first_name, #last_name,#email,#username,#password{
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial;
+  color:  #a79ae0;
+}
+
+
+select{
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid black;
+  height: 50px;
+}
+
+h1{
+
+	font-size: 1.5em;
+    color: white;
+    margin-top: 0px;
+}
+
+label{
+	font-size: 1.5em;
+	color: white;
+}
+
+main{
+margin-bottom:65px;
+}
+
+
+footer{
+	position: fixed;
+	bottom: 0;
+	overflow: hidden;
+	background-color:#a79ae0;
+	padding: 0;
+	height: 65px;
+	width:100%;
+	color:white;
+}
+
+
