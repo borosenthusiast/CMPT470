@@ -6,22 +6,68 @@ body{
 main{
     margin-bottom:65px;
 }
+
 #appname{
-	position: absolute;
-	left:3%;
-	top: 20px;
-	font-size: 25px;
+    font-size: 25px;
 }
 
+#processname{
+    /*right:3%;
+    top: 26px;*/
+    font-size: 16px;
+
+}
+
+#headertable{
+    position: relative;
+    float: left;
+    height: 100%;
+
+}
+
+#navitable{
+    position: relative;
+    float:right;
+    right: 15px;
+    height: 100%;
+    color: #352288;
+}
+
+#headertable a{
+    text-decoration: none;
+    color:white;
+}
+
+#navitable a{
+    text-decoration: none;
+    color: #352288;
+}
+
+#navitable a:hover{
+    
+    color: white;
+}
+
+#matchalerts{
+    padding: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0; 
+    border-radius: 50px;
+    color: white;
+    background-color: red;
+}
+
+
 #navbar{
-	list-style-type: none;
-	margin: 0;
-	overflow: hidden;
-	background-color:#a79ae0;
-	padding: 0;
-	height: 70px;
-	color:white;
-	font-weight: 600;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color:#a79ae0;
+    padding: 0;
+    height: 70px;
+    color:white;
+    font-weight: 600;
 }
 
 #pageheader{
@@ -33,12 +79,7 @@ main{
 	text-align: center;
 }
 
-#processname{
-	position: absolute;
-	right:3%;
-	top: 26px;
-	font-size: 16px;
-}
+
 
 footer{
 	position: fixed;
@@ -238,4 +279,20 @@ body .fc-widget-header a {
 
 .m-l-10 {
     cursor:pointer; 
+}
+
+.pet-img img{
+     max-width: 100%;
+     position: relative; 
+}
+.pet-img{
+    width: 30.5rem;
+    height: 20.5rem;
+    overflow: hidden;
+    z-index: 10;
+    padding: 0.1875rem; 
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    background: #fff;
 }
