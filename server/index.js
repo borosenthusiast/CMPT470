@@ -34,7 +34,7 @@ app.use('/', indexRoute);
 
 app.use('/register', registerRoute);
 
-app.use('/profile', middleware.checkToken, profileRoute); 
+app.use('/profile', middleware.checkToken, profileRoute);
 
 app.use('/dogforadoption', dogforadoptionRoute);
 

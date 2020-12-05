@@ -23,5 +23,6 @@ var upload = multer({dest: './uploads/'});
 
 router.post('/submit', middleware.checkToken, upload.single('file'), profileController.submitProfile);
 
+router.get('/getUID', profileController.getUID);
 
 module.exports = router;
