@@ -227,3 +227,16 @@ $("#datefilter").click(function(){
 function autoscrollTop(){
 	$('html, body').animate({scrollTop: '0px'}, 0);
 }
+
+var expireCookie = function(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
+
+function logout() {
+		console.log('signing out');
+		localStorage.removeItem('token');
+		sessionStorage.removeItem('token');
+		expireCookie('Authentication');
+		window.location.href = "/";
+
+  }
