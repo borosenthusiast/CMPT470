@@ -43,7 +43,7 @@ function userprofile(){
 }
 
 
-function deck(filterstat){
+function deck(){
 	$.ajax({
     	url: "/adoption/alldogs",
     	type: "GET",
@@ -51,10 +51,15 @@ function deck(filterstat){
   		}).done(function(data) {
   			var allDogs = data;
 
-  		if (filterstat != undefined && filterstat[0] == "oldest" ){
+  		console.log("in first load");
+  		console.log(data);
+  		console.log(document.getElementById("datefilter").innerHTML);
+
+
+		if (document.getElementById("datefilter").innerHTML == "NEWEST"){
 			allDogs = allDogs.sort(sortByDate);
-	
-		} 
+		}
+
 
 		
 		var dogcards =[];
@@ -79,7 +84,7 @@ function deck(filterstat){
 
 }
 
-//use this deck to pull dog attributes from db
+
 
 
 function sortByDate(a, b){
@@ -178,9 +183,8 @@ $(document).on('click', '.dogcard', function() {
 
 
 $("#tabbutton").click(function(){
-	console.log(filterstat);
 
-	deck(filterstat);
+	deck();
 	//empty posts and reupdate
 	document.getElementById("adoptposts").innerHTML="";
 
@@ -192,11 +196,9 @@ $("#datefilter").click(function(){
 	$this.toggleClass("li");
 	if ($this.hasClass("li")){
 		$this.text('OLDEST');
-		filterstat[0] = "oldest"
 
 	}else{
 		$this.text('NEWEST');
-		filterstat[0] = "newest"
 		
 	}
 });

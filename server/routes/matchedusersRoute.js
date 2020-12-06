@@ -23,6 +23,7 @@ var upload = multer({dest: './uploads/'});
 router.get('/getmatchedusers', middleware.checkToken, matchedusersController.getmatchedusers);
 router.post('/newmessage', middleware.checkToken, upload.single('img'), matchedusersController.newmessage);
 router.post('/loadMessages', middleware.checkToken, matchedusersController.loadMessages);
+router.post('/lastMessage', middleware.checkToken, matchedusersController.lastMessage);
 
 
 module.exports = router;
