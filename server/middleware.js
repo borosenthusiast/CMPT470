@@ -41,8 +41,8 @@ const checkToken = (req, res, next) => {
     } else {
         console.log("No authentication token was provided.");
         return res.status(403).json({
-        success: false,
-        message: 'Auth token is not supplied'
+            success: false,
+            message: 'Auth token is not supplied'
         });
     }
 }

@@ -7,8 +7,7 @@ body{
 
 #home{
 	width:100%;
-	/*height: 625px;*/
-	height: 750px;
+	height: 95vh;
 	background-image: url('/images/home1.jpg');
 	background-position: center;
 	background-size: cover;
@@ -25,13 +24,8 @@ body{
 	transition: opacity 1s;
 }
 
-
 .appname{
-	position: relative;
-	/*left: 50%;*/
-
-	text-align: center;
-	font-size: 60px;
+	font-size: 50px;
 	font-weight:700;
 }
 
@@ -55,7 +49,6 @@ body{
 
 #appdesc{
 	position: absolute;
-	font-size: large;
 	color:white;
 	top: 285px;
 	left: 40%;
@@ -65,7 +58,7 @@ body{
 .loginbox{
 	position: absolute;
 	width: 410px;
-	height: 625px;
+	height: 95vh;
 	left: 10%;	
 	text-align: center;
 }
@@ -120,20 +113,7 @@ body{
 	color: #810000;
 }
 
-#about {
-	position: relative;
-	text-align: center;
-	font-size: 40pt;
-	color: white;
-	left: 10%;
-	width: 80%;
-	height: 20%;
-}
-
 footer{
-	position: absolute;
-	width: 100%;
-	height: 5%;
 	color:white;
 }
 
