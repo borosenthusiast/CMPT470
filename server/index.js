@@ -37,13 +37,13 @@ app.use('/register', registerRoute);
 
 app.use('/profile', middleware.checkToken, profileRoute);
 
-app.use('/dogforadoption', dogforadoptionRoute);
+app.use('/dogforadoption', middleware.checkToken, dogforadoptionRoute);
 
-app.use('/adoption', adoptionRoute);
+app.use('/adoption', middleware.checkToken, adoptionRoute);
 
-app.use('/matchedusers', matchedusersRoute);
+app.use('/matchedusers', middleware.checkToken, matchedusersRoute);
 
-app.use('/adoptionprofile', adoptionprofileRoute);
+app.use('/adoptionprofile', middleware.checkToken, adoptionprofileRoute);
 
 // use middleware checktoken for protected pages that require authentication from the user.
 
