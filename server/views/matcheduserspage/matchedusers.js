@@ -153,7 +153,6 @@ $(document).ready(function(){
 					messageForm.reset();
 					document.getElementById("imgpreview").innerHTML = "";
 
-                	console.log(data)
                 	loadMessages(selectedChat);
             	},
             	cache: false,
@@ -184,8 +183,6 @@ function loadMessages(selectedChat){
 	const reqData = {
 		targetuser: selectedChat
 	}
-	console.log("data to send");
-	console.log(reqData);
 
 	$.ajaxSetup({
 		headers: {"Authorization": localStorage.getItem('token')}
@@ -228,36 +225,29 @@ function loadMessages(selectedChat){
 				
 			}
 
-			var message = document.createElement("section");
-			message.setAttribute("class", "message");	
-			message.innerHTML = messages[i].message;
-			message.style.padding = "10px";
+			if (messages[i].message != null ){
+				var message = document.createElement("section");
+				message.setAttribute("class", "message");	
+				message.innerHTML = messages[i].message;
+				message.style.padding = "10px";
 
 
-			if (messages[i].targetuser == parseInt(selectedChat,10)){
-				message.style.float = "right";	
-				message.style.backgroundColor = "#CABFDA";
+				if (messages[i].targetuser == parseInt(selectedChat,10)){
+					message.style.float = "right";	
+					message.style.backgroundColor = "#CABFDA";
 				
-			} else {
-				message.style.float = "left";
+				} else {
+					message.style.float = "left";
 			
+				}
+
+			
+				messageWindow.appendChild(message);
 			}
-			
-			messageWindow.appendChild(message);
 			
 		}
 
-
-
-
 		messageWindow.scrollTop = messageWindow.scrollHeight;
-
-
-
-
-
-
-
 
 	});
 
