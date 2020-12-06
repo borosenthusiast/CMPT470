@@ -124,9 +124,6 @@ body{
 	background-color: #CABFDA;
 }
 
-.usercard:hover .preview{
-	color: white;
-}
 
 .username{
 	position: relative;

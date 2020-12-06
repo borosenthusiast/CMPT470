@@ -75,4 +75,40 @@ Message.loadMessages = async(ids) =>{
 	}
 }
 
+
+Message.lastMessage = async (ids) => {
+	var ids_senderId = ids.senderId;
+	var ids_targetuser = ids.targetuser;
+	try{
+		let message_collection = await mongo_db.mongo_collection('Messages');
+
+		let query1 = [
+						{	$match: {senderId: { $eq: ids_senderId }}	},
+						{	$match: {targetuser: {$eq: ids_targetuser}}	},
+						{	$sort: {time: -1}	},
+						{	$limit: 1},
+						{	$project: {message:1, time:1}	}
+					];
+		
+		let result1 = await message_collection.aggregate(query1).toArray();
+	
+		let query2 = [
+						{	$match: {senderId: { $eq: ids_targetuser} }	},
+						{	$match: {targetuser: {$eq: ids_senderId} }	},
+						{	$sort: {time: -1}	},
+						{	$project: {message:1, time:1}	}
+					];
+		
+		let result2 = await message_collection.aggregate(query2).toArray();
+
+		var result = result1.concat(result2);
+
+		return result;
+	}catch(err){
+		console.log(err);
+		console.log("Error in Message.lastMessage");
+	}
+}
+
+
 module.exports = Message;

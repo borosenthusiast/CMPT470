@@ -41,3 +41,14 @@ exports.loadMessages = async(req,res) =>{
 
 
 }
+
+exports.lastMessage = async(req,res) => {
+	var ids = req.body;
+	try {
+		let lastMessage = await Message.lastMessage(ids);
+		res.send(lastMessage);
+	} catch (err) {
+		console.log("Error at mongoserver matchedusersController.lastMessage");
+	}
+}
+

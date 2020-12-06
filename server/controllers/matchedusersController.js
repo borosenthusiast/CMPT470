@@ -94,3 +94,18 @@ exports.loadMessages = async(req,res) =>{
 		console.log("Error at matchedusersController.loadMessages");
 	}
 }
+
+exports.lastMessage = async(req,res) =>{
+	var convertedTargetuser = parseInt(req.body.targetuser,10);
+	var ids = {
+		senderId: req.decoded.id,
+		targetuser: convertedTargetuser
+	};
+
+	try{
+		let lastmessage = await Message.lastMessage(ids);
+		res.send(lastmessage);
+	} catch(err) {
+		console.log("Error at matchedusersController.lastMessage");
+	}
+}

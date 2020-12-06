@@ -20,6 +20,13 @@ Message.loadMessages = async (ids) => {
 	return loadedMessages.data;
 }
 
+Message.lastMessage = async (ids)=>{
+	let lastMessage = await axios.post('http://localhost:8081/matchedusers/lastMessage', ids);
+	return lastMessage.data;
+
+}
+
+
 
 module.exports = Message;
 		

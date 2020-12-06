@@ -19,7 +19,19 @@ function userprofile(){
 }
 
 function producecards(matcheduser){
-	var matchedusers = document.getElementById("matchedusers");
+
+	const reqData = {
+		targetuser: matcheduser.userId
+	}
+
+	$.ajaxSetup({
+		headers: {"Authorization": localStorage.getItem('token')}
+	});
+	$.post("/matchedusers/lastMessage", reqData, function(result){
+		var messages = result.sort(sortByDate);
+		var lastmessage = messages[messages.length-1];
+
+		var matchedusers = document.getElementById("matchedusers");
 
 	var usercard = document.createElement("section");
 	usercard.setAttribute("class", "usercard");
@@ -47,14 +59,38 @@ function producecards(matcheduser){
 	var preview = document.createElement("p");
 	preview.setAttribute("class", "preview");
 	description.appendChild(preview);	//grab newest message
-	preview.innerHTML = "thisispreviewmessage.clicktoseemore";
+
+
+	preview.innerHTML = lastmessage.message;
 
 
 	usercard.id = matcheduser.userId; //username as id (for convenience in searching)
 
+
+	});
+
+
+
+
+}
+
+function lastMessage(targetuser){
+
 }
 
 function prependcard(chosenuser){
+	const reqData = {
+		targetuser: matcheduser.userId
+	}
+
+	$.ajaxSetup({
+		headers: {"Authorization": localStorage.getItem('token')}
+	});
+	$.post("/matchedusers/lastMessage", reqData, function(result){
+		var messages = result.sort(sortByDate);
+		var lastmessage = messages[messages.length-1];
+
+
 	var matchedusers = document.getElementById("matchedusers");
 
 	var usercard = document.createElement("section");
@@ -83,9 +119,11 @@ function prependcard(chosenuser){
 	var preview = document.createElement("p");
 	preview.setAttribute("class", "preview");
 	description.appendChild(preview);	//grab newest message
-	preview.innerHTML = "thisispreviewmessage.clicktoseemore";
+	preview.innerHTML = lastmessage.message;
 
 	usercard.id = chosenuser.userId; //username as id (for convenience in searching)
+
+	});
 
 }
 
@@ -94,6 +132,8 @@ function initMatches(matcheslist){
 	var matched = matcheslist;
 	var chosenId = localStorage.getItem("chosenId");
 	console.log("chosenID is: " + chosenId);
+
+
 
 	for (var i = 0; i < matched.length; i ++){
 		if (matched[i].userId != chosenId){
@@ -249,10 +289,26 @@ function loadMessages(selectedChat){
 
 		messageWindow.scrollTop = messageWindow.scrollHeight;
 
+
+		//update preview
+		var lastmessage = messages[messages.length-1];
+		var matchedusers = document.getElementsByClassName("usercard");
+
+		console.log("who should be updated?");
+		for (var i = 0; i < matchedusers.length; i++){
+			if (matchedusers[i].id == selectedChat){
+				var preview = matchedusers[i].childNodes[1].childNodes[1];
+				preview.innerHTML = lastmessage.message;
+			}
+		}
+		
+
 	});
 
 
 }
+
+
 
 
 $('#img').change(function () {
@@ -319,7 +375,7 @@ $(document).ready(function(){
 
 $(document).on('click', '.usercard', function() {
 		var thisId = this.id;
-		loadMessages(thisId)
+		loadMessages(thisId);
 		localStorage.setItem("selectedChat", thisId );
 
 
