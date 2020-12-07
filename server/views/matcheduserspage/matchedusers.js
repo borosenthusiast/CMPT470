@@ -268,9 +268,10 @@ function loadMessages(selectedChat){
 				
 			}
 
-			if (messages[i].message != null ){
+			if (messages[i].message.length != 0 || messages[i].message != ""){
 				var message = document.createElement("section");
 				message.setAttribute("class", "message");	
+				console.log(messages[i].message.length);
 				message.innerHTML = messages[i].message;
 				message.style.padding = "10px";
 
