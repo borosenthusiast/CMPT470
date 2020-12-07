@@ -55,10 +55,8 @@ app.use('/admin', adminRoute);
 
 app.use('/about', aboutRoute);
 
-//////////////////////////// temp
 var cardFlipRoute = require('./routes/cardFlipRoute');
 app.use('/cardflip', middleware.checkToken, cardFlipRoute);
-///////////////////////////
 
 
 app.listen(3000);  // app.listen(port, [host], [backlog], [callback]])
