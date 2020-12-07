@@ -1,5 +1,8 @@
 window.onload = function(){
 	readMatchedUsers();
+	var chosenId = localStorage.getItem("chosenId");
+	loadMessages(chosenId);
+
 }
 
 function userprofile(){
@@ -74,13 +77,10 @@ function producecards(matcheduser){
 
 }
 
-function lastMessage(targetuser){
-
-}
 
 function prependcard(chosenuser){
 	const reqData = {
-		targetuser: matcheduser.userId
+		targetuser: chosenuser.userId
 	}
 
 	$.ajaxSetup({
@@ -299,6 +299,7 @@ function loadMessages(selectedChat){
 			if (matchedusers[i].id == selectedChat){
 				var preview = matchedusers[i].childNodes[1].childNodes[1];
 				preview.innerHTML = lastmessage.message;
+				preview.setAttribute("class", "preview");
 			}
 		}
 		

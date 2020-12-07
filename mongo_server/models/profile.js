@@ -137,7 +137,7 @@ Profile.gettenrandomprofiles = async (userid) => {
 		let query = [
 						{	$match: {userId: { $not: { $eq: currentuser }}} },
 						{	$sample: {size: 10}	},
-						{	$project: {userId: 1, profile_img: 1}	}
+						{	$project: {userId: 1, pet:1}	}
 					];
 		let result = await profile_collection.aggregate(query).toArray();
 		return result;
