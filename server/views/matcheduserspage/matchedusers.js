@@ -119,7 +119,10 @@ function prependcard(chosenuser){
 	var preview = document.createElement("p");
 	preview.setAttribute("class", "preview");
 	description.appendChild(preview);	//grab newest message
-	preview.innerHTML = lastmessage.message;
+	if (lastmessage != undefined){
+		preview.innerHTML = lastmessage.message;
+	}
+	
 
 	usercard.id = chosenuser.userId; //username as id (for convenience in searching)
 
@@ -294,12 +297,14 @@ function loadMessages(selectedChat){
 		var lastmessage = messages[messages.length-1];
 		var matchedusers = document.getElementsByClassName("usercard");
 
-		console.log("who should be updated?");
 		for (var i = 0; i < matchedusers.length; i++){
 			if (matchedusers[i].id == selectedChat){
 				var preview = matchedusers[i].childNodes[1].childNodes[1];
-				preview.innerHTML = lastmessage.message;
-				preview.setAttribute("class", "preview");
+				if (lastmessage != undefined){
+					preview.innerHTML = lastmessage.message;
+					preview.setAttribute("class", "preview");
+				}
+				
 			}
 		}
 		
