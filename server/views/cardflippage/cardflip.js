@@ -1,4 +1,3 @@
-
 /*after DB setup, pull 10-15 user profiles to put in array, insert as cards to html page*/
 /*for now, 4 demo cards*/
 
@@ -101,7 +100,7 @@ window.onload = function(){
 				cardSection.appendChild(username);
 				username.setAttribute("class", "username");
 
-				username.innerHTML = carddeck[i].username + "'s dog: ";
+				username.innerHTML = carddeck[i].username;
 
 				var dogname = document.createElement("p");
 				cardSection.appendChild(dogname);
