@@ -1,4 +1,5 @@
 var axios = require("axios");
+var config = require("../config.js");
 
 var Profile = function(profile) {
 	this.userId = profile.userId;
@@ -11,23 +12,23 @@ var Profile = function(profile) {
 
 
 Profile.create = async (profile) => {
-	let response = await axios.post('http://localhost:8081/profile/createprofile', profile);
+	let response = await axios.post(config.addr_mongo + '/profile/createprofile', profile);
 	console.log(response.data);
 	return response.data;
 }
 
 Profile.getProfileById = async (id) => {
-	let response = await axios.get('http://localhost:8081/profile/getprofilebyid/' + id);
+	let response = await axios.get(config.addr_mongo + '/profile/getprofilebyid/' + id);
 	return response.data;
 }
 
 Profile.updateProfile = async (id, data) => {
-	let response = await axios.post('http://localhost:8081/profile/updateprofile/' + id, data);
+	let response = await axios.post(config.addr_mongo + '/profile/updateprofile/' + id, data);
 	return response.data;
 }
 
 Profile.getTenRandom = async (profile)=>{
-	let response = await axios.post('http://localhost:8081/profile/tenrandomprofiles', profile);
+	let response = await axios.post(config.addr_mongo + '/profile/tenrandomprofiles', profile);
 	/*response.data is random users in array*/
 	return response.data;
 }
@@ -35,19 +36,19 @@ Profile.getTenRandom = async (profile)=>{
 Profile.pushtoaddedlist = async (ids) => {
 	//console.log("in server profile model: ");
 	//console.log(addedId);
-	let response = await axios.post('http://localhost:8081/profile/pushtoaddedlist', ids);
+	let response = await axios.post(config.addr_mongo + '/profile/pushtoaddedlist', ids);
 	return response.data;
 }
 
 Profile.checkifmatch = async (ids) => {
-	let response = await axios.post('http://localhost:8081/profile/checkifmatch', ids);
+	let response = await axios.post(config.addr_mongo + '/profile/checkifmatch', ids);
 	//console.log("in server model verifying: ");
 	//console.log(response.data);
 	return response.data;
 }
 
 Profile.getmatchedusers = async(userid) => {
-	let response = await axios.post('http://localhost:8081/profile/getmatchedusers', userid);
+	let response = await axios.post(config.addr_mongo + '/profile/getmatchedusers', userid);
 	return response.data;
 }
 

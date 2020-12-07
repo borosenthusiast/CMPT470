@@ -2,6 +2,7 @@ var http = require('http');
 var querystring = require('querystring');
 var util = require("util");
 var axios = require("axios");
+var config = require("../config.js");
 
 var User = function(user) {
 	this.username = user.username;
@@ -13,29 +14,29 @@ var User = function(user) {
 }
 
 User.create = async(user) => {	
-	let response = await axios.post('http://localhost:8080/users/signup', user);
+	let response = await axios.post(config.addr_mysql + '/users/signup', user);
 	//console.log(response.data);
 	return response.data;
 }
 
 User.getUserbyUsername = async(username) => {
-	let response = await axios.get('http://localhost:8080/users/getusersbyusername/' + username);
+	let response = await axios.get(config.addr_mysql + '/users/getusersbyusername/' + username);
 	console.log("User.getusersbyusername" + response.data);
 	return response.data;
 };
 
 User.getUserbyId = async(id) => {
-	let response = await axios.get('http://localhost:8080/users/getusersbyid/' + id);
+	let response = await axios.get(config.addr_mysql + '/users/getusersbyid/' + id);
 	return response.data;
 }
 
 User.getAllUsers = async() => {
-	let response = await axios.get('http://localhost:8080/users/getallusers');
+	let response = await axios.get(config.addr_mysql + '/users/getallusers');
 	return response.data;
 }
 
 User.updateUser = async(id, data) => {
-	let response = await axios.post('http://localhost:8080/users/updateuser/' + id, data);
+	let response = await axios.post(config.addr_mysql + '/users/updateuser/' + id, data);
 	return response.data;
 }	
 

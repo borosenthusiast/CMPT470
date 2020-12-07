@@ -1,4 +1,5 @@
 var axios = require("axios");
+var config = require("../config");
 
 var Dogforadoption = function(doginfo) {
 	this.name = doginfo.name,
@@ -17,19 +18,19 @@ var Dogforadoption = function(doginfo) {
 }
 
 Dogforadoption.create = async (doginfo) => {
-	let response = await axios.post('http://localhost:8081/dogforadoption/createdogforadoption', doginfo);
+	let response = await axios.post(config.addr_mongo + '/dogforadoption/createdogforadoption', doginfo);
 	return response.data;
 
 }
 
 Dogforadoption.getAlldogs = async (request) => {
 	//no need for request. just show all the dogs
-	let response = await axios.get('http://localhost:8081/dogforadoption/getAlldogs', request);
+	let response = await axios.get(config.addr_mongo + '/dogforadoption/getAlldogs', request);
 	return response.data;
 }
 
 Dogforadoption.loadDog = async (dogReq) =>{
-	let response = await axios.post('http://localhost:8081/dogforadoption/loadDog', dogReq);
+	let response = await axios.post(config.addr_mongo + '/dogforadoption/loadDog', dogReq);
 	return response.data;
 }
 

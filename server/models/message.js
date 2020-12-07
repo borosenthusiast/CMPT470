@@ -1,4 +1,5 @@
 var axios = require("axios");
+var config = require("../config.js");
 
 var Message = function(inputmessageData) {
 	this.senderId = inputmessageData.senderId;
@@ -10,18 +11,18 @@ var Message = function(inputmessageData) {
 }
 
 Message.newmessage = async(messagetosend) => {
-	let response = await axios.post('http://localhost:8081/matchedusers/newmessage', messagetosend);
+	let response = await axios.post(config.addr_mongo + '/matchedusers/newmessage', messagetosend);
 	return response.data;
 
 }
 
 Message.loadMessages = async (ids) => {
-	let loadedMessages = await axios.post('http://localhost:8081/matchedusers/loadMessages', ids);
+	let loadedMessages = await axios.post(config.addr_mongo + '/matchedusers/loadMessages', ids);
 	return loadedMessages.data;
 }
 
 Message.lastMessage = async (ids)=>{
-	let lastMessage = await axios.post('http://localhost:8081/matchedusers/lastMessage', ids);
+	let lastMessage = await axios.post(config.addr_mongo + '/matchedusers/lastMessage', ids);
 	return lastMessage.data;
 
 }

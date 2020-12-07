@@ -1,4 +1,5 @@
 var axios = require("axios");
+var config = require("../config.js");
 
 var PetProfile = function(petProfile) {
 	this.userId = petProfile.userId;
@@ -10,7 +11,7 @@ var PetProfile = function(petProfile) {
 
 
 PetProfile.create = async (petProfile) => {
-	let response = await axios.post('http://localhost:8081/profile/createpetprofile', petProfile);
+	let response = await axios.post(config.addr_mongo + '/profile/createpetprofile', petProfile);
 	console.log(response.data);
 	return response.data;
 }
