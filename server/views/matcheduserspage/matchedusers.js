@@ -64,8 +64,9 @@ function producecards(matcheduser){
 	description.appendChild(preview);	//grab newest message
 
 
-	preview.innerHTML = lastmessage.message;
-
+	if (lastmessage != undefined){
+		preview.innerHTML = lastmessage.message;
+	}
 
 	usercard.id = matcheduser.userId; //username as id (for convenience in searching)
 
