@@ -44,10 +44,7 @@ $(document).ready(function() {
 			},
 			success: function(data) {
 			  console.log('Success logging in!');
-			  localStorage.setItem('token', JSON.stringify(data));
 			  window.location.href = "/cardflip";
-				// send the token when redirecting the user
-			
 			}
 		  });
 		

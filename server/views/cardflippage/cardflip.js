@@ -7,20 +7,17 @@ var addedlist = [];
 var matchlist = [];
 var subtractedlist = [];
 
+var expireCookie = function(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
 
 function logout() {
-	$.ajax({
-		url: "/logout",
-		type: "GET",
-		error: function(err) {
-			console.log("Failed to log out with error: ", err)
-		},
-		success: function(data) {
-			localStorage.removeItem('token');
-			sessionStorage.removeItem('token');
-			window.location = data.redirect;
-		}
-	});
+		console.log('signing out');
+		localStorage.removeItem('token');
+		sessionStorage.removeItem('token');
+		expireCookie('Authentication');
+		window.location.href = "/";
+
   }
 
 
