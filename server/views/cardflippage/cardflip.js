@@ -26,6 +26,7 @@ function card(data){
 	this.userId = data.userId;
 	this.username = data.username;
 	this.profile_img = data.profile_img; 
+	this.pet = data.pet;
 }
 
 
@@ -69,11 +70,13 @@ window.onload = function(){
         },
         success: function(data) {
 
+
         	var carddeck = builddeck(data);
-        	console.log("img is: " + carddeck[0].profile_img.path);
 
         	var deckSection = document.getElementById("cards");
         	for (var i = 0; i < carddeck.length; i++){
+
+
 				var cardSection = document.createElement("section");		
 				deckSection.appendChild(cardSection);
 				cardSection.setAttribute("class", "card");
@@ -87,15 +90,24 @@ window.onload = function(){
 				imgSection.appendChild(img);
 				img.setAttribute("class", "image");
 				
-				var profile_img = carddeck[i].profile_img;
-				img.src = 'data:' + profile_img.mimetype + ';base64,' + profile_img.buff;
+				//dog image
+				var pet = carddeck[i].pet;
+				var petname = pet.petName;
+				var petimg = pet.petImage;
+				img.src = 'data:' + petimg.mimetype + ';base64,' + petimg.buff;
 		
-
+				//dog name 
 				var username = document.createElement("p");
 				cardSection.appendChild(username);
 				username.setAttribute("class", "username");
 
-				username.innerHTML = carddeck[i].username;
+				username.innerHTML = carddeck[i].username + "'s dog: ";
+
+				var dogname = document.createElement("p");
+				cardSection.appendChild(dogname);
+				dogname.setAttribute("class", "dogname");
+
+				dogname.innerHTML = petname;
 
 			}
 
