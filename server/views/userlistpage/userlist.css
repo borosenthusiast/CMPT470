@@ -34,6 +34,7 @@ body{
 table, td, th { 
  border: 1px solid #ddd; 
  text-align: left;
+ margin-bottom: 100px;
 } 
 table { 
  border-collapse: collapse; 
