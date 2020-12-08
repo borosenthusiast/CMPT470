@@ -31,9 +31,11 @@ body{
 }
 
 #appname{	
-	position: absolute;
+	position: relative;
 	width: 310px;
-	left: 37%;
+	margin-left: auto;
+	margin-right: auto;
+	/*left: 37%;*/
 	top: 240px;
 	z-index: 1;
 }
@@ -49,10 +51,12 @@ body{
 
 
 #appdesc{
-	position: absolute;
+	position: relative;
 	color:white;
 	top: 285px;
-	left: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	/*left: 40%;*/
 
 }
 
