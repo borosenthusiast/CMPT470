@@ -163,7 +163,7 @@ $(document).ready(function() {
               console.log('Error!', err);
             },
             success: function(data) {
-              alert(data);
+              //alert(data);
               window.location.href = '/admin/view/' + id;
             //updateProfileinfo(data.data);
             },
